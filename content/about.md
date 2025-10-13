@@ -16,7 +16,7 @@ What started as "let's use AI to help plan a murder mystery dinner" somehow turn
 This site documents:
 
 - **The projects I build** (mystery crimes, and whatever comes next)
-- **The tools I use** (Claude, HuggingFace, Python, Typst, etc.)
+- **The tools I use** (Claude, HuggingFace, VS Code, Python, Typst, etc.)
 - **The processes that work** (and the spectacular failures)
 - **Everything in between**
 
