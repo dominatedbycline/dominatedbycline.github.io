@@ -10,7 +10,8 @@ pygmentsCodeFences = true
 pygmentsCodeFencesGuessSyntax = true
 
 # Pagination
-paginate = 5
+[pagination]
+  pagerSize = 5
 
 [params]
   mode = "auto"  # color-mode: light, dark, toggle, or auto
