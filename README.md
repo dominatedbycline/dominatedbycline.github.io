@@ -2,7 +2,7 @@
 
 A blog exploring AI tools, techniques, and creative processes.
 
-**Live Site:** [https://marialu1.github.io/artefactum/](https://marialu1.github.io/artefactum/)
+**Live Site:** [https://dominatedbycline.github.io/](https://dominatedbycline.github.io/)
 
 ---
 
