@@ -1,46 +1,54 @@
-# Artefactum
+# dominatedbydoug
 
-A blog exploring AI tools, techniques, and creative processes.
+**My Home on the Internet** 🌐
 
-**Live Site:** [https://dominatedbycline.github.io/](https://dominatedbycline.github.io/)
-
----
-
-## About
-
-*Artefactum* (Latin: craft, skill, artifact) documents experiments with AI tools, programming workflows, and the artifacts that emerge from creative collaboration with AI.
-
-**Topics:**
-- AI-assisted workflows (HuggingFace, Claude, GPT-4)
-- Programming techniques (Python, Typst, automation)
-- Process documentation (concept → completion)
-- Bloopers, learnings, and reusable templates
+This is my personal blog built with Hugo and the Archie theme, where I document projects, experiments, and learnings at the intersection of AI and creative work.
 
 ---
 
-## Tech Stack
+## 🔗 Live Site
 
-- **Hugo** - Static site generator
-- **Archie theme** - Minimal, clean design
-- **GitHub Pages** - Hosting
-- **GitHub Actions** - Automated deployment
+**Visit:** [https://dominatedbycline.github.io/](https://dominatedbycline.github.io/)
 
 ---
 
-## Local Development
+## 🎯 What's Here
 
-### Prerequisites
+This blog documents:
 
-- [Hugo](https://gohugo.io/installation/) (v0.128.0 or later)
+- **AI Tools & Techniques** - Experiments with Claude, GPT, HuggingFace, and more
+- **Programming Workflows** - Python automation, Typst typesetting, Hugo blogs
+- **Creative Projects** - From murder mystery games to AI-generated videos
+- **Process Documentation** - Bloopers, learnings, and the journey from idea to product
 
-### Setup
+---
+
+## 🚀 Featured Projects
+
+- **[Mystery Crime Party](/tags/mystery-crime-party/)** - A complete murder mystery roleplay game for 11 players set in 1926 Manhattan
+- More projects coming soon!
+
+---
+
+## 🛠️ Built With
+
+- **[Hugo](https://gohugo.io/)** - Fast static site generator
+- **[Archie Theme](https://github.com/athul/archie)** - Minimal, clean theme
+- **GitHub Pages** - Free hosting with automatic deployment
+
+---
+
+## 📝 Local Development
 
 ```bash
-# Clone repository with theme submodule
-git clone --recurse-submodules https://github.com/marialu1/artefactum.git
-cd artefactum
+# Install Hugo
+brew install hugo
 
-# Or if already cloned without submodules:
+# Clone repository
+git clone git@github.com:dominatedbycline/dominatedbycline.github.io.git
+cd dominatedbycline.github.io
+
+# Initialize theme submodule
 git submodule update --init --recursive
 
 # Run local server
@@ -49,66 +57,14 @@ hugo server -D
 # Visit http://localhost:1313
 ```
 
-### Creating New Posts
+---
 
-```bash
-# Create new post
-hugo new content posts/YYYY-MM-DD-post-title.md
+## 🌟 About
 
-# Edit the file in content/posts/
-# Set draft: false when ready to publish
+Welcome to my corner of the internet! This is where I share what I'm building, learning, and breaking.
 
-# Commit and push - GitHub Actions will deploy automatically
-```
+*"Every project is an experiment. Every experiment is an artifact."*
 
 ---
 
-## Project Structure
-
-```
-artefactum/
-├── .github/workflows/hugo.yml    # Automated deployment
-├── content/
-│   ├── about.md                  # About page
-│   └── posts/                    # Blog posts
-├── themes/archie/                # Theme (git submodule)
-├── hugo.toml                     # Hugo configuration
-└── README.md                     # This file
-```
-
----
-
-## Deployment
-
-This blog deploys automatically via GitHub Actions when pushing to the `main` branch.
-
-**Deployment workflow:**
-1. Push to `main` branch
-2. GitHub Actions builds Hugo site
-3. Deploys to GitHub Pages
-4. Site live at [https://marialu1.github.io/artefactum/](https://marialu1.github.io/artefactum/)
-
----
-
-## Featured Project
-
-**Christmas Murder Dinner 1926** - A complete murder mystery roleplay game for 11 players set in 1920s Manhattan, showcasing:
-
-- AI-assisted character development
-- Automated typesetting with Typst
-- Modular content architecture
-- AI-generated video assets
-- Workflow automation
-
-See the blog for detailed breakdowns of techniques and code.
-
----
-
-## License
-
-Content: © Maria Lu  
-Code/Templates: MIT License
-
----
-
-**Questions or feedback?** Open an issue or reach out via [GitHub](https://github.com/marialu1).
+**© 2025 Maria Lu**
