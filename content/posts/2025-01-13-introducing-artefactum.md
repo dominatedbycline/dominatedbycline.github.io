@@ -3,7 +3,7 @@ title: "Introducing Artefactum"
 description: "A new blog exploring AI tools, techniques, and creative processes"
 date: 2025-01-13T13:00:00Z
 draft: false
-tags: ["meta", "ai-tools", "introduction"]
+tags: ["meta", "ai-tools", "introduction", "project", "mystery-crime-party"]
 ---
 
 ## What is Artefactum?
