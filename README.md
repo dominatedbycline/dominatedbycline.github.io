@@ -1,8 +1,8 @@
-# dominatedbydoug
+# Dominated by Cline
 
-**My Home on the Internet** 🌐
+**AI-Assisted Development Log** 🤖
 
-This is my personal blog built with Hugo and the Archie theme, where I document projects, experiments, and learnings at the intersection of AI and creative work.
+This is a development blog built with Hugo and the Archie theme, documenting projects, experiments, and learnings created with AI assistance from Cline.
 
 ---
 
