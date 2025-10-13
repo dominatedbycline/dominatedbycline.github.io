@@ -1,0 +1,27 @@
+/* Center the header title and navigation */
+header {
+  justify-content: center !important;
+  text-align: center;
+}
+
+header .main {
+  width: 100%;
+  text-align: center;
+}
+
+nav {
+  justify-content: center !important;
+  width: 100%;
+}
+
+/* Ensure site description is also centered */
+.site-description {
+  justify-content: center !important;
+  text-align: center;
+  width: 100%;
+}
+
+/* Center footer items */
+footer {
+  justify-content: center !important;
+}

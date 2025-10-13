@@ -17,6 +17,7 @@ pygmentsCodeFencesGuessSyntax = true
   mode = "auto"  # color-mode: light, dark, toggle, or auto
   useCDN = false  # serve fonts/icons locally
   subtitle = "Building ridiculous projects with AI assistance (and documenting every weird decision)"
+  customCSS = ["css/custom.css"]
   
   # Math support (optional)
   mathjax = false
