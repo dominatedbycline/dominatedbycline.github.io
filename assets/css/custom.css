@@ -25,3 +25,65 @@ nav {
 footer {
   justify-content: center !important;
 }
+
+/* Change all red elements to hot pink */
+:root {
+  --color-primary: #FF1493 !important;
+  --color-primary-hover: #FF69B4 !important;
+}
+
+/* Asterisks in lists */
+ul > li::before {
+  color: #FF1493 !important;
+}
+
+/* Heading markers (# symbols) */
+h1::before, h2::before, h3::before, h4::before, h5::before, h6::before {
+  color: #FF1493 !important;
+}
+
+/* Links */
+a {
+  border-bottom-color: #FF1493 !important;
+  border-block-end-color: #FF1493 !important;
+}
+
+a:hover, a:focus {
+  background-color: #FF69B4 !important;
+  outline-color: #FF1493 !important;
+}
+
+/* Selection */
+::selection {
+  background: #FF1493 !important;
+}
+
+::-moz-selection {
+  background: #FF1493 !important;
+}
+
+/* Figure captions */
+figure h4::before {
+  color: #FF1493 !important;
+}
+
+/* Tags */
+.tags a {
+  border-bottom-color: #FF1493 !important;
+  border-block-end-color: #FF1493 !important;
+}
+
+.tags a:hover, .tags a:focus {
+  background-color: #FF69B4 !important;
+}
+
+/* Social icons hover */
+.soc:hover, .soc:focus {
+  color: #FF1493 !important;
+  outline-color: #FF1493 !important;
+}
+
+/* Draft label */
+.draft-label {
+  color: #FF1493 !important;
+}
