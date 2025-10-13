@@ -16,7 +16,7 @@ pygmentsCodeFencesGuessSyntax = true
 [params]
   mode = "auto"  # color-mode: light, dark, toggle, or auto
   useCDN = false  # serve fonts/icons locally
-  subtitle = "AI-assisted development log"
+  subtitle = "Building ridiculous projects with AI assistance (and documenting every weird decision)"
   
   # Math support (optional)
   mathjax = false
@@ -35,26 +35,16 @@ pygmentsCodeFencesGuessSyntax = true
   weight = 1
 
 [[menu.main]]
-  name = "All Posts"
-  url = "/posts"
+  name = "Projects"
+  url = "/projects"
   weight = 2
 
 [[menu.main]]
-  name = "Projects"
-  url = "/tags/project"
+  name = "Blog"
+  url = "/posts"
   weight = 3
-
-[[menu.main]]
-  name = "Mystery Crime Party"
-  url = "/tags/mystery-crime-party"
-  weight = 4
-
-[[menu.main]]
-  name = "AI Tools"
-  url = "/tags/ai"
-  weight = 5
 
 [[menu.main]]
   name = "About"
   url = "/about"
-  weight = 6
+  weight = 4
