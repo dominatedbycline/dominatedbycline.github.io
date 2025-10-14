@@ -87,3 +87,13 @@ figure h4::before {
 .draft-label {
   color: #FF1493 !important;
 }
+
+/* Double the size of blog post titles */
+.post-content .title h1,
+.title h1.title {
+  font-size: 4rem !important;
+}
+
+.post-content .title h1 {
+  line-height: 1.2 !important;
+}
