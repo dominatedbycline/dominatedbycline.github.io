@@ -11,6 +11,13 @@ tags: ["project", "murder-mystery", "artifactum", "ai-tools", "game-design"]
 An interactive murder mystery set in 1926. 
 Solve the crime using AI-generated clues, characters, and plot twists.
 
+<div style="text-align: center; margin: 2rem 0;">
+  <video width="100%" style="max-width: 500px; border-radius: 8px;" controls>
+    <source src="/videos/teaser.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
 **Status:** In development
 
 ## What it is
