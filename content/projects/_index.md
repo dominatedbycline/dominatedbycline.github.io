@@ -7,9 +7,13 @@ Welcome to the project showcase. Each project here is an experiment in AI-assist
 
 ## Current Projects
 
-### [Artifactum Mystery Crimes](/projects/artifactum/)
+### Artifactum Mystery Crimes
 
-Murder mystery roleplay games built with AI assistance. Each game is a self-contained experiment in character development, automated typesetting, and creative chaos.
+**Murder, Mayhem, and Machine Learning**
+
+**Artefactum** is my series of murder mystery roleplay games—each one a complete, self-contained experiment in AI-assisted creative chaos. The name comes from the Latin word for "artifact": something crafted with skill.
+
+Each game in the series is built using AI tools as creative collaborators, with full documentation of the process, tools, and inevitable bloopers.
 
 **Status:** First game complete  
 **Tags:** #ai-tools #creative #game-design #typst #python
