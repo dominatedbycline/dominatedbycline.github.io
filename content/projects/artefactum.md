@@ -22,6 +22,16 @@ Each game in the series is built using AI tools as creative collaborators, with 
 **Development Time:** ~2 weeks  
 **AI Tools Used:** Too many to count
 
+<div style="text-align: center; margin: 2rem 0;">
+  <video width="100%" style="max-width: 800px; border-radius: 8px;" controls>
+    <source src="/videos/teaser.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <p style="margin-top: 1rem; font-style: italic; color: #666;">
+    Teaser of this project, made with lm-arena ❤️, kdenlive, Gemini, VS Code, Claude, and more
+  </p>
+</div>
+
 ### What It Is
 
 A complete murder mystery roleplay game for 11 players set in 1920s Manhattan. Players receive character sheets, backstories, secrets, and objectives. Someone gets murdered. Chaos ensues. The game includes:
