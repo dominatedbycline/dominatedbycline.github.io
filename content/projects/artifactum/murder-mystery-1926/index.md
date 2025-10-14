@@ -15,12 +15,12 @@ tags: ["project", "murder-mystery", "artifactum", "ai-tools", "game-design"]
   </video>
 </div>
 
-**Status:** Complete ✅ (and played!)  
-**Development Time:** ~2 weeks  
-**Players:** 11 interconnected characters → 10 people played  
+**Status:** In Development 🎨 (almost there!)  
+**Development Time:** 2+ weeks (14+ hours/day, hyperfocused)  
+**Players:** 11 interconnected characters → 10 people signed up  
 **Pages:** 100+ game materials  
 **Setting:** 1920s Manhattan  
-**Event:** Christmas Dinner 2024
+**Event:** December 25, 2025
 
 ---
 
@@ -138,6 +138,14 @@ Cline was the AI coding assistant that made the entire automation pipeline possi
 
 Without Cline, none of the automation would have happened.
 
+### Design & Assets: Canva Pro
+
+**Props & Visual Assets:**
+- All physical props and visual assets designed in Canva Pro
+- Character cards, invitations, promotional materials
+- Print-ready designs for game materials
+- Quick iterations and professional results
+
 ### Typesetting & Automation
 
 **Typst** (replaced LaTeX):
@@ -166,12 +174,22 @@ This project was created with access to:
 
 This is a privileged setup. It matters to document that reality.
 
+### The Work: Hyperfocus Mode Activated
+
+**14+ hours per day. Non-stop. Super hyperfocused.**
+
+Not bragging—just the reality of ADHD hyperfocus when the right project hits.
+
+When you're in the zone, you don't stop. You learn by doing. You iterate constantly. You make mistakes and fix them immediately. You generate more content than you need because you're exploring every possibility.
+
+This project was built in that state. It's a privileged position to be able to work like that, but it's also how the learning happened.
+
 ### The Creative Chaos
 
 - Tested MANY tools on Fal.ai before finding what worked
 - Generated more content than I needed
 - Fell in love with video clips I didn't use
-- Learned by doing (and failing)
+- Learned an insane amount in 2 weeks
 - Nobody's suggestion paid off (he was right, again)
 
 ---
@@ -219,4 +237,4 @@ Detailed breakdowns coming:
 
 ---
 
-**Note:** Full game details and character materials available upon request. The game was played at Christmas 2024 with 10 friends. It worked. 🎭🎄
+**Note:** Full game details and character materials available upon request. The game will be played December 25, 2025. Almost there! 🎭🎄
