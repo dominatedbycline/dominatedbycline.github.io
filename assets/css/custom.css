@@ -99,6 +99,14 @@ figure h4::before {
 }
 
 /* Hero Section Styling */
+.hero-tagline {
+  text-align: center;
+  font-size: 1.2rem;
+  font-style: italic;
+  margin: 2rem 0;
+  padding: 1rem 0;
+}
+
 .hero-section {
   text-align: center;
   margin: 2rem 0 3rem 0;
@@ -118,12 +126,6 @@ figure h4::before {
 .hero-link a {
   font-size: 1rem;
   text-decoration: none;
-}
-
-.hero-tagline {
-  margin-top: 1.5rem;
-  font-size: 1.2rem;
-  font-style: italic;
 }
 
 /* Featured Project Section */
