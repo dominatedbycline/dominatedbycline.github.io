@@ -1,5 +1,5 @@
 ---
-title: "About Me"
+title: "About"
 description: "Interior designer → AI experimenter"
 date: 2025-01-13T13:00:00Z
 draft: false
