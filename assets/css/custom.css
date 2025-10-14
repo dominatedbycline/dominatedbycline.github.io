@@ -97,3 +97,119 @@ figure h4::before {
 .post-content .title h1 {
   line-height: 1.2 !important;
 }
+
+/* Hero Section Styling */
+.hero-section {
+  text-align: center;
+  margin: 2rem 0 3rem 0;
+  padding: 2rem 0;
+}
+
+.mini-bio {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.hero-link {
+  margin: 1rem 0;
+}
+
+.hero-link a {
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+.hero-tagline {
+  margin-top: 1.5rem;
+  font-size: 1.2rem;
+  font-style: italic;
+}
+
+/* Featured Project Section */
+.featured-project {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.featured-project h2 {
+  margin-bottom: 1.5rem;
+}
+
+.project-card {
+  background: rgba(255, 20, 147, 0.05);
+  border-left: 3px solid #FF1493;
+  padding: 1.5rem;
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.project-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.project-card p {
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.project-cta {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: #FF1493;
+  color: white !important;
+  text-decoration: none !important;
+  border: none !important;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.project-cta:hover {
+  background: #FF69B4 !important;
+}
+
+/* Latest Updates Section */
+.latest-updates {
+  margin: 3rem 0;
+}
+
+.latest-updates h2 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.update-item {
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 20, 147, 0.2);
+}
+
+.update-item h3 {
+  margin-bottom: 0.5rem;
+}
+
+.update-item h3.title {
+  font-size: 1.5rem;
+}
+
+.update-item time {
+  font-size: 0.9rem;
+  color: #666;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.update-item .excerpt {
+  margin-top: 0.5rem;
+  line-height: 1.5;
+}
+
+.see-all {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.see-all a {
+  font-size: 1.1rem;
+}

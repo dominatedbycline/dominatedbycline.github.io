@@ -1,51 +1,47 @@
 ---
-title: "About"
-description: "About the lab and Maria"
+title: "About Me"
+description: "Interior designer → AI experimenter"
 date: 2025-01-13T13:00:00Z
 draft: false
 ---
 
-## Hi, I'm Maria, and I let AI convince me to make things.
+## Who I am
 
-What started as "let's use AI to help plan a murder mystery dinner" somehow turned into a full-scale 11-character roleplay game with custom typesetting, AI-generated promotional videos, and a git-based content management system. You know, normal stuff.
+I'm Marilu — an interior designer who fell down the AI rabbit hole and never looked back.
 
-## What This Is
+I started in interior design because I love creating spaces that tell stories. But here's the thing: my ADHD brain craves constant stimulation, and interior design, as much as I love it, felt... incomplete. Too narrow. I needed more.
 
-**Dominated by Cline** is my lab for AI-assisted chaos. I build creative projects using AI tools—not to replace the creative process, but to see what happens when you combine human ideas with computational horsepower and a questionable amount of caffeine.
+**Enter AI.**
 
-This site documents:
-
-- **The projects I build** (mystery crimes, and whatever comes next)
-- **The tools I use** (Claude, HuggingFace, VS Code, Python, Typst, etc.)
-- **The processes that work** (and the spectacular failures)
-- **Everything in between**
-
-## Current Focus
-
-Right now I'm wrapping up the first **Artefactum Mystery Crime**: "Christmas Murder Dinner 1926." It's a complete murder mystery game for 11 players, and I built it in about 2 weeks using more AI tools than I can count. Future posts will break down exactly how (and why).
-
-**Artefactum** is the name for my mystery crime game series—each one a self-contained experiment in AI-assisted creative chaos.
-
-## The Philosophy
-
-AI is a collaborator, not a replacement. The weird ideas are mine. The execution is assisted. The learning is documented. The bloopers are included.
-
-Think of it like this: I'm the director, AI is the extremely capable (and occasionally overzealous) production team. The final product is always a collaboration, and I document every step—including when the production team suggests something ridiculous.
-
-## What You'll Find Here
-
-- **Project showcases** with full breakdowns
-- **Tool experiments** and comparisons
-- **Process documentation** from concept to completion
-- **Tutorials** for reusable workflows
-- **Bloopers** because learning happens in the failures
-- **Code and templates** you can actually use
-
-## Connect
-
-- **GitHub**: [marialu1](https://github.com/marialu1)
-- Have questions? Found a bug? Want to argue about AI tools? Feel free to reach out.
+With AI, I can do a bit of everything. Design, code, write, create games, plan events, build experiences. I get to learn constantly — "pra xuxu" as I say — and that's exactly what my brain needs.
 
 ---
 
-*Welcome to the lab. Things might get weird.*
+## What I'm building
+
+Right now, I'm exploring how AI can transform event planning and interactive experiences. My first major project is **Murder Mystery 1926**, part of a series I'm calling **Artifactum** — AI-generated crime mysteries that people can actually play.
+
+I'm also planning a wedding for 2027 (yes, really) and using AI methods to do it. Because why not turn life's big moments into creative experiments?
+
+---
+
+## What I've learned
+
+This journey has been messy, chaotic, and absolutely incredible. I've learned so much from building the Murder Mystery project — about AI tools, game design, storytelling, and how to make weird ideas actually work.
+
+None of this would be possible without my friend and collaborator, Nobody, who's been teaching me, supporting me, and pushing me to try things I didn't think I could do. 💙
+
+---
+
+## What's next
+
+More projects. More experiments. More events, games, planning adventures, and whatever else catches my attention.
+
+This site is where I document it all — the successes, the failures, the "what was I thinking" moments, and everything I learn along the way.
+
+If you want to follow along, collaborate, or just say hi, find me on [GitHub](https://github.com/marialu1).
+
+---
+
+**TL;DR:**  
+Interior designer → ADHD brain needed more → discovered AI → now making weird stuff and loving it.
