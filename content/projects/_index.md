@@ -3,26 +3,18 @@ title: "Projects"
 description: "AI-assisted creative chaos, documented"
 ---
 
-# Artifactum Mystery Crimes
+Welcome to the project showcase. Each project here is an experiment in AI-assisted creation—from concept to completion, including all the weird decisions and spectacular failures along the way.
 
-## Murder, Mayhem, and Machine Learning
+## Current Projects
 
-**Artefactum** is my series of murder mystery roleplay games—each one a complete, self-contained experiment in AI-assisted creative chaos. The name comes from the Latin word for "artifact": something crafted with skill.
+### [Artifactum Mystery Crimes](/projects/artifactum/)
 
-Each game in the series is built using AI tools as creative collaborators, with full documentation of the process, tools, and inevitable bloopers.
+Murder mystery roleplay games built with AI assistance. Each game is a self-contained experiment in character development, automated typesetting, and creative chaos.
 
----
+**Status:** First game complete  
+**Tags:** #ai-tools #creative #game-design #typst #python
 
-### [Christmas Murder Mystery 1926](/projects/artifactum/murder-mystery-1926/)
-
-An interactive murder mystery set in 1926. My first complete AI game project.
-
-**Status:** Complete ✅  
-**Players:** 11 characters  
-**Setting:** 1920s Manhattan  
-**Development Time:** ~2 weeks
-
-[View project details →](/projects/artifactum/murder-mystery-1926/)
+[Explore the series →](/projects/artifactum/)
 
 ---
 
