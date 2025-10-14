@@ -13,7 +13,7 @@ Each game in the series is built using AI tools as creative collaborators, with 
 
 ---
 
-### [Murder Mystery 1926](/projects/artifactum/murder-mystery-1926/)
+### [Christmas Murder Mystery 1926](/projects/artifactum/murder-mystery-1926/)
 
 An interactive murder mystery set in 1926. My first complete AI game project.
 

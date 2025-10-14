@@ -1,12 +1,12 @@
 ---
-title: "Murder Mystery 1926"
+title: "Christmas Murder Mystery 1926"
 description: "An interactive AI-generated murder mystery"
 date: 2025-10-14
 featured: true
 tags: ["project", "murder-mystery", "artifactum", "ai-tools", "game-design"]
 ---
 
-# Murder Mystery 1926
+# Christmas Murder Mystery 1926
 
 An interactive murder mystery set in 1926. 
 Solve the crime using AI-generated clues, characters, and plot twists.
