@@ -98,23 +98,42 @@
 
 @media (max-width: 768px) {
     .scene {
-        height: 300px;
+        height: 220px;
+        perspective: 800px;
     }
 
     .carousel-card {
-        width: 250px;
-        height: 220px;
-        margin-left: -125px;
-        margin-top: -110px;
+        width: 180px;
+        height: 160px;
+        margin-left: -90px;
+        margin-top: -80px;
+    }
+
+    .card-header {
+        font-size: 0.75rem;
+        padding: 8px;
     }
 
     .card-content {
-        height: 160px;
-        padding: 12px;
+        height: 110px;
+        padding: 8px;
+        font-size: 0.7rem;
+    }
+    
+    .card-content h3 {
+        font-size: 0.75rem;
+        margin-bottom: 3px;
     }
     
     .card-content p {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
+        line-height: 1.4;
+        margin-bottom: 5px;
+    }
+    
+    .card-tag {
+        font-size: 0.6rem;
+        padding: 2px 5px;
     }
 }
 </style>
@@ -226,12 +245,24 @@
     let currentIndex = 0;
     
     const theta = 360 / totalCards;
-    const radius = Math.round((315 / 2) / Math.tan(Math.PI / totalCards));
     
-    cards.forEach(function(card, i) {
-        const angle = theta * i;
-        card.style.transform = 'rotateY(' + angle + 'deg) translateZ(' + radius + 'px)';
-    });
+    function getCardWidth() {
+        return window.innerWidth <= 768 ? 180 : 315;
+    }
+    
+    function updateCarouselPositions() {
+        const cardWidth = getCardWidth();
+        const radius = Math.round((cardWidth / 2) / Math.tan(Math.PI / totalCards));
+        
+        cards.forEach(function(card, i) {
+            const angle = theta * i;
+            card.style.transform = 'rotateY(' + angle + 'deg) translateZ(' + radius + 'px)';
+        });
+    }
+    
+    updateCarouselPositions();
+    
+    window.addEventListener('resize', updateCarouselPositions);
     
     function rotateCarousel(direction) {
         if (direction === 'next') {
