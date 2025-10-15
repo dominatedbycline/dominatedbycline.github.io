@@ -24,7 +24,8 @@ tags: ["project", "murder-mystery", "artifactum", "ai-tools", "game-design"]
 
 ---
 
-## The Origin Story
+<details>
+<summary><h2 style="display: inline;">The Origin Story</h2></summary>
 
 It started on a beach.
 
@@ -54,9 +55,12 @@ With AI as my production team.
 
 **Spoiler:** It worked. 🎭
 
+</details>
+
 ---
 
-## What It Is
+<details>
+<summary><h2 style="display: inline;">What It Is</h2></summary>
 
 A complete murder mystery roleplay game for 11 players set in 1920s Manhattan. Each player receives:
 - Detailed character sheet with backstory
@@ -70,9 +74,12 @@ A complete murder mystery roleplay game for 11 players set in 1920s Manhattan. E
 
 **(photo: printed character booklets ou digital files preview)**
 
+</details>
+
 ---
 
-## Development Story
+<details>
+<summary><h2 style="display: inline;">Development Story</h2></summary>
 
 ### Week 1: Character Development & Story Architecture
 
@@ -106,9 +113,12 @@ With characters locked, it was time to build everything.
 
 **(screenshot: terminal showing build scripts running ou Git commits timeline)**
 
+</details>
+
 ---
 
-## Tools & Workflow
+<details>
+<summary><h2 style="display: inline;">Tools & Workflow</h2></summary>
 
 **(graphic: "The Dream Team" header with tool logos)**
 
@@ -234,9 +244,12 @@ Without Cline, none of the automation would have happened.
 
 **(screenshot: Git commit history showing creative project version control)**
 
+</details>
+
 ---
 
-## Behind the Scenes: The Reality
+<details>
+<summary><h2 style="display: inline;">Behind the Scenes: The Reality</h2></summary>
 
 **(graphic: "Real Talk" header)**
 
@@ -284,9 +297,12 @@ This project was built in that state. It's a privileged position to be able to w
 
 **(meme: "Well well well, how the turntables" ou Nobody being smug as Cri-Kee)**
 
+</details>
+
 ---
 
-## What Worked
+<details>
+<summary><h2 style="display: inline;">What Worked</h2></summary>
 
 **(graphic: checklist aesthetic)**
 
@@ -301,9 +317,12 @@ This project was built in that state. It's a privileged position to be able to w
 
 **(graphic: success metrics visualization ou before/after comparison)**
 
+</details>
+
 ---
 
-## What I Learned
+<details>
+<summary><h2 style="display: inline;">What I Learned</h2></summary>
 
 **(graphic: "The Lesson" ou lightbulb moment)**
 
@@ -317,9 +336,12 @@ Claude was the mastermind. Cline was the builder. I was the director. The game w
 
 **(diagram: visual showing Claude + Cline + You = Murder Mystery Game)**
 
+</details>
+
 ---
 
-## Bloopers & Failures
+<details>
+<summary><h2 style="display: inline;">Bloopers & Failures</h2></summary>
 
 **(graphic: "The Bloopers" header with fun font)**
 
@@ -335,9 +357,12 @@ Coming soon: Screenshots and stories of what went spectacularly wrong.
 
 More chaos documentation coming! 💀
 
+</details>
+
 ---
 
-## Future Posts
+<details>
+<summary><h2 style="display: inline;">Future Posts</h2></summary>
 
 **(graphic: "Coming Soon" section)**
 
@@ -353,9 +378,12 @@ Detailed breakdowns coming:
 
 **Want updates?** Follow [#artifactum](/tags/artifactum/)
 
+</details>
+
 ---
 
-## The Final Sprint
+<details>
+<summary><h2 style="display: inline;">The Final Sprint</h2></summary>
 
 **(photo: current workspace - "we're almost there" energy)**
 
@@ -372,3 +400,5 @@ Detailed breakdowns coming:
 **Note:** Full game details and character materials available upon request. The game will be played December 25, 2025. Almost there! 🎭🎄
 
 **(photo: "See you on December 25" graphic ou teaser for the event)**
+
+</details>
