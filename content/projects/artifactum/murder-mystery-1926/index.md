@@ -247,8 +247,7 @@ Without Cline, none of the automation would have happened.
 - Template-based modular content
 - 100+ pages generated from snippets
 
-<div style="max-width: 500px; margin: 1rem auto;">
-
+<div style="max-width: 500px; margin: 0.5rem auto;">
 ```mermaid
 graph LR
     A[Content<br/>Snippets] --> B[Typst<br/>Templates]
@@ -260,7 +259,6 @@ graph LR
     style C fill:#FF6B6B
     style D fill:#95E1D3
 ```
-
 </div>
 
 **Python + Git:**
