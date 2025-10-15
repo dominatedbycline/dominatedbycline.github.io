@@ -276,8 +276,6 @@ graph LR
 <details>
 <summary><h2 style="display: inline;">Behind the Scenes: The Reality</h2></summary>
 
-**(graphic: "Real Talk" header)**
-
 ### The Privileged Setup
 
 This project was created with access to:
