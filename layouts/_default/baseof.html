@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    {{- partial "header.html" . -}}
+    <body>
+        <div class="content">
+        {{- partial "head.html" . -}}
+        {{- block "main" . }}{{- end }}
+        {{- partial "footer.html" . -}}
+        </div>
+        
+        {{- if .Page.Store.Get "hasMermaid" -}}
+        <script type="module">
+            import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+            mermaid.initialize({ 
+                startOnLoad: true,
+                theme: 'default',
+                securityLevel: 'loose'
+            });
+        </script>
+        {{- end -}}
+    </body>
+</html>

@@ -85,7 +85,7 @@ A complete murder mystery roleplay game for 11 players set in 1920s Manhattan. E
 
 Claude became the mastermind behind this project—the creative collaborator that feeds my ideas and helps them evolve.
 
-**(screenshot: Claude conversation showing character development process)**
+{{ partial "claude-carousel.html" . }}
 
 - Started with character concepts and relationships
 - Developed 11 interconnected backstories with secret connections
@@ -93,15 +93,32 @@ Claude became the mastermind behind this project—the creative collaborator tha
 - Multiple iterations to ensure narrative coherence
 - Claude analyzed consistency across all character arcs
 
-**(diagram: character relationship web showing interconnections - pode ser desenhado à mão ou digital)**
+<details>
+<summary><strong>⚠️ SPOILER ALERT: Character Relationship Web</strong> (click to reveal)</summary>
+
+<img src="/images/character-relationship-web.png" alt="Character Relationship Web showing all 11 characters and their connections" style="max-width: 100%; display: block; margin: 1rem auto;" />
+
+</details>
 
 ### Week 2: Production Pipeline
 
-**(graphic: "Week 2" header - maybe with "PRODUCTION HELL" vibes)**
-
 With characters locked, it was time to build everything.
 
-**(meme: "let's fucking go" energy)**
+```mermaid
+graph LR
+    A[Week 2:<br/>Production] --> B[Typesetting<br/>Automation]
+    A --> C[AI Character<br/>Portraits]
+    A --> D[Video Teaser<br/>Production]
+    A --> E[Git Version<br/>Control]
+    A --> F[Final<br/>Assembly]
+    
+    style A fill:#FF6B6B
+    style B fill:#4ECDC4
+    style C fill:#4ECDC4
+    style D fill:#4ECDC4
+    style E fill:#4ECDC4
+    style F fill:#95E1D3
+```
 
 - Typesetting automation with Typst
 - AI-generated character portraits and assets
@@ -232,7 +249,17 @@ Without Cline, none of the automation would have happened.
 - Template-based modular content
 - 100+ pages generated from snippets
 
-**(diagram: snippet → template → final PDF workflow)**
+```mermaid
+graph LR
+    A[Content<br/>Snippets] --> B[Typst<br/>Templates]
+    B --> C[Build<br/>Script]
+    C --> D[Final PDFs<br/>100+ pages]
+    
+    style A fill:#FFE66D
+    style B fill:#4ECDC4
+    style C fill:#FF6B6B
+    style D fill:#95E1D3
+```
 
 **Python + Git:**
 - Build automation scripts
@@ -259,9 +286,17 @@ This project was created with access to:
 - Friends' accounts for parallel processing
 - ADHD-friendly workflow (no forced breaks, continuous iteration)
 
-**(photo: receipts ou subscription screenshots showing costs - optional, pode ser gráfico abstrato de "$$")**
-
 This is a privileged setup. It matters to document that reality.
+
+**Work Distribution:**
+
+```mermaid
+pie title AI vs Human Work Split
+    "AI Generation" : 40
+    "Human Curation" : 25
+    "Human Refinement" : 20
+    "Manual Work" : 15
+```
 
 ---
 
@@ -332,7 +367,17 @@ But it's not about the AI replacing you. It's about the AI feeding your ideas, h
 
 Claude was the mastermind. Cline was the builder. I was the director. The game was the result.
 
-**(diagram: visual showing Claude + Cline + You = Murder Mystery Game)**
+```mermaid
+graph LR
+    A[Claude<br/>The Mastermind] --> D[Murder Mystery<br/>Game]
+    B[Cline<br/>The Builder] --> D
+    C[Maria<br/>The Director] --> D
+    
+    style A fill:#9B59B6
+    style B fill:#3498DB
+    style C fill:#E74C3C
+    style D fill:#2ECC71
+```
 
 </details>
 
@@ -387,7 +432,24 @@ Detailed breakdowns coming:
 
 **Current status:** Finishing the final details. Almost ready for December 25.
 
-**(graphic: progress bar at 95% ou countdown to December 25)**
+**Project Timeline:**
+
+```mermaid
+gantt
+    title Murder Mystery 1926 - Development
+    dateFormat  YYYY-MM-DD
+    section Week 1
+    Character Design     :done, a1, 2025-09-30, 7d
+    Story Architecture   :done, a2, 2025-10-02, 5d
+    section Week 2
+    AI Asset Generation  :done, a3, 2025-10-07, 4d
+    Video Production     :done, a4, 2025-10-09, 3d
+    Typesetting Setup    :done, a5, 2025-10-11, 2d
+    section Final Sprint
+    Final Assembly       :active, a6, 2025-10-13, 2d
+    Testing & Polish     :a7, 2025-10-15, 10d
+    Event Day            :milestone, a8, 2025-12-25, 0d
+```
 
 **Feelings:** Exhausted. Proud. Nervous. Excited.
 

@@ -1,0 +1,2 @@
+- [ ] diagrama a mao gerado 
+- [ ] 

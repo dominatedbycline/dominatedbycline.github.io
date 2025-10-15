@@ -223,3 +223,52 @@ figure h4::before {
 .see-all a {
   font-size: 1.1rem;
 }
+
+/* Mermaid diagram styling - MAKE IT READABLE */
+.mermaid {
+  width: 100% !important;
+  max-width: 100% !important;
+  text-align: center !important;
+  margin: 2rem auto !important;
+  padding: 2rem !important;
+  min-height: 400px !important;
+  overflow-x: auto !important;
+  background: rgba(250, 250, 250, 0.3);
+  border-radius: 8px;
+}
+
+.mermaid svg {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  min-height: 400px !important;
+  font-size: 16px !important;
+}
+
+/* Make nodes bigger */
+.mermaid .node rect,
+.mermaid .node circle,
+.mermaid .node ellipse,
+.mermaid .node polygon {
+  stroke-width: 2px !important;
+}
+
+/* Make text bigger */
+.mermaid .nodeLabel,
+.mermaid .edgeLabel {
+  font-size: 16px !important;
+  font-weight: 500 !important;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .mermaid {
+    min-height: 300px !important;
+    padding: 1rem !important;
+  }
+  
+  .mermaid svg {
+    min-height: 300px !important;
+    font-size: 14px !important;
+  }
+}

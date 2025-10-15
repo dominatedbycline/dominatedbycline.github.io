@@ -22,4 +22,19 @@ Each game in the series is built using AI tools as creative collaborators, with 
 
 ---
 
+### Strategic Job Search
+
+**From Interior Designer to AI Creative Technologist**
+
+A comprehensive, AI-powered career transition research report documenting my path from traditional creative work into the emerging field of AI creative technology. This is what happens when you use Claude to conduct strategic market research for your own career pivot.
+
+**The Mission:** Navigate the European AI creative tech job market, identify the perfect role matches, and develop a concrete 90-day action plan—all while turning an "unconventional" background into a competitive advantage.
+
+**Status:** Research complete, execution in progress  
+**Tags:** #career-transition #ai-tools #strategic-planning #creative-tech
+
+[Read the strategic report →](/projects/job-search/)
+
+---
+
 More projects coming soon. Things are about to get weird.
