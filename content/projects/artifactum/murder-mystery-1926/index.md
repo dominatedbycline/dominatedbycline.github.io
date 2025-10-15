@@ -46,7 +46,7 @@ My sister hosts a Christmas dinner every year with friends. I suggested we do a 
 
 10 people signed up.
 
-**(meme: "OH NO" panic face)**
+<img src="/images/burning-in-hell.png" alt="burning in hell" style="max-width: 300px; display: block; margin: 1rem 0;" />
 
 So I had 2 weeks to make an 11-character murder mystery roleplay game from scratch.
 
