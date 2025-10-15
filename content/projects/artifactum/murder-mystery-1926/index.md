@@ -39,14 +39,14 @@ I was stuck. No prospects. Feeling creatively blocked. Nobody (my personal Cri-K
 
 A few weeks earlier, I'd seen an Instagram reel from a creative director who made a murder mystery party for her friends. I loved it. I wanted to make one too.
 
-<img src="/images/instagram-inspo.jpg" alt="Instagram inspiration" style="max-width: 400px; display: block; margin: 1rem 0;" />
+<img src="/images/instagram-inspo.jpg" alt="Instagram inspiration" style="max-width: 200px; display: block; margin: 1rem 0;" />
 <p style="font-size: 0.85rem; font-style: italic; margin-top: -0.5rem; margin-bottom: 1rem;">Insta:viktoria.psd</p>
 
 My sister hosts a Christmas dinner every year with friends. I suggested we do a murder mystery this year instead.
 
 10 people signed up.
 
-<img src="/images/burning-in-hell.png" alt="burning in hell" style="max-width: 200px; display: block; margin: 1rem 0;" />
+<img src="/images/burning-in-hell.png" alt="burning in hell" style="width: 150px; display: block; margin: 1rem 0;" />
 
 So I had 2 weeks to make an 11-character murder mystery roleplay game from scratch.
 
