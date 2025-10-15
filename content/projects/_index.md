@@ -37,4 +37,19 @@ A comprehensive, AI-powered career transition research report documenting my pat
 
 ---
 
+### Building This Site
+
+**From "I Don't Understand Shit" to Actually Shipping It**
+
+Meta-documentation of building this very site you're reading. A journey from Squarespace frustration to Hugo mastery, documenting every confused moment, broken build, and eventual breakthrough. Proof that you can learn web development even when you start with zero idea what you're doing.
+
+**The Reality:** I tried Squarespace first, got frustrated with the limitations, discovered Hugo, and learned static site generation through AI-assisted trial and error. This site is the result—and the documentation of how it got built is now part of the portfolio itself.
+
+**Status:** Live and continuously evolving  
+**Tags:** #hugo #web-development #learning #static-sites #github-pages
+
+[Read the full journey →](/projects/building-this-site/)
+
+---
+
 More projects coming soon. Things are about to get weird.
