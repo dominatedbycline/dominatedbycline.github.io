@@ -74,7 +74,8 @@ A complete murder mystery roleplay game for 11 players set in 1920s Manhattan. E
 
 ## Development Story
 
-### Week 1: Character Development & Story Architecture
+<details>
+<summary><strong>Week 1: Character Development & Story Architecture</strong></summary>
 
 **(graphic: "Week 1" header with dramatic flair)**
 
@@ -90,7 +91,10 @@ Claude became the mastermind behind this project—the creative collaborator tha
 
 **(diagram: character relationship web showing interconnections - pode ser desenhado à mão ou digital)**
 
-### Week 2: Production Pipeline
+</details>
+
+<details>
+<summary><strong>Week 2: Production Pipeline</strong></summary>
 
 **(graphic: "Week 2" header - maybe with "PRODUCTION HELL" vibes)**
 
@@ -106,13 +110,16 @@ With characters locked, it was time to build everything.
 
 **(screenshot: terminal showing build scripts running ou Git commits timeline)**
 
+</details>
+
 ---
 
 ## Tools & Workflow
 
 **(graphic: "The Dream Team" header with tool logos)**
 
-### The Mastermind: Claude
+<details>
+<summary><strong>The Mastermind: Claude</strong></summary>
 
 **(screenshot: Claude interface ou logo with heart)**
 
@@ -124,9 +131,10 @@ Claude was the creative engine behind this entire project. Not just a tool—a c
 
 **(meme: "I love you 3000" Iron Man reference)**
 
----
+</details>
 
-### Character Portraits: Gemini
+<details>
+<summary><strong>Character Portraits: Gemini</strong></summary>
 
 **(screenshot: Gemini interface ou sample generated portrait)**
 
@@ -144,9 +152,10 @@ Claude was the creative engine behind this entire project. Not just a tool—a c
 
 **(screenshot: audio waveforms ou Gemini voice interface)**
 
----
+</details>
 
-### Video Production: The lm-arena Experience
+<details>
+<summary><strong>Video Production: The lm-arena Experience</strong></summary>
 
 **(meme: journey from "this is fine" to "wait this actually works")**
 
@@ -182,9 +191,10 @@ Why? I don't know. But lm-arena became my favorite video generation tool.
 
 **(screenshot: kdenlive timeline showing audio layers)**
 
----
+</details>
 
-### The Development Backbone: Cline (VS Code)
+<details>
+<summary><strong>The Development Backbone: Cline (VS Code)</strong></summary>
 
 **(screenshot: VS Code with Cline interface)**
 
@@ -198,9 +208,10 @@ Without Cline, none of the automation would have happened.
 
 **(screenshot: Cline building Python scripts ou automation in action)**
 
----
+</details>
 
-### Design & Assets: Canva Pro
+<details>
+<summary><strong>Design & Assets: Canva Pro</strong></summary>
 
 **(screenshot: Canva Pro interface with project assets)**
 
@@ -212,9 +223,10 @@ Without Cline, none of the automation would have happened.
 
 **(photo: finished Canva designs - character cards, invitations, props)**
 
----
+</details>
 
-### Typesetting & Automation
+<details>
+<summary><strong>Typesetting & Automation</strong></summary>
 
 **(screenshot: Typst code ou output comparison)**
 
@@ -234,13 +246,16 @@ Without Cline, none of the automation would have happened.
 
 **(screenshot: Git commit history showing creative project version control)**
 
+</details>
+
 ---
 
 ## Behind the Scenes: The Reality
 
 **(graphic: "Real Talk" header)**
 
-### The Privileged Setup
+<details>
+<summary><strong>The Privileged Setup</strong></summary>
 
 This project was created with access to:
 - Premium AI tool subscriptions
@@ -252,9 +267,10 @@ This project was created with access to:
 
 This is a privileged setup. It matters to document that reality.
 
----
+</details>
 
-### The Work: Hyperfocus Mode Activated
+<details>
+<summary><strong>The Work: Hyperfocus Mode Activated</strong></summary>
 
 **(photo: workspace at 3am - coffee cups, chaos, screens everywhere)**
 
@@ -270,9 +286,10 @@ When you're in the zone, you don't stop. You learn by doing. You iterate constan
 
 This project was built in that state. It's a privileged position to be able to work like that, but it's also how the learning happened.
 
----
+</details>
 
-### The Creative Chaos
+<details>
+<summary><strong>The Creative Chaos</strong></summary>
 
 **(graphic: "The Chaos" section header)**
 
@@ -283,6 +300,8 @@ This project was built in that state. It's a privileged position to be able to w
 - Nobody's suggestion paid off (he was right, again)
 
 **(meme: "Well well well, how the turntables" ou Nobody being smug as Cri-Kee)**
+
+</details>
 
 ---
 
