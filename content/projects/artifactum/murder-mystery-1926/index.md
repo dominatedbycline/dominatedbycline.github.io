@@ -85,7 +85,7 @@ A complete murder mystery roleplay game for 11 players set in 1920s Manhattan. E
 
 Claude became the mastermind behind this project—the creative collaborator that feeds my ideas and helps them evolve.
 
-{{ partial "claude-carousel.html" . }}
+{{< claude-carousel >}}
 
 - Started with character concepts and relationships
 - Developed 11 interconnected backstories with secret connections
@@ -93,8 +93,14 @@ Claude became the mastermind behind this project—the creative collaborator tha
 - Multiple iterations to ensure narrative coherence
 - Claude analyzed consistency across all character arcs
 
-<details>
-<summary><strong>⚠️ SPOILER ALERT: Character Relationship Web</strong> (click to reveal)</summary>
+<details style="border: none; background: transparent;">
+<summary style="border: none; list-style: none; cursor: pointer;">
+<div style="text-align: center; padding: 1rem 0;">
+<strong>Character Relationship Web</strong><br/>
+<span style="font-size: 2em; color: #FF1493; font-weight: bold;">SPOILER ALERT</span><br/>
+<span style="font-size: 0.9em;">(click to reveal)</span>
+</div>
+</summary>
 
 <img src="/images/character-relationship-web.png" alt="Character Relationship Web showing all 11 characters and their connections" style="max-width: 100%; display: block; margin: 1rem auto;" />
 
@@ -105,12 +111,15 @@ Claude became the mastermind behind this project—the creative collaborator tha
 With characters locked, it was time to build everything.
 
 ```mermaid
-graph LR
-    A[Week 2:<br/>Production] --> B[Typesetting<br/>Automation]
-    A --> C[AI Character<br/>Portraits]
-    A --> D[Video Teaser<br/>Production]
-    A --> E[Git Version<br/>Control]
-    A --> F[Final<br/>Assembly]
+graph TD
+    A[Week 2: Production]
+    A --> B[Typesetting Automation]
+    A --> C[AI Character Portraits]
+    A --> D[Video Teaser Production]
+    A --> E[Git Version Control]
+    A --> F[Final Assembly]
+    
+    B & C & D & E --> F
     
     style A fill:#FF6B6B
     style B fill:#4ECDC4
@@ -125,8 +134,6 @@ graph LR
 - Video teaser production
 - Git-based version control for all content
 - Final assembly and testing
-
-**(screenshot: terminal showing build scripts running ou Git commits timeline)**
 
 </details>
 

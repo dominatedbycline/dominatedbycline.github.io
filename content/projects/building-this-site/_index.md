@@ -200,7 +200,7 @@ tags: ["tag1", "tag2"]
 
 **Shortcodes:**
 - Custom HTML components you can embed in Markdown
-- Example: `{{< mermaid >}}` for diagrams
+- Example: `{{</* mermaid */>}}` for diagrams
 
 ### Git & GitHub Pages
 

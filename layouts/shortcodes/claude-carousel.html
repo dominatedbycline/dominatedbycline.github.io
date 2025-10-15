@@ -1,0 +1,260 @@
+<style>
+.carousel-wrapper {
+    width: 100%;
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.scene {
+    width: 100%;
+    height: 350px;
+    perspective: 1200px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.carousel-3d {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 1s ease-in-out;
+}
+
+.carousel-card {
+    position: absolute;
+    width: 315px;
+    height: 265px;
+    left: 50%;
+    top: 50%;
+    margin-left: -157.5px;
+    margin-top: -132.5px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 15px 45px rgba(0,0,0,0.3);
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-card:hover {
+    box-shadow: 0 25px 80px rgba(0,0,0,0.4);
+    transform: scale(1.02);
+}
+
+.card-header {
+    background: white;
+    padding: 15px;
+    color: #FF1493;
+    font-weight: bold;
+    font-size: 1rem;
+    border-bottom: 2px solid #FF1493;
+}
+
+.card-content {
+    padding: 18px;
+    text-align: left;
+    height: 210px;
+    overflow-y: auto;
+    background: white;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+}
+
+.card-content::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.card-content h3 {
+    color: #FF1493;
+    margin-bottom: 5px;
+    font-size: 0.85rem;
+}
+
+.card-content p {
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 8px;
+    font-size: 0.85rem;
+}
+
+.card-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.card-tag {
+    display: inline-block;
+    background: #FF1493;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    margin-right: 4px;
+    margin-top: 4px;
+}
+
+@media (max-width: 768px) {
+    .scene {
+        height: 300px;
+    }
+
+    .carousel-card {
+        width: 250px;
+        height: 220px;
+        margin-left: -125px;
+        margin-top: -110px;
+    }
+
+    .card-content {
+        height: 160px;
+        padding: 12px;
+    }
+    
+    .card-content p {
+        font-size: 0.8rem;
+    }
+}
+</style>
+
+<div class="carousel-wrapper">
+    <div class="scene">
+            <div class="carousel-3d" id="carousel-3d">
+                <!-- Card 1 -->
+                <div class="carousel-card">
+                    <div class="card-header">Phase 1: Initial Concept</div>
+                    <div class="card-content">
+                        <h3>Character Brainstorming</h3>
+                        <p>Discussion about base archetypes and how to create characters that connect organically at a 1926 Christmas party.</p>
+                        <p><strong>Claude suggested:</strong> Start with motivations, then build the secret relationships.</p>
+                        <div>
+                            <span class="card-tag">characters</span>
+                            <span class="card-tag">concept</span>
+                            <span class="card-tag">1926</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="carousel-card">
+                    <div class="card-header">Phase 2: Relationships & Secrets</div>
+                    <div class="card-content">
+                        <h3>Web of Connections</h3>
+                        <p>Creating secret relationships between characters. Each needed at least 3 connections with others.</p>
+                        <p><strong>Challenge:</strong> Maintain coherence across all backstories without contradictions.</p>
+                        <div>
+                            <span class="card-tag">relationships</span>
+                            <span class="card-tag">plot-threads</span>
+                            <span class="card-tag">secrets</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="carousel-card">
+                    <div class="card-header">Phase 3: Consistency Review</div>
+                    <div class="card-content">
+                        <h3>Cross-Analysis</h3>
+                        <p>Claude analyzed all 11 backstories simultaneously to identify temporal and logical inconsistencies.</p>
+                        <p><strong>Result:</strong> Found 7 conflicts that were resolved before final production.</p>
+                        <div>
+                            <span class="card-tag">analysis</span>
+                            <span class="card-tag">debugging</span>
+                            <span class="card-tag">consistency</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="carousel-card">
+                    <div class="card-header">Phase 4: Secret Objectives</div>
+                    <div class="card-content">
+                        <h3>Hidden Motivations</h3>
+                        <p>Each character needed objectives that would create tension and drama during gameplay.</p>
+                        <p><strong>Claude helped:</strong> Balance competitive and collaborative objectives to keep everyone engaged.</p>
+                        <div>
+                            <span class="card-tag">objectives</span>
+                            <span class="card-tag">gameplay</span>
+                            <span class="card-tag">drama</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="carousel-card">
+                    <div class="card-header">Phase 5: Final Iterations</div>
+                    <div class="card-content">
+                        <h3>Refinement</h3>
+                        <p>Multiple rounds of feedback and adjustments. Some characters completely changed direction.</p>
+                        <p><strong>Learning:</strong> AI as creative collaborator works best with rapid iterations.</p>
+                        <div>
+                            <span class="card-tag">iteration</span>
+                            <span class="card-tag">refinement</span>
+                            <span class="card-tag">final</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="carousel-card">
+                    <div class="card-header">Phase 6: Character Sheets</div>
+                    <div class="card-content">
+                        <h3>Final Documentation</h3>
+                        <p>Transform all conversations into structured character sheets for each player.</p>
+                        <p><strong>Format:</strong> Backstory + relationships + objectives + secret information.</p>
+                        <div>
+                            <span class="card-tag">documentation</span>
+                            <span class="card-tag">structure</span>
+                            <span class="card-tag">game-ready</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    const carousel = document.getElementById('carousel-3d');
+    if (!carousel) return;
+    
+    const cards = carousel.querySelectorAll('.carousel-card');
+    const totalCards = cards.length;
+    let currentRotation = 0;
+    let currentIndex = 0;
+    
+    const theta = 360 / totalCards;
+    const radius = Math.round((315 / 2) / Math.tan(Math.PI / totalCards));
+    
+    cards.forEach(function(card, i) {
+        const angle = theta * i;
+        card.style.transform = 'rotateY(' + angle + 'deg) translateZ(' + radius + 'px)';
+    });
+    
+    function rotateCarousel(direction) {
+        if (direction === 'next') {
+            currentRotation -= theta;
+            currentIndex = (currentIndex + 1) % totalCards;
+        } else {
+            currentRotation += theta;
+            currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+        }
+        
+        carousel.style.transform = 'rotateY(' + currentRotation + 'deg)';
+    }
+    
+    cards.forEach(function(card, index) {
+        card.addEventListener('click', function() {
+            const diff = index - currentIndex;
+            if (diff !== 0) {
+                const direction = diff > 0 ? 'next' : 'prev';
+                for (let i = 0; i < Math.abs(diff); i++) {
+                    setTimeout(function() { rotateCarousel(direction); }, i * 200);
+                }
+            }
+        });
+    });
+})();
+</script>
