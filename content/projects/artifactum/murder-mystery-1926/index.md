@@ -33,6 +33,7 @@ I was stuck. No prospects. Feeling creatively blocked. Nobody (my personal Cri-K
 "But it can't be creative," I said.
 
 <img src="/images/innocent-as-a-babydog.png" alt="innocent dog" style="width: 150px; display: block; margin: 1rem 0;" />
+<p style="font-size: 0.85rem; font-style: italic; margin-top: -0.5rem; margin-bottom: 1rem;">(me innocent as a baby dog)(yodo)</p>
 
 **Well. Guess not.**
 
