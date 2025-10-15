@@ -83,8 +83,6 @@ A complete murder mystery roleplay game for 11 players set in 1920s Manhattan. E
 
 ### Week 1: Character Development & Story Architecture
 
-**(graphic: "Week 1" header with dramatic flair)**
-
 Claude became the mastermind behind this project—the creative collaborator that feeds my ideas and helps them evolve.
 
 **(screenshot: Claude conversation showing character development process)**
