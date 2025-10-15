@@ -142,11 +142,9 @@ graph TD
 <details>
 <summary><h2 style="display: inline;">Tools & Workflow</h2></summary>
 
-**(graphic: "The Dream Team" header with tool logos)**
+<img src="/images/dreamteam.webp" alt="The Dream Team" style="max-width: 600px; display: block; margin: 2rem auto;" />
 
 ### The Mastermind: Claude
-
-**(screenshot: Claude interface ou logo with heart)**
 
 Claude was the creative engine behind this entire project. Not just a tool—a collaborator that:
 - Helped develop and refine 11 interconnected character arcs
@@ -154,47 +152,50 @@ Claude was the creative engine behind this entire project. Not just a tool—a c
 - Evolved ideas from vague concepts to concrete plots
 - Fed my creativity instead of replacing it
 
-**(meme: "I love you 3000" Iron Man reference)**
-
 ---
 
 ### Character Portraits: Gemini
 
-**(screenshot: Gemini interface ou sample generated portrait)**
+<img src="/images/gemini-interface.png" alt="Gemini interface for character generation" style="max-width: 600px; display: block; margin: 1rem auto;" />
 
 **Image Generation:**
 - Prompt + reference photo → character portraits
 - Multiple iterations per character
 - Style consistency across all 11 characters
 
-**(photo: grid of all 11 character portraits)**
+<details style="border: none; background: transparent;">
+<summary style="border: none; list-style: none; cursor: pointer;">
+<div style="text-align: center; padding: 1rem 0;">
+<strong>Guest List</strong><br/>
+<span style="font-size: 2em; color: #FF1493; font-weight: bold;">GUEST LIST</span><br/>
+<span style="font-size: 0.9em;">(click to reveal)</span>
+</div>
+</summary>
+
+<img src="/images/guest-list.png" alt="Grid of all 11 character portraits" style="max-width: 100%; display: block; margin: 1rem auto;" />
+
+</details>
 
 **Voice Generation:**
 - Script-to-voice for audio clips
 - Character-specific variations
 - Multiple takes for selection
 
-**(screenshot: audio waveforms ou Gemini voice interface)**
-
 ---
 
 ### Video Production: The lm-arena Experience
-
-**(meme: journey from "this is fine" to "wait this actually works")**
 
 **The Discovery:**
 
 I had budget on Fal.ai and tried MANY programs, including Sora. Results? Always shit.
 
-**(meme: throwing money into fire ou dumpster fire)**
-
 **Then I tried lm-arena with Sora.**
 
 Same tool. Different platform. **Quite different. Better.**
 
-**(meme: confused math lady ou "visible confusion")**
-
 Why? I don't know. But lm-arena became my favorite video generation tool.
+
+<img src="/images/smiley-baby.png" alt="Smiley baby" style="width: 150px; display: block; margin: 1rem auto;" />
 
 **The Process:**
 - Used multiple accounts (thanks Discord friends!)
@@ -203,38 +204,30 @@ Why? I don't know. But lm-arena became my favorite video generation tool.
 - Created several clips, fell in love with one I didn't even use
 - Final editing in kdenlive
 
-**(screenshot: multiple video generation attempts side-by-side comparison)**
-
-**(photo: "the clips I loved but didn't use" 💔 - maybe screenshot of unused footage)**
-
 **Sound Design:**
 - SFX created with Adobe Firefly
 - Audio clips from Gemini voice generation
 - Final mix in kdenlive
 
-**(screenshot: kdenlive timeline showing audio layers)**
+<img src="/images/kdenlive.png" alt="Kdenlive timeline" style="max-width: 100%; display: block; margin: 1rem auto;" />
 
 ---
 
 ### The Development Backbone: Cline (VS Code)
 
-**(screenshot: VS Code with Cline interface)**
+<img src="/images/vs-code-backbone.png" alt="VS Code with Cline interface" style="max-width: 600px; display: block; margin: 1rem auto;" />
 
 💙 **You have my heart.**
 
 Cline was the AI coding assistant that made the entire automation pipeline possible. From Python scripts to Git hooks to content assembly—Cline was the development backbone of this project.
 
-**(meme: heart eyes emoji ou "you're perfect" energy)**
-
 Without Cline, none of the automation would have happened.
-
-**(screenshot: Cline building Python scripts ou automation in action)**
 
 ---
 
 ### Design & Assets: Canva Pro
 
-**(screenshot: Canva Pro interface with project assets)**
+<img src="/images/canva-window.png" alt="Canva Pro interface with project assets" style="max-width: 600px; display: block; margin: 1rem auto;" />
 
 **Props & Visual Assets:**
 - All physical props and visual assets designed in Canva Pro
@@ -247,8 +240,6 @@ Without Cline, none of the automation would have happened.
 ---
 
 ### Typesetting & Automation
-
-**(screenshot: Typst code ou output comparison)**
 
 **Typst** (replaced LaTeX):
 - Faster, modern typesetting system
@@ -273,8 +264,6 @@ graph LR
 - Git hooks for version control
 - Modular content architecture
 - Automated assembly pipeline
-
-**(screenshot: Git commit history showing creative project version control)**
 
 </details>
 
