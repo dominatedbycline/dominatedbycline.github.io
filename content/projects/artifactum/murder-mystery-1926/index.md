@@ -93,17 +93,7 @@ Claude became the mastermind behind this project—the creative collaborator tha
 - Multiple iterations to ensure narrative coherence
 - Claude analyzed consistency across all character arcs
 
-```mermaid
-graph TD
-    A[11 Characters] --> B[Interconnected Backstories]
-    B --> C[Secret Relationships]
-    B --> D[Hidden Objectives]
-    B --> E[Plot Threads]
-    C --> F[The Murder]
-    D --> F
-    E --> F
-    F --> G[1926 Manhattan Mystery]
-```
+**(diagram: character relationship web showing interconnections - pode ser desenhado à mão ou digital)**
 
 ### Week 2: Production Pipeline
 
@@ -242,13 +232,7 @@ Without Cline, none of the automation would have happened.
 - Template-based modular content
 - 100+ pages generated from snippets
 
-```mermaid
-flowchart LR
-    A[Content Snippets] --> B[Typst Templates]
-    B --> C[Automated Generation]
-    C --> D[100+ Page PDFs]
-    D --> E[Character Booklets]
-```
+**(diagram: snippet → template → final PDF workflow)**
 
 **Python + Git:**
 - Build automation scripts
@@ -348,13 +332,7 @@ But it's not about the AI replacing you. It's about the AI feeding your ideas, h
 
 Claude was the mastermind. Cline was the builder. I was the director. The game was the result.
 
-```mermaid
-flowchart LR
-    A[Claude<br/>The Mastermind] --> D[Murder Mystery<br/>1926]
-    B[Cline<br/>The Builder] --> D
-    C[Me<br/>The Director] --> D
-    D --> E[🎭 Complete Game]
-```
+**(diagram: visual showing Claude + Cline + You = Murder Mystery Game)**
 
 </details>
 
