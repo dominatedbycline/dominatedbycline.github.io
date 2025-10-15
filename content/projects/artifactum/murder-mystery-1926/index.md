@@ -22,21 +22,17 @@ tags: ["project", "murder-mystery", "artifactum", "ai-tools", "game-design"]
 **Setting:** 1920s Manhattan  
 **Event:** December 25, 2025
 
-**(graphic: timeline visual ou progress bar showing "almost there")**
-
 ---
 
 ## The Origin Story
 
 It started on a beach.
 
-**(photo: beach scene ou "the beach where it all began")**
-
 I was stuck. No prospects. Feeling creatively blocked. Nobody (my personal Cri-Kee 💙) suggested—again—that I try AI.
 
 "But it can't be creative," I said.
 
-**(meme: person saying "no" stubbornly)**
+<img src="/images/innocent-as-a-babydog.png" alt="innocent dog" style="width: 150px; display: block; margin: 1rem 0;" />
 
 **Well. Guess not.**
 
