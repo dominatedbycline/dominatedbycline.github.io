@@ -273,3 +273,22 @@ figure h4::before {
     font-size: 14px !important;
   }
 }
+
+/* Hide disclosure triangles on collapsible sections */
+details summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+details summary::-webkit-details-marker {
+  display: none;
+}
+
+details summary::-moz-details-marker {
+  display: none;
+}
+
+/* Hide the main page title on the about page */
+.single .title {
+  display: none;
+}
