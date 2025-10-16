@@ -446,8 +446,6 @@ More chaos documentation coming! 💀
 <details>
 <summary><h2 class="inline-heading">Future Posts</h2></summary>
 
-**(graphic: "Coming Soon" section)**
-
 Detailed breakdowns coming:
 - AI-assisted character development workflow
 - Why lm-arena > standalone Sora
@@ -455,8 +453,6 @@ Detailed breakdowns coming:
 - Video production pipeline
 - Modular content architecture for creative projects
 - Full bloopers post
-
-**(photo: notebook with post ideas ou screenshot of post-ideas.md)**
 
 **Want updates?** Follow [#artifactum](/tags/artifactum/)
 
