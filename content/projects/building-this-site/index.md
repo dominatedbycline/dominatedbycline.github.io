@@ -1,10 +1,10 @@
 ---
-title: "Building dominated by cline site"
+title: "Building Dominated by Cline"
 description: "From Squarespace confusion to Hugo deployment—learning to build a custom static site with heavy AI assistance in less than a week"
 date: 2025-10-16
 ---
 
-# Building dominated by cline site
+# Building Dominated by Cline
 
 ## From "I Don't Understand Shit" to Actually Shipping It
 
