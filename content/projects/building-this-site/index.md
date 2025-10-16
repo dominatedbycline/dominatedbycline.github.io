@@ -17,6 +17,9 @@ Here's how that happened.
 ---
 
 <details>
+<summary><h1 style="font-size: 1.5rem;">📖 The Journey</h1></summary>
+
+<details>
 <summary><h2 class="inline-heading">The Problem</h2></summary>
 
 **What I wanted:**
@@ -351,7 +354,14 @@ dominatedbycline/
 - [ ] Performance optimization
 - [ ] SEO improvements
 
+</details>
+
+</details>
+
 ---
+
+<details>
+<summary><h1 style="font-size: 1.5rem;">🔧 Technical Specifications</h1></summary>
 
 <details>
 <summary><h2 class="inline-heading">Hugo Fundamentals</h2></summary>
@@ -836,10 +846,11 @@ I'm now comfortable enough with Hugo to write detailed documentation about learn
 
 </details>
 
+</details>
+
 ---
 
-<details>
-<summary><h2 class="inline-heading">The Honest Assessment</h2></summary>
+## The Honest Assessment
 
 **What worked:**
 - AI-assisted learning accelerated the process dramatically
