@@ -459,7 +459,94 @@ mindmap
 
 ### Claude Carousel Component
 
-*Coming soon: Building a custom image carousel*
+**Why a 3D Carousel?**
+
+For the murder mystery project, I needed to show the creative process across multiple phases. A 3D rotating carousel:
+- **Visual interest** - More engaging than a static list
+- **Interactive** - Click to explore different phases
+- **Progressive** - Shows the journey step-by-step
+- **Unique** - Stands out on the page
+
+**What It Does:**
+
+A pure CSS + JavaScript 3D carousel (no libraries!) that displays cards in a rotating circle. Click any card to bring it to the front.
+
+**Implementation Overview:**
+
+**1. The Shortcode Structure**
+
+Created `layouts/shortcodes/claude-carousel.html` with:
+- CSS for 3D transforms and hot pink styling
+- HTML structure for cards in a "scene"
+- JavaScript for rotation logic
+
+**2. Key CSS Techniques**
+
+```css
+.scene {
+  perspective: 1200px;  /* Creates 3D space */
+  transform-style: preserve-3d;
+}
+
+.carousel-card {
+  transform: rotateY(angle) translateZ(radius);
+  /* Positions each card in a circle */
+}
+```
+
+**3. JavaScript Rotation Logic**
+
+```javascript
+function rotateCarousel(direction) {
+  currentRotation -= theta;  // theta = 360 / totalCards
+  carousel.style.transform = 'rotateY(' + currentRotation + 'deg)';
+}
+```
+
+**How to Use in Markdown:**
+
+```markdown
+{{</* claude-carousel */>}}
+```
+
+That's it! The cards are hardcoded in the shortcode (for now).
+
+**Features:**
+- ✅ Click any card to rotate it to front
+- ✅ Smooth animations
+- ✅ Mobile responsive (smaller cards)
+- ✅ Hot pink accents
+- ✅ Scrollable card content
+
+**Mobile Optimization:**
+
+Uses `@media (max-width: 768px)` to:
+- Reduce card size (180px vs 315px)
+- Adjust font sizes
+- Maintain 3D effect
+- Keep touch-friendly interactions
+
+**Customization Tips:**
+
+To modify cards, edit `layouts/shortcodes/claude-carousel.html`:
+- Add/remove cards (updates `totalCards` automatically)
+- Change colors in `.card-header` and `.card-tag`
+- Adjust animation speed in `transition: transform 1s`
+- Modify card size in `.carousel-card` width/height
+
+**What I Learned:**
+
+- CSS 3D transforms are powerful but tricky
+- `perspective` is essential for depth effect
+- Calculating card positions requires trigonometry (`Math.tan`)
+- Mobile needs different radius calculations
+- Click handlers need to update rotation state
+
+**Future Improvements:**
+- [ ] Make cards configurable (pass content as parameters)
+- [ ] Add prev/next buttons
+- [ ] Auto-rotate option
+- [ ] Keyboard navigation
 
 ### Hot Pink Theme Customization
 
