@@ -8,8 +8,8 @@ tags: ["project", "murder-mystery", "artifactum", "ai-tools", "game-design"]
 
 # Christmas Murder Mystery 1926
 
-<div style="text-align: center; margin: 2rem 0;">
-  <video width="100%" style="max-width: 500px; border-radius: 8px;" controls>
+<div class="video-container">
+  <video controls>
     <source src="/videos/teaser.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
@@ -25,7 +25,7 @@ tags: ["project", "murder-mystery", "artifactum", "ai-tools", "game-design"]
 ---
 
 <details>
-<summary><h2 style="display: inline;">The Origin Story</h2></summary>
+<summary><h2 class="inline-heading">The Origin Story</h2></summary>
 
 It started on a beach.
 
@@ -33,21 +33,21 @@ I was stuck. No prospects. Feeling creatively blocked. Nobody (my personal Cri-K
 
 "But it can't be creative," I said.
 
-<img src="/images/innocent-as-a-babydog.png" alt="innocent dog" style="width: 150px; display: block; margin: 1rem 0;" />
-<p style="font-size: 0.85rem; font-style: italic; margin-top: -0.5rem; margin-bottom: 1rem;">(me innocent as a baby dog)(yodo)</p>
+<img src="/images/innocent-as-a-babydog.png" alt="innocent dog" class="meme-img" />
+<p class="img-caption">(me innocent as a baby dog)(yodo)</p>
 
 **Well. Guess not.**
 
 A few weeks earlier, I'd seen an Instagram reel from a creative director who made a murder mystery party for her friends. I loved it. I wanted to make one too.
 
-<img src="/images/instagram-inspo.jpg" alt="Instagram inspiration" style="max-width: 200px; display: block; margin: 1rem 0;" />
-<p style="font-size: 0.85rem; font-style: italic; margin-top: -0.5rem; margin-bottom: 1rem;">Insta:viktoria.psd</p>
+<img src="/images/instagram-inspo.jpg" alt="Instagram inspiration" class="meme-img" />
+<p class="img-caption">Insta:viktoria.psd</p>
 
 My sister hosts a Christmas dinner every year with friends. I suggested we do a murder mystery this year instead.
 
 10 people signed up.
 
-<img src="/images/burning-in-hell.png" alt="burning in hell" style="width: 150px; display: block; margin: 1rem 0;" />
+<img src="/images/burning-in-hell.png" alt="burning in hell" class="meme-img" />
 
 So I had 2 weeks to make an 11-character murder mystery roleplay game from scratch.
 
@@ -60,7 +60,7 @@ With AI as my production team.
 ---
 
 <details>
-<summary><h2 style="display: inline;">What It Is</h2></summary>
+<summary><h2 class="inline-heading">What It Is</h2></summary>
 
 A complete murder mystery roleplay game for 11 players set in 1920s Manhattan. Each player receives:
 - Detailed character sheet with backstory
@@ -79,7 +79,7 @@ A complete murder mystery roleplay game for 11 players set in 1920s Manhattan. E
 ---
 
 <details>
-<summary><h2 style="display: inline;">Development Story</h2></summary>
+<summary><h2 class="inline-heading">Development Story</h2></summary>
 
 ### Week 1: Character Development & Story Architecture
 
@@ -93,16 +93,16 @@ Claude became the mastermind behind this project—the creative collaborator tha
 - Multiple iterations to ensure narrative coherence
 - Claude analyzed consistency across all character arcs
 
-<details style="border: none; background: transparent;">
-<summary style="border: none; list-style: none; cursor: pointer;">
-<div style="text-align: center; padding: 1rem 0;">
+<details class="spoiler-details">
+<summary class="spoiler-summary">
+<div class="spoiler-header">
 <strong>Character Relationship Web</strong><br/>
-<span style="font-size: 2em; color: #FF1493; font-weight: bold;">SPOILER ALERT</span><br/>
-<span style="font-size: 0.9em;">(click to reveal)</span>
+<span class="spoiler-alert">SPOILER ALERT</span><br/>
+<span class="spoiler-hint">(click to reveal)</span>
 </div>
 </summary>
 
-<img src="/images/character-relationship-web.png" alt="Character Relationship Web showing all 11 characters and their connections" style="max-width: 100%; display: block; margin: 1rem auto;" />
+<img src="/images/character-relationship-web.png" alt="Character Relationship Web showing all 11 characters and their connections" class="wide-img" />
 
 </details>
 
@@ -140,9 +140,9 @@ graph TD
 ---
 
 <details>
-<summary><h2 style="display: inline;">Tools & Workflow</h2></summary>
+<summary><h2 class="inline-heading">Tools & Workflow</h2></summary>
 
-<img src="/images/dreamteam.webp" alt="The Dream Team" style="max-width: 600px; display: block; margin: 2rem auto;" />
+<img src="/images/dreamteam.webp" alt="The Dream Team" class="wide-img" />
 
 ### The Mastermind: Claude
 
@@ -156,23 +156,25 @@ Claude was the creative engine behind this entire project. Not just a tool—a c
 
 ### Character Portraits: Gemini
 
-<img src="/images/gemini-interface.png" alt="Gemini interface for character generation" style="max-width: 600px; display: block; margin: 1rem auto;" />
+<img src="/images/gemini-interface.png" alt="Gemini interface for character generation" class="wide-img" />
 
 **Image Generation:**
 - Prompt + reference photo → character portraits
 - Multiple iterations per character
 - Style consistency across all 11 characters
 
-<details style="border: none; background: transparent;">
-<summary style="border: none; list-style: none; cursor: pointer;">
-<div style="text-align: center; padding: 1rem 0;">
+<details class="spoiler-details">
+<summary class="spoiler-summary">
+<div class="spoiler-header">
 <strong>Guest List</strong><br/>
-<span style="font-size: 2em; color: #FF1493; font-weight: bold;">GUEST LIST</span><br/>
-<span style="font-size: 0.9em;">(click to reveal)</span>
+<span class="spoiler-alert">GUEST LIST</span><br/>
+<span class="spoiler-hint">(click to reveal)</span>
 </div>
 </summary>
 
-<img src="/images/guest-list.png" alt="Grid of all 11 character portraits" style="max-width: 100%; display: block; margin: 1rem auto;" />
+<div style="background: white; padding: 1rem; border-radius: 8px; display: inline-block;">
+<img src="/images/guest-list.png" alt="Grid of all 11 character portraits" class="wide-img" />
+</div>
 
 </details>
 
@@ -195,7 +197,7 @@ Same tool. Different platform. **Quite different. Better.**
 
 Why? I don't know. But lm-arena became my favorite video generation tool.
 
-<img src="/images/smiley-baby.png" alt="Smiley baby" style="width: 150px; display: block; margin: 1rem auto;" />
+<img src="/images/smiley-baby.png" alt="Smiley baby" class="meme-img" />
 
 **The Process:**
 - Used multiple accounts (thanks Discord friends!)
@@ -209,13 +211,13 @@ Why? I don't know. But lm-arena became my favorite video generation tool.
 - Audio clips from Gemini voice generation
 - Final mix in kdenlive
 
-<img src="/images/kdenlive.png" alt="Kdenlive timeline" style="max-width: 100%; display: block; margin: 1rem auto;" />
+<img src="/images/kdenlive.png" alt="Kdenlive timeline" class="wide-img" />
 
 ---
 
 ### The Development Backbone: Cline (VS Code)
 
-<img src="/images/vs-code-backbone.png" alt="VS Code with Cline interface" style="max-width: 600px; display: block; margin: 1rem auto;" />
+<img src="/images/vs-code-backbone.png" alt="VS Code with Cline interface" class="wide-img" />
 
 💙 **You have my heart.**
 
@@ -227,7 +229,7 @@ Without Cline, none of the automation would have happened.
 
 ### Design & Assets: Canva Pro
 
-<img src="/images/canva-window.png" alt="Canva Pro interface with project assets" style="max-width: 600px; display: block; margin: 1rem auto;" />
+<img src="/images/canva-window.png" alt="Canva Pro interface with project assets" class="wide-img" />
 
 **Props & Visual Assets:**
 - All physical props and visual assets designed in Canva Pro
@@ -247,8 +249,6 @@ Without Cline, none of the automation would have happened.
 - Template-based modular content
 - 100+ pages generated from snippets
 
-<div style="max-width: 500px; margin: 0.5rem auto;">
-
 ```mermaid
 graph LR
     A[Content<br/>Snippets] --> B[Typst<br/>Templates]
@@ -261,8 +261,6 @@ graph LR
     style D fill:#95E1D3
 ```
 
-</div>
-
 **Python + Git:**
 - Build automation scripts
 - Git hooks for version control
@@ -274,7 +272,7 @@ graph LR
 ---
 
 <details>
-<summary><h2 style="display: inline;">Behind the Scenes: The Reality</h2></summary>
+<summary><h2 class="inline-heading">Behind the Scenes: The Reality</h2></summary>
 
 ### The Privileged Setup
 
@@ -300,17 +298,11 @@ pie title AI vs Human Work Split
 
 ### The Work: Hyperfocus Mode Activated
 
-**(photo: workspace at 3am - coffee cups, chaos, screens everywhere)**
-
 **14+ hours per day. Non-stop. Super hyperfocused.**
 
 Not bragging—just the reality of ADHD hyperfocus when the right project hits.
 
-**(meme: person typing intensely ou "hyperfocus activated" energy)**
-
 When you're in the zone, you don't stop. You learn by doing. You iterate constantly. You make mistakes and fix them immediately. You generate more content than you need because you're exploring every possibility.
-
-**(photo: sleep tracker showing 4 hours ou coffee count chart)**
 
 This project was built in that state. It's a privileged position to be able to work like that, but it's also how the learning happened.
 
@@ -318,24 +310,18 @@ This project was built in that state. It's a privileged position to be able to w
 
 ### The Creative Chaos
 
-**(graphic: "The Chaos" section header)**
-
 - Tested MANY tools on Fal.ai before finding what worked
 - Generated more content than I needed
 - Fell in love with video clips I didn't use
 - Learned an insane amount in 2 weeks
 - Nobody's suggestion paid off (he was right, again)
 
-**(meme: "Well well well, how the turntables" ou Nobody being smug as Cri-Kee)**
-
 </details>
 
 ---
 
 <details>
-<summary><h2 style="display: inline;">What Worked</h2></summary>
-
-**(graphic: checklist aesthetic)**
+<summary><h2 class="inline-heading">What Worked</h2></summary>
 
 ✅ **Claude as creative collaborator** - Feeds creativity, doesn't replace it  
 ✅ **Cline for development** - Made automation pipeline possible  
@@ -344,22 +330,68 @@ This project was built in that state. It's a privileged position to be able to w
 ✅ **Adobe Firefly for SFX** - Professional audio without a sound designer  
 ✅ **Typst over LaTeX** - Faster, easier automation  
 ✅ **Git for creative projects** - Version control for storytelling  
-✅ **Modular content architecture** - Easy iterations and updates  
+✅ **Modular content architecture** - Easy iterations and updates
 
-**(graphic: success metrics visualization ou before/after comparison)**
+```mermaid
+mindmap
+  root((� The Dream Team))
+    🤖 AI Collaborators
+      Claude
+        Creative partner
+        Feeds creativity
+        Doesn't replace it
+      Gemini
+        Character images
+        Prompt + photo
+        Consistent portraits
+      LM Arena
+        Video creation
+        Better than standalone
+        Multi-model testing
+    💻 Development Stack
+      Cline
+        Automation pipeline
+        Dev efficiency
+        Code generation
+      Typst
+        Faster than LaTeX
+        Easy automation
+        Clean documents
+      Git
+        Version control
+        Creative projects
+        Collaboration
+    🎨 Production Tools
+      Adobe Firefly
+        Professional SFX
+        No sound designer
+        High quality audio
+      Canva
+        Visual design
+        Quick mockups
+        Brand consistency
+      Mermaid
+        Auto diagrams
+        Documentation
+        This diagram!
+    🏗️ Architecture
+      Modular Content
+        Easy iterations
+        Clean updates
+        Scalable system
+        Reusable components
+```
 
 </details>
 
 ---
 
 <details>
-<summary><h2 style="display: inline;">What I Learned</h2></summary>
-
-**(graphic: "The Lesson" ou lightbulb moment)**
+<summary><h2 class="inline-heading">What I Learned</h2></summary>
 
 **"AI can't be creative"** → Wrong. AI can be an incredible creative collaborator.
 
-**(meme: "I was wrong" admission ou character development arc)**
+<img src="/images/flexing.png" alt="Flexing in hell slaying" class="meme-img" />
 
 But it's not about the AI replacing you. It's about the AI feeding your ideas, helping them evolve, and handling the production work while you stay in creative control.
 
@@ -382,19 +414,28 @@ graph LR
 ---
 
 <details>
-<summary><h2 style="display: inline;">Bloopers & Failures</h2></summary>
-
-**(graphic: "The Bloopers" header with fun font)**
+<summary><h2 class="inline-heading">Bloopers & Failures</h2></summary>
 
 Coming soon: Screenshots and stories of what went spectacularly wrong.
 
-**(teaser image: blurred blooper screenshots)**
+**Video Generation Gone Wrong:**
+
+<div class="video-container">
+  <video controls>
+    <source src="/videos/clue002.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+**The Prompt:**
+
+> Extreme macro close-up, broken piano wire approximately 30cm length coiled on dark wood surface (mahogany desk), wire diameter 0.8mm visible in sharp detail, dark brownish-red stains on sections of wire (dried blood implication), one end shows clean break with metal fiber separation visible, wire casts dramatic shadow from single key light above left, camera slow rotation orbit 270 degrees around wire over 6 seconds revealing different angles and stain patterns, slight movement as if wire has subtle life (micro-vibration), shot with 100mm macro lens f/2.0, ultra-sharp focus showing steel wire texture, color grading dark noir with cool blue tones, stains appear darker brown, photorealistic metal material and forensic detail, 8K macro, unsettling
 
 **Preview:**
 
-**(screenshot: qnd-n-se-percebe-um-crl.png from Bloopers folder)**
+<img src="/images/blooper-confused.png" alt="When you don't understand what just happened" class="screenshot-img" />
 
-**(screenshot: qnd-tava-frustrada-com-characterfiles.png from Bloopers folder)**
+<img src="/images/blooper-frustrated.png" alt="Frustration with character files" class="screenshot-img" />
 
 More chaos documentation coming! 💀
 
@@ -403,7 +444,7 @@ More chaos documentation coming! 💀
 ---
 
 <details>
-<summary><h2 style="display: inline;">Future Posts</h2></summary>
+<summary><h2 class="inline-heading">Future Posts</h2></summary>
 
 **(graphic: "Coming Soon" section)**
 
@@ -424,7 +465,7 @@ Detailed breakdowns coming:
 ---
 
 <details>
-<summary><h2 style="display: inline;">The Final Sprint</h2></summary>
+<summary><h2 class="inline-heading">The Final Sprint</h2></summary>
 
 **(photo: current workspace - "we're almost there" energy)**
 

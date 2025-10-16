@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Dream Team - Mind Map</title>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ 
+            startOnLoad: true,
+            theme: 'base',
+            themeVariables: {
+                primaryColor: '#667eea',
+                primaryTextColor: '#fff',
+                primaryBorderColor: '#764ba2',
+                lineColor: '#764ba2',
+                secondaryColor: '#ffd54f',
+                tertiaryColor: '#e8f5e9',
+                background: '#fdfbf7',
+                fontSize: '16px',
+                fontFamily: 'Inter, system-ui, sans-serif'
+            }
+        });
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #fdfbf7 0%, #f5f0e8 100%);
+            padding: 2rem 1rem;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 800;
+        }
+        
+        .subtitle {
+            color: #666;
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            margin-bottom: 0.5rem;
+        }
+
+        .tagline {
+            color: #999;
+            font-size: 0.9rem;
+            font-style: italic;
+        }
+        
+        .diagram-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+        
+        .mermaid {
+            text-align: center;
+            padding: 2rem 0;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .code-section {
+            background: #2d2d2d;
+            border-radius: 12px;
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+
+        .code-header {
+            background: #1a1a1a;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .code-title {
+            color: #ffd54f;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .copy-btn {
+            background: #667eea;
+            padding: 0.4rem 1rem;
+            font-size: 0.85rem;
+            box-shadow: none;
+        }
+
+        .copy-btn:hover {
+            background: #764ba2;
+        }
+        
+        .code-block {
+            color: #f8f8f2;
+            padding: 1.5rem;
+            overflow-x: auto;
+            font-family: 'Fira Code', 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        .success-message {
+            position: fixed;
+            top: 2rem;
+            right: 2rem;
+            background: #4caf50;
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+            animation: slideIn 0.3s ease;
+            z-index: 1000;
+        }
+
+        .success-message.show {
+            display: flex;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .legend {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .legend-icon {
+            font-size: 1.5rem;
+        }
+
+        .legend-text {
+            font-size: 0.85rem;
+            color: #555;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem 0.5rem;
+            }
+
+            .diagram-container {
+                padding: 1rem;
+            }
+
+            .controls {
+                flex-direction: column;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎨 The Dream Team</h1>
+            <p class="subtitle">AI-powered tools that made this project possible</p>
+            <p class="tagline">From stuck on a beach to shipping in 2 weeks ✨</p>
+        </header>
+
+        <div class="diagram-container">
+            <div class="mermaid">
+mindmap
+  root((🎯 The Dream Team))
+    🤖 AI Collaborators
+      Claude
+        Creative partner
+        Feeds creativity
+        Doesn't replace it
+      Gemini
+        Character images
+        Prompt + photo
+        Consistent portraits
+      LM Arena
+        Video creation
+        Better than standalone
+        Multi-model testing
+    💻 Development Stack
+      Cline
+        Automation pipeline
+        Dev efficiency
+        Code generation
+      Typst
+        Faster than LaTeX
+        Easy automation
+        Clean documents
+      Git
+        Version control
+        Creative projects
+        Collaboration
+    🎨 Production Tools
+      Adobe Firefly
+        Professional SFX
+        No sound designer
+        High quality audio
+      Canva
+        Visual design
+        Quick mockups
+        Brand consistency
+      Mermaid
+        Auto diagrams
+        Documentation
+        This diagram!
+    🏗️ Architecture
+      Modular Content
+        Easy iterations
+        Clean updates
+        Scalable system
+        Reusable components
+            </div>
+
+            <div class="legend">
+                <div class="legend-item">
+                    <span class="legend-icon">🤖</span>
+                    <span class="legend-text">AI Collaborators</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-icon">💻</span>
+                    <span class="legend-text">Development Stack</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-icon">🎨</span>
+                    <span class="legend-text">Production Tools</span>
+                </div>
+                <div class="legend-item">
+                    <span class="legend-icon">🏗️</span>
+                    <span class="legend-text">Architecture</span>
+                </div>
+            </div>
+
+            <div class="controls">
+                <button onclick="downloadSVG()">📥 Download SVG</button>
+                <button onclick="downloadPNG()">📥 Download PNG</button>
+                <button onclick="toggleCode()">👁️ Show/Hide Code</button>
+            </div>
+        </div>
+
+        <div class="code-section" id="codeSection" style="display: none;">
+            <div class="code-header">
+                <span class="code-title">📋 Mermaid Code - Copy & Paste</span>
+                <button class="copy-btn" onclick="copyCode()">Copy</button>
+            </div>
+            <pre class="code-block" id="codeBlock">```mermaid
+mindmap
+  root((🎯 The Dream Team))
+    🤖 AI Collaborators
+      Claude
+        Creative partner
+        Feeds creativity
+        Doesn't replace it
+      Gemini
+        Character images
+        Prompt + photo
+        Consistent portraits
+      LM Arena
+        Video creation
+        Better than standalone
+        Multi-model testing
+    💻 Development Stack
+      Cline
+        Automation pipeline
+        Dev efficiency
+        Code generation
+      Typst
+        Faster than LaTeX
+        Easy automation
+        Clean documents
+      Git
+        Version control
+        Creative projects
+        Collaboration
+    🎨 Production Tools
+      Adobe Firefly
+        Professional SFX
+        No sound designer
+        High quality audio
+      Canva
+        Visual design
+        Quick mockups
+        Brand consistency
+      Mermaid
+        Auto diagrams
+        Documentation
+        This diagram!
+    🏗️ Architecture
+      Modular Content
+        Easy iterations
+        Clean updates
+        Scalable system
+        Reusable components
+```</pre>
+        </div>
+    </div>
+
+    <div class="success-message" id="successMessage">
+        <span>✅</span>
+        <span>Copied to clipboard!</span>
+    </div>
+
+    <script>
+        function copyCode() {
+            const codeBlock = document.getElementById('codeBlock');
+            const text = codeBlock.textContent;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                showSuccess();
+            }).catch(err => {
+                alert('Failed to copy: ' + err);
+            });
+        }
+
+        function toggleCode() {
+            const codeSection = document.getElementById('codeSection');
+            if (codeSection.style.display === 'none') {
+                codeSection.style.display = 'block';
+            } else {
+                codeSection.style.display = 'none';
+            }
+        }
+
+        function showSuccess() {
+            const msg = document.getElementById('successMessage');
+            msg.classList.add('show');
+            setTimeout(() => {
+                msg.classList.remove('show');
+            }, 3000);
+        }
+
+        function downloadSVG() {
+            const svg = document.querySelector('.mermaid svg');
+            if (!svg) {
+                alert('Diagram not loaded yet, please wait...');
+                return;
+            }
+            
+            const svgData = new XMLSerializer().serializeToString(svg);
+            const blob = new Blob([svgData], { type: 'image/svg+xml' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'dream-team-mindmap.svg';
+            link.click();
+            URL.revokeObjectURL(url);
+            showSuccess();
+        }
+
+        function downloadPNG() {
+            const svg = document.querySelector('.mermaid svg');
+            if (!svg) {
+                alert('Diagram not loaded yet, please wait...');
+                return;
+            }
+
+            const svgData = new XMLSerializer().serializeToString(svg);
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            const img = new Image();
+
+            img.onload = function() {
+                canvas.width = img.width * 2;
+                canvas.height = img.height * 2;
+                ctx.scale(2, 2);
+                ctx.drawImage(img, 0, 0);
+                
+                canvas.toBlob(function(blob) {
+                    const url = URL.createObjectURL(blob);
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = 'dream-team-mindmap.png';
+                    link.click();
+                    URL.revokeObjectURL(url);
+                    showSuccess();
+                });
+            };
+
+            img.src = 'data:image/svg+xml;base64,' + btoa(unescape(encodeURIComponent(svgData)));
+        }
+    </script>
+</body>
+</html>

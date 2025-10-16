@@ -264,13 +264,19 @@ figure h4::before {
 /* Mobile responsive */
 @media (max-width: 768px) {
   .mermaid {
-    min-height: 300px !important;
-    padding: 1rem !important;
+    min-height: 250px !important;
+    padding: 0.5rem !important;
+    margin: 1rem auto !important;
   }
   
   .mermaid svg {
-    min-height: 300px !important;
-    font-size: 14px !important;
+    min-height: 250px !important;
+    font-size: 12px !important;
+  }
+
+  .mermaid .nodeLabel,
+  .mermaid .edgeLabel {
+    font-size: 12px !important;
   }
 }
 
@@ -291,4 +297,110 @@ details summary::-moz-details-marker {
 /* Hide the main page title on the about page */
 .single .title {
   display: none;
+}
+
+/* Image sizing system - mobile-friendly and consistent */
+/* Memes - centered and small */
+.meme-img {
+  max-width: 120px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+}
+
+/* Screenshots/Photos - medium size */
+.screenshot-img, .photo-img {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+}
+
+/* Wide images - for timelines, diagrams */
+.wide-img {
+  max-width: 400px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 1rem auto;
+}
+
+/* Mobile responsive - everything fits screen width on mobile */
+@media (max-width: 768px) {
+  .meme-img,
+  .screenshot-img,
+  .photo-img,
+  .wide-img {
+    max-width: 100%;
+    padding: 0 0.5rem;
+    margin: 1rem auto;
+  }
+
+  .video-container {
+    padding: 0 0.5rem;
+  }
+
+  .video-container video {
+    max-width: 100%;
+  }
+}
+
+/* Video container */
+.video-container {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.video-container video {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+}
+
+/* Image captions */
+.img-caption {
+  font-size: 0.85rem;
+  font-style: italic;
+  margin-top: -0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Spoiler alert sections */
+.spoiler-details {
+  border: none;
+  background: transparent;
+}
+
+.spoiler-summary {
+  border: none;
+  list-style: none;
+  cursor: pointer;
+}
+
+.spoiler-header {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.spoiler-alert {
+  font-size: 2em;
+  color: #FF1493;
+  font-weight: bold;
+}
+
+.spoiler-hint {
+  font-size: 0.9em;
+}
+
+/* Inline heading style (for collapsible sections) */
+.inline-heading {
+  display: inline;
+}
+
+/* Diagram container */
+.diagram-container {
+  max-width: 250px;
+  margin: 0.5rem auto;
 }
