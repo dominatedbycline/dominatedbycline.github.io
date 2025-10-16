@@ -404,3 +404,16 @@ details summary::-moz-details-marker {
   max-width: 250px;
   margin: 0.5rem auto;
 }
+
+/* Indent and space subsections within main collapsible sections */
+details > details {
+  margin-left: 2rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Add more spacing between main sections */
+body > details,
+article > details {
+  margin-bottom: 2rem;
+}
