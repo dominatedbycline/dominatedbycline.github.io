@@ -362,6 +362,163 @@ dominatedbycline/
 
 ---
 
+<details>
+<summary><h2 class="inline-heading">Hugo Fundamentals</h2></summary>
+
+### How Hugo Actually Works
+
+*Coming soon: Detailed explanation with diagrams*
+
+### Directory Structure Deep Dive
+
+*Coming soon: Visual breakdown of each folder*
+
+### Front Matter Guide
+
+*Coming soon: Examples and use cases*
+
+### Content Organization
+
+*Coming soon: How to structure posts, projects, pages*
+
+</details>
+
+---
+
+<details>
+<summary><h2 class="inline-heading">Features I Built</h2></summary>
+
+### Mermaid Diagrams Integration
+
+*Coming soon: How I added diagram support*
+
+### Claude Carousel Component
+
+*Coming soon: Building a custom image carousel*
+
+### Hot Pink Theme Customization
+
+*Coming soon: CSS overrides and color scheme*
+
+### Mobile Responsive Design
+
+*Coming soon: Making the site work on all devices*
+
+</details>
+
+---
+
+<details>
+<summary><h2 class="inline-heading">Deployment & Workflow</h2></summary>
+
+### GitHub Pages Setup
+
+*Coming soon: Step-by-step deployment guide*
+
+### Git Workflow
+
+*Coming soon: My daily workflow for updates*
+
+### GitHub Actions
+
+*Coming soon: Automated building and deployment*
+
+### Domain & Hosting
+
+*Coming soon: Custom domain setup (if applicable)*
+
+</details>
+
+---
+
+<details>
+<summary><h2 class="inline-heading">Customization Deep Dives</h2></summary>
+
+### Theme Override System
+
+*Coming soon: How to customize without breaking updates*
+
+### Custom Layouts
+
+*Coming soon: Building custom page templates*
+
+### Shortcodes I Use
+
+*Coming soon: Reusable components I created*
+
+### CSS Architecture
+
+*Coming soon: How I organize styles*
+
+</details>
+
+---
+
+<details>
+<summary><h2 class="inline-heading">Troubleshooting & Tips</h2></summary>
+
+### Common Problems & Solutions
+
+*Coming soon: Expanded troubleshooting guide*
+
+### Performance Optimization
+
+*Coming soon: Making the site fast*
+
+### SEO Basics
+
+*Coming soon: Getting found on search engines*
+
+### Best Practices
+
+*Coming soon: What I learned about Hugo best practices*
+
+</details>
+
+---
+
+<details>
+<summary><h2 class="inline-heading">AI-Assisted Development</h2></summary>
+
+### How I Use Cline
+
+*Coming soon: My workflow with AI assistance*
+
+### What AI Does Well
+
+*Coming soon: Where AI really helps*
+
+### What I Still Do Manually
+
+*Coming soon: Where human decisions matter*
+
+### Learning vs Automating
+
+*Coming soon: Finding the balance*
+
+</details>
+
+---
+
+<details>
+<summary><h2 class="inline-heading">Resources & References</h2></summary>
+
+### Essential Links
+
+*Coming soon: Organized resource list*
+
+### Code Snippets Library
+
+*Coming soon: Reusable code I use often*
+
+### Learning Path
+
+*Coming soon: Recommended learning sequence*
+
+</details>
+
+---
+
 ## For Others Considering Hugo
 
 ### Should You Use Hugo?
