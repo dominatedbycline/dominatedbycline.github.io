@@ -945,19 +945,348 @@ Added to `hugo.toml`:
 
 ### GitHub Pages Setup
 
-*Coming soon: Step-by-step deployment guide*
+**What is GitHub Pages?**
+
+Free hosting for static websites directly from a GitHub repository. Perfect for Hugo sites!
+
+**Step-by-step setup:**
+
+**1. Create the repository**
+
+Repository name MUST be: `username.github.io`
+
+Example: `dominatedbycline.github.io`
+
+**2. Initialize your Hugo site locally**
+
+```bash
+# Create new Hugo site
+hugo new site dominatedbycline
+cd dominatedbycline
+
+# Initialize Git
+git init
+git branch -M main
+
+# Add theme (using Archie as example)
+git submodule add https://github.com/athul/archie themes/archie
+echo "theme = 'archie'" >> hugo.toml
+```
+
+**3. Configure `hugo.toml`**
+
+```toml
+baseURL = 'https://dominatedbycline.github.io/'
+languageCode = 'en-us'
+title = 'Your Site Title'
+theme = 'archie'
+
+# Important: Tell Hugo to publish to docs/ for GitHub Pages
+publishDir = 'public'
+```
+
+**4. Create `.gitignore`**
+
+```
+# Hugo
+/public/
+/resources/_gen/
+/.hugo_build.lock
+
+# OS
+.DS_Store
+Thumbs.db
+```
+
+**5. Build and push**
+
+```bash
+# Build the site (generates public/ folder)
+hugo
+
+# Add all files
+git add -A
+
+# Commit
+git commit -m "Initial commit"
+
+# Add remote
+git remote add origin git@github.com:username/username.github.io.git
+
+# Push
+git push -u origin main
+```
+
+**6. Configure GitHub Pages**
+
+1. Go to your repo on GitHub
+2. Settings → Pages
+3. Source: Deploy from a branch
+4. Branch: `main` → folder: `/public` or `/root` (depends on setup)
+5. Save
+
+**Wait 2-3 minutes, then visit:** `https://username.github.io`
+
+**Common Issues:**
+
+❌ **"Site not found"**
+- Check repository name is exactly `username.github.io`
+- Verify branch is `main` (not `master`)
+- Wait a few minutes for initial deployment
+
+❌ **"Page builds but shows 404"**
+- Check `baseURL` in `hugo.toml` matches your URL
+- Ensure you ran `hugo` before pushing
+- Check GitHub Pages settings point to correct folder
+
+❌ **"CSS/images not loading"**
+- Use absolute paths: `/images/photo.jpg` (not `../images/`)
+- Check case sensitivity (GitHub is Linux, case-sensitive!)
+- Verify files are in `static/` folder
 
 ### Git Workflow
 
-*Coming soon: My daily workflow for updates*
+**My daily workflow for site updates:**
+
+**Making changes:**
+
+```bash
+# 1. Make your changes (edit markdown, add images, etc.)
+
+# 2. Build site locally to test
+hugo server
+
+# (Opens http://localhost:1313 - check your changes!)
+
+# 3. Build for production
+hugo
+
+# 4. Stage all changes
+git add -A
+
+# 5. Commit with descriptive message
+git commit -m "Add new blog post about Hugo"
+
+# 6. Push to GitHub
+git push origin main
+
+# 7. Wait 2-3 minutes, then check live site
+```
+
+**My actual commit messages:**
+
+```bash
+git commit -m "Add Mermaid diagram integration"
+git commit -m "Fill Hugo Fundamentals section with detailed content"
+git commit -m "Reorganize Building This Site into 2 major sections"
+git commit -m "Add CSS indentation and spacing for subsections"
+```
+
+**Quick commands I use constantly:**
+
+```bash
+# Check what changed
+git status
+
+# See recent commits
+git log --oneline -n 5
+
+# Undo last commit (keep changes)
+git reset --soft HEAD~1
+
+# Discard all local changes
+git reset --hard
+
+# Pull latest from GitHub
+git pull origin main
+```
+
+**Branching workflow (optional but recommended):**
+
+```bash
+# Create feature branch
+git checkout -b add-new-feature
+
+# Make changes, commit
+git add -A
+git commit -m "Implement new feature"
+
+# Switch back to main
+git checkout main
+
+# Merge feature
+git merge add-new-feature
+
+# Push to GitHub
+git push origin main
+
+# Delete feature branch
+git branch -d add-new-feature
+```
 
 ### GitHub Actions
 
-*Coming soon: Automated building and deployment*
+**What is GitHub Actions?**
+
+Automate the Hugo build process. Instead of running `hugo` locally, GitHub builds it for you!
+
+**Why use it?**
+
+- ✅ No need to commit `public/` folder
+- ✅ Automatic builds on every push
+- ✅ Always up-to-date
+- ✅ Cleaner Git history
+
+**Setup with GitHub Actions:**
+
+**1. Create workflow file:**
+
+`.github/workflows/hugo.yml`
+
+```yaml
+name: Deploy Hugo site to Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: 'latest'
+          extended: true
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+```
+
+**2. Update `.gitignore` to exclude `public/`:**
+
+```
+/public/
+/resources/
+```
+
+**3. Configure GitHub Pages:**
+
+- Go to Settings → Pages
+- Source: **GitHub Actions** (not "Deploy from branch")
+
+**4. Push workflow:**
+
+```bash
+git add .github/workflows/hugo.yml
+git commit -m "Add GitHub Actions workflow"
+git push origin main
+```
+
+**Now every push automatically builds and deploys!**
+
+**Check build status:**
+- Go to your repo → Actions tab
+- See build progress in real-time
+- Click on workflow runs for details
+
+**My current setup:**
+
+I'm NOT using GitHub Actions (yet). I build locally with `hugo` and push `public/`. 
+
+**Why?** 
+- Simpler for now
+- I like seeing the build output
+- Less "magic" happening
+
+**Will I switch?** Maybe! When the project gets bigger.
 
 ### Domain & Hosting
 
-*Coming soon: Custom domain setup (if applicable)*
+**Current setup: `dominatedbycline.github.io`**
+
+This is the free GitHub Pages domain. Works perfectly!
+
+**Custom domain (optional):**
+
+If you want your own domain (e.g., `yourdomain.com`):
+
+**1. Buy domain** (Namecheap, Google Domains, etc.)
+
+**2. Add DNS records:**
+
+```
+Type: CNAME
+Name: www
+Value: username.github.io
+```
+
+**3. Configure in GitHub:**
+
+- Settings → Pages
+- Custom domain: `www.yourdomain.com`
+- Save
+
+**4. Update `hugo.toml`:**
+
+```toml
+baseURL = 'https://www.yourdomain.com/'
+```
+
+**5. Wait for DNS propagation** (can take 24-48 hours)
+
+**Current decision:** Sticking with GitHub Pages default domain. It works, it's free, and it clearly shows this is a developer portfolio!
+
+**Deployment checklist:**
+
+Before every deploy:
+
+- [ ] Test locally with `hugo server`
+- [ ] Run `hugo` to build
+- [ ] Check `git status` for unexpected changes
+- [ ] Commit with clear message
+- [ ] Push to GitHub
+- [ ] Wait 2-3 minutes
+- [ ] Hard refresh browser (Ctrl+Shift+R)
+- [ ] Check live site
+
+**Pro tip:** Keep a terminal window with `hugo server` running while you work. Live reload shows changes instantly!
 
 </details>
 
