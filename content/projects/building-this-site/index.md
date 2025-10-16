@@ -353,7 +353,109 @@ dominatedbycline/
 
 ### Mermaid Diagrams Integration
 
-*Coming soon: How I added diagram support*
+**Why Mermaid?**
+- Create diagrams with simple text syntax
+- No need for external image tools
+- Version control friendly (text-based)
+- Renders beautifully on the web
+- Perfect for flowcharts, mind maps, timelines
+
+**Implementation Steps:**
+
+**1. Add Mermaid CDN to Hugo**
+
+Created `layouts/_default/_markup/render-codeblock-mermaid.html`:
+
+```html
+<div class="mermaid">
+  {{- .Inner | safeHTML }}
+</div>
+{{ .Page.Store.Set "hasMermaid" true }}
+```
+
+**2. Load Mermaid Script**
+
+In `layouts/partials/head.html` or your base template:
+
+```html
+<!-- Mermaid.js for diagrams -->
+<script type="module">
+  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+  mermaid.initialize({ 
+    startOnLoad: true,
+    theme: 'base',
+    themeVariables: {
+      primaryColor: '#ff1493',
+      primaryTextColor: '#fff',
+      primaryBorderColor: '#ff69b4',
+      lineColor: '#ff1493',
+      secondaryColor: '#ffd700'
+    }
+  });
+</script>
+```
+
+**3. Use in Markdown**
+
+Simply use triple backticks with `mermaid` language tag:
+
+````markdown
+```mermaid
+graph TD
+    A[Start] --> B[Write Content]
+    B --> C[Add Mermaid]
+    C --> D[Beautiful Diagrams!]
+```
+````
+
+**Example: The Dream Team Mind Map**
+
+This is the actual diagram used in my murder mystery project:
+
+```mermaid
+mindmap
+  root((🎯 The Dream Team))
+    🤖 AI Collaborators
+      Claude
+        Creative partner
+      Gemini
+        Character images
+      LM Arena
+        Video creation
+    💻 Development
+      Cline
+        Automation
+      Typst
+        Typesetting
+      Git
+        Version control
+    🎨 Production
+      Firefly
+        SFX
+      Canva
+        Design
+      Mermaid
+        Diagrams
+```
+
+**Diagram Types Available:**
+- **Flowcharts** (`graph TD`, `graph LR`)
+- **Mind maps** (`mindmap`)
+- **Sequence diagrams** (`sequenceDiagram`)
+- **Gantt charts** (`gantt`)
+- **Class diagrams** (`classDiagram`)
+
+**Common Issues & Solutions:**
+
+**Problem:** Diagram doesn't render  
+**Solution:** Check that Mermaid script loads before content
+
+**Problem:** Colors don't match theme  
+**Solution:** Customize `themeVariables` in `mermaid.initialize()`
+
+**Resources:**
+- [Mermaid Documentation](https://mermaid.js.org/)
+- [Mermaid Live Editor](https://mermaid.live/)
 
 ### Claude Carousel Component
 
@@ -361,7 +463,77 @@ dominatedbycline/
 
 ### Hot Pink Theme Customization
 
-*Coming soon: CSS overrides and color scheme*
+**Why Hot Pink?**
+
+Because life's too short for boring websites! 💅
+
+Hot pink (`#ff1493` / `#ff69b4`) adds:
+- **Personality** - Stands out from typical dev portfolios
+- **Energy** - Eye-catching and memorable
+- **Consistency** - Used throughout as accent color
+- **Fun** - Reflects the creative, playful nature of my projects
+
+**Implementation:**
+
+Created `assets/css/custom.css` with hot pink accents:
+
+```css
+:root {
+  --hot-pink: #ff1493;
+  --hot-pink-light: #ff69b4;
+  --accent-gold: #ffd700;
+}
+
+/* Links - Hot Pink on Hover */
+a:hover {
+  color: var(--hot-pink);
+}
+
+/* Code Blocks */
+code {
+  border-left: 3px solid var(--hot-pink);
+}
+
+/* Blockquotes */
+blockquote {
+  border-left: 4px solid var(--hot-pink);
+}
+```
+
+**Where Hot Pink Appears:**
+- ✅ Link hovers
+- ✅ Code block accents
+- ✅ Blockquote borders
+- ✅ Diagram nodes (Mermaid)
+- ✅ Button backgrounds
+
+**Color Palette:**
+
+```
+Primary:     #ff1493 (Deep Pink)
+Light:       #ff69b4 (Hot Pink)
+Accent:      #ffd700 (Gold)
+Background:  #fdfbf7 (Warm Cream)
+Text:        #2c2c2c (Dark Gray)
+```
+
+**Accessibility:**
+- Hot pink used as **accent only**, not primary text
+- Body text stays dark gray for readability
+- Tested with browser accessibility tools
+- Clear hover states for interactive elements
+
+**Hugo Integration:**
+
+Added to `hugo.toml`:
+```toml
+[params]
+  customCSS = ["css/custom.css"]
+```
+
+**Resources:**
+- [CSS Variables Guide](https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties)
+- [Color Contrast Checker](https://webaim.org/resources/contrastchecker/)
 
 ### Mobile Responsive Design
 
