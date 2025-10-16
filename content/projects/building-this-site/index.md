@@ -16,7 +16,8 @@ Here's how that happened.
 
 ---
 
-## The Problem
+<details>
+<summary><h2 class="inline-heading">The Problem</h2></summary>
 
 **What I wanted:**
 - A personal portfolio/blog site
@@ -32,9 +33,12 @@ Here's how that happened.
 
 **The realization:** I wanted something cooler than drag-and-drop builders, but I had no idea what I was doing.
 
+</details>
+
 ---
 
-## What Is Hugo? (Explained Like I Wish Someone Had)
+<details>
+<summary><h2 class="inline-heading">What Is Hugo? (Explained Like I Wish Someone Had)</h2></summary>
 
 **Hugo is a static site generator.**
 
@@ -60,9 +64,12 @@ What that actually means:
 
 **The tradeoff:** More initial setup time, but way more power and flexibility.
 
+</details>
+
 ---
 
-## The Journey: Less Than a Week
+<details>
+<summary><h2 class="inline-heading">The Journey: Less Than a Week</h2></summary>
 
 **Real timeline:** ~5 days from "What is Hugo?" to site live online.
 
@@ -100,9 +107,12 @@ What that actually means:
 
 **The honest truth:** Without Claude, this would have taken weeks or months. With Claude, it took days.
 
+</details>
+
 ---
 
-## The AI Collaboration Part
+<details>
+<summary><h2 class="inline-heading">The AI Collaboration Part</h2></summary>
 
 ### How AI (Cline) Made This Possible
 
@@ -134,9 +144,12 @@ What that actually means:
 - With Hugo + AI, you learn the system and can do anything
 - The AI doesn't replace understanding—it accelerates it
 
+</details>
+
 ---
 
-## What I Learned (Technical Skills)
+<details>
+<summary><h2 class="inline-heading">What I Learned (Technical Skills)</h2></summary>
 
 ### Hugo Concepts
 
@@ -188,9 +201,12 @@ git push origin main # Push to GitHub
 - Code blocks with syntax highlighting
 - Lists and tables
 
+</details>
+
 ---
 
-## What I Learned (Meta Skills)
+<details>
+<summary><h2 class="inline-heading">What I Learned (Meta Skills)</h2></summary>
 
 ### 1. Reading Documentation Doesn't Mean You Understand It
 
@@ -230,9 +246,12 @@ git push origin main # Push to GitHub
 
 **The verdict:** Hugo takes more time but gives you actual capabilities instead of just a website.
 
+</details>
+
 ---
 
-## The Tech Stack
+<details>
+<summary><h2 class="inline-heading">The Tech Stack</h2></summary>
 
 **What This Site Uses:**
 
@@ -251,9 +270,12 @@ git push origin main # Push to GitHub
 - Cline (AI coding assistant in VS Code)
 - Git (version control)
 
+</details>
+
 ---
 
-## Common Problems I Hit (And How I Fixed Them)
+<details>
+<summary><h2 class="inline-heading">Common Problems I Hit (And How I Fixed Them)</h2></summary>
 
 ### "My post doesn't show up!"
 **Cause:** `draft: true` in front matter  
@@ -275,9 +297,12 @@ git push origin main # Push to GitHub
 **Cause:** Browser cache  
 **Fix:** Hard refresh (Ctrl+Shift+R) or wait a few minutes
 
+</details>
+
 ---
 
-## Project Structure (How It Actually Works)
+<details>
+<summary><h2 class="inline-heading">Project Structure (How It Actually Works)</h2></summary>
 
 ```
 dominatedbycline/
@@ -305,9 +330,12 @@ dominatedbycline/
 5. Outputs HTML to `public/`
 6. GitHub Pages serves `public/`
 
+</details>
+
 ---
 
-## What's Next
+<details>
+<summary><h2 class="inline-heading">What's Next</h2></summary>
 
 **Features I want to add:**
 - [ ] Search functionality
@@ -741,7 +769,8 @@ Added to `hugo.toml`:
 
 ---
 
-## For Others Considering Hugo
+<details>
+<summary><h2 class="inline-heading">For Others Considering Hugo</h2></summary>
 
 ### Should You Use Hugo?
 
@@ -768,9 +797,12 @@ Added to `hugo.toml`:
 **Total time investment:** ~20-30 hours spread over 3-4 weeks  
 **Result:** A custom site and transferable web development skills
 
+</details>
+
 ---
 
-## The Meta Irony
+<details>
+<summary><h2 class="inline-heading">The Meta Irony</h2></summary>
 
 **This project documenting my Hugo learning journey is itself a Hugo project.**
 
@@ -780,9 +812,12 @@ I'm now comfortable enough with Hugo to write detailed documentation about learn
 
 **That's the proof it works.**
 
+</details>
+
 ---
 
-## Resources That Actually Helped
+<details>
+<summary><h2 class="inline-heading">Resources That Actually Helped</h2></summary>
 
 **Official Hugo Docs:** [gohugo.io/documentation](https://gohugo.io/documentation/)  
 (Dense but comprehensive once you understand basics)
@@ -799,9 +834,12 @@ I'm now comfortable enough with Hugo to write detailed documentation about learn
 **AI Assistants:** Claude, Cline, ChatGPT  
 (For explaining concepts and debugging)
 
+</details>
+
 ---
 
-## The Honest Assessment
+<details>
+<summary><h2 class="inline-heading">The Honest Assessment</h2></summary>
 
 **What worked:**
 - AI-assisted learning accelerated the process dramatically
