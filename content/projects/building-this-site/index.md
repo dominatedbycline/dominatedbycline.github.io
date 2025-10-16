@@ -934,7 +934,345 @@ Added to `hugo.toml`:
 
 ### Mobile Responsive Design
 
-*Coming soon: Making the site work on all devices*
+**Making the site work on all devices**
+
+The Archie theme is mobile-friendly by default, but I added custom responsive design for all the features I built.
+
+**Responsive breakpoint:**
+
+```css
+@media (max-width: 768px) {
+  /* Mobile styles here */
+}
+```
+
+**What I made responsive:**
+
+### 1. Mermaid Diagrams
+
+**Problem:** Diagrams too big on mobile  
+**Solution:** Smaller minimum height and font size
+
+```css
+@media (max-width: 768px) {
+  .mermaid {
+    min-height: 250px !important;  /* vs 400px desktop */
+    padding: 0.5rem !important;
+    margin: 1rem auto !important;
+    font-size: 12px !important;    /* vs 16px desktop */
+  }
+  
+  .mermaid svg {
+    min-height: 250px !important;
+  }
+
+  .mermaid .nodeLabel,
+  .mermaid .edgeLabel {
+    font-size: 12px !important;
+  }
+}
+```
+
+### 2. Image Sizing System
+
+**Problem:** Images too large on small screens  
+**Solution:** Responsive max-width with padding
+
+```css
+/* Desktop - fixed max sizes */
+.meme-img {
+  max-width: 120px;
+}
+
+.screenshot-img, .photo-img {
+  max-width: 250px;
+}
+
+.wide-img {
+  max-width: 400px;
+}
+
+/* Mobile - fit screen width */
+@media (max-width: 768px) {
+  .meme-img,
+  .screenshot-img,
+  .photo-img,
+  .wide-img {
+    max-width: 100%;        /* Fill available space */
+    padding: 0 0.5rem;      /* Breathing room */
+    margin: 1rem auto;
+  }
+}
+```
+
+**Usage in Markdown:**
+
+```markdown
+![Confused face](confused.png){.meme-img}
+![Screenshot](screenshot.png){.screenshot-img}
+![Wide diagram](diagram.png){.wide-img}
+```
+
+### 3. Claude Carousel (3D Carousel)
+
+**Problem:** 3D carousel too big for mobile  
+**Solution:** Smaller cards, adjusted radius
+
+```css
+.carousel-card {
+  width: 315px;
+  height: 420px;
+  /* Desktop size */
+}
+
+@media (max-width: 768px) {
+  .carousel-card {
+    width: 180px;           /* Much smaller */
+    height: 270px;
+    font-size: 0.8rem;      /* Smaller text */
+  }
+  
+  .carousel-card h3 {
+    font-size: 1rem;        /* Adjust headings */
+  }
+}
+```
+
+The 3D effect is maintained, just scaled down!
+
+### 4. Video Containers
+
+```css
+.video-container video {
+  width: 100%;
+  max-width: 500px;
+}
+
+@media (max-width: 768px) {
+  .video-container {
+    padding: 0 0.5rem;
+  }
+
+  .video-container video {
+    max-width: 100%;        /* Full width on mobile */
+  }
+}
+```
+
+### Testing Mobile Responsiveness
+
+**Browser Dev Tools:**
+
+1. Open Chrome DevTools (F12)
+2. Click "Toggle device toolbar" (Ctrl+Shift+M)
+3. Select device:
+   - iPhone SE (375px)
+   - iPhone 12 Pro (390px)
+   - Pixel 5 (393px)
+   - iPad (768px)
+
+**Real device testing:**
+
+```bash
+# Hugo server accessible on local network
+hugo server --bind 0.0.0.0 --baseURL http://192.168.1.X:1313
+```
+
+Then visit from phone browser: `http://192.168.1.X:1313`
+
+**What I test:**
+
+- [ ] Navigation works (menu accessible)
+- [ ] Text readable (no horizontal scroll)
+- [ ] Images fit screen
+- [ ] Diagrams render
+- [ ] Carousel clickable
+- [ ] Videos play
+- [ ] Links tappable (not too small)
+
+### Mobile-First Approach
+
+**I didn't use mobile-first** (desktop code first, then mobile overrides). 
+
+**Why?** 
+- Archie theme is already mobile-responsive
+- My additions were desktop-focused (carousel, diagrams)
+- Easier to scale down than up
+
+**Mobile-first would look like:**
+
+```css
+/* Base styles - mobile */
+.element {
+  width: 100%;
+  font-size: 14px;
+}
+
+/* Desktop override */
+@media (min-width: 768px) {
+  .element {
+    width: 500px;
+    font-size: 16px;
+  }
+}
+```
+
+### Common Responsive Patterns
+
+**Patterns I use:**
+
+**1. Fluid width:**
+```css
+img {
+  max-width: 100%;
+  height: auto;
+}
+```
+
+**2. Flexible containers:**
+```css
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+```
+
+**3. Stack on mobile:**
+```css
+.row {
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+}
+```
+
+**4. Hide on mobile:**
+```css
+@media (max-width: 768px) {
+  .desktop-only {
+    display: none;
+  }
+}
+```
+
+### Breakpoints I Use
+
+```css
+/* Mobile */
+@media (max-width: 768px) { }
+
+/* Tablet */
+@media (min-width: 769px) and (max-width: 1024px) { }
+
+/* Desktop */
+@media (min-width: 1025px) { }
+```
+
+**In reality:** I only use `max-width: 768px` for mobile. Simple!
+
+### Typography Scaling
+
+**The theme handles this**, but here's the concept:
+
+```css
+/* Desktop */
+body {
+  font-size: 18px;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  
+  h1 {
+    font-size: 2rem;    /* Smaller on mobile */
+  }
+}
+```
+
+### Touch-Friendly Design
+
+**Considerations:**
+
+- **Tap targets:** Minimum 44x44px (Apple HIG)
+- **Spacing:** More padding between clickable elements
+- **Hover states:** Don't rely on `:hover` (no mouse on mobile!)
+
+**Example: Carousel cards**
+
+Cards are large enough to tap easily (180px wide on mobile), with clear visual feedback.
+
+### Common Mobile Issues & Fixes
+
+**❌ Horizontal scroll appears**
+
+**Cause:** Element wider than viewport
+
+**Fix:**
+```css
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+```
+
+**❌ Text too small to read**
+
+**Cause:** Fixed font sizes
+
+**Fix:**
+```css
+body {
+  font-size: 16px;  /* Minimum for mobile */
+}
+```
+
+**❌ Images break layout**
+
+**Cause:** Images with fixed widths
+
+**Fix:**
+```css
+img {
+  max-width: 100%;
+  height: auto;
+}
+```
+
+### Performance on Mobile
+
+**Consider:**
+- Smaller images (use responsive images)
+- Fewer animations (some devices struggle)
+- Lazy loading for images below fold
+
+**I don't do this yet**, but plan to!
+
+### Testing Checklist
+
+Before deploying:
+
+- [ ] Test on Chrome mobile emulator
+- [ ] Test on actual phone
+- [ ] Check landscape orientation
+- [ ] Test touch interactions
+- [ ] Verify no horizontal scroll
+- [ ] Check font sizes readable
+- [ ] Test form inputs (if any)
+- [ ] Check navigation works
+
+**Current status:** Site works well on mobile! All custom features (Mermaid, carousel, images) are responsive.
 
 </details>
 
