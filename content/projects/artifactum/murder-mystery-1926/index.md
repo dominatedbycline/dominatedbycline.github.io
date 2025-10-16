@@ -463,8 +463,6 @@ Detailed breakdowns coming:
 <details>
 <summary><h2 class="inline-heading">The Final Sprint</h2></summary>
 
-**(photo: current workspace - "we're almost there" energy)**
-
 **Current status:** Finishing the final details. Almost ready for December 25.
 
 **Project Timeline:**
@@ -488,12 +486,8 @@ gantt
 
 **Feelings:** Exhausted. Proud. Nervous. Excited.
 
-**(meme: roller coaster of emotions ou "I'm fine" dog but actually fine this time)**
-
 ---
 
 **Note:** Full game details and character materials available upon request. The game will be played December 25, 2025. Almost there! 🎭🎄
-
-**(photo: "See you on December 25" graphic ou teaser for the event)**
 
 </details>
