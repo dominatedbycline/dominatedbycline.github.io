@@ -1,6 +1,7 @@
 ---
 title: "Building This Site"
-description: "From Squarespace confusion to Hugo mastery—documenting the journey of building a custom static site with AI assistance"
+description: "From Squarespace confusion to Hugo deployment—learning to build a custom static site with heavy AI assistance in less than a week"
+date: 2025-10-16
 ---
 
 # Building This Site
@@ -61,81 +62,43 @@ What that actually means:
 
 ---
 
-## The Journey: Week by Week
+## The Journey: Less Than a Week
 
-### Week 1: "What the Fuck Is a Static Site Generator?"
+**Real timeline:** ~5 days from "What is Hugo?" to site live online.
 
-**What I did:**
+**How I actually learned:**
+
+**Day 1-2: Setup & Confusion**
 - Installed Hugo (`sudo apt install hugo`)
 - Found the Archie theme (minimal, clean, exactly what I wanted)
-- Tried to follow installation docs (got confused)
-- Googled "how does Hugo work" approximately 47 times
-- Created my first post (it didn't show up)
-- Realized I needed front matter (those `---` sections at the top of files)
+- Tried to follow installation docs (got completely lost)
+- Asked Claude to explain Hugo in simple terms
+- Created first post (didn't show up)
+- Claude explained front matter to me
+- Finally got a post to appear!
 
-**What I learned:**
-- Hugo uses a specific directory structure: `content/`, `layouts/`, `static/`
-- Content goes in `content/posts/` for blog posts
-- `hugo.toml` is the config file (controls everything)
-- `hugo server` runs a local preview
-- `hugo` builds the actual site
-
-**Biggest confusion:** Where do things go? What's the difference between `layouts/` and `themes/archie/layouts/`?
-
-**Answer:** Custom layouts override theme layouts. You put your custom stuff in the main `layouts/` folder.
-
-### Week 2: "Git, GitHub Pages, and Deployment Panic"
-
-**What I needed:**
-- GitHub repository set up
-- GitHub Pages enabled
-- Deployment workflow figured out
-
-**What actually happened:**
-- Created repo `dominatedbycline.github.io`
-- Pushed code (but site didn't appear)
-- Discovered I needed to build with `hugo` first
+**Day 3-4: Git, GitHub Pages, and Many Errors**
+- Created repo `dominatedbycline.github.io` 
+- Pushed code (site didn't appear)
+- Claude helped me understand the build process
+- Learned you need to run `hugo` to generate the site
 - Pushed again (still broken)
-- Realized GitHub Pages needs files in root or `public/` folder
-- Finally understood: build locally with `hugo`, commit the `public/` directory
-- Site went live! (then I broke it trying to add features)
+- Claude explained GitHub Pages needs the `public/` folder
+- Site went live! (then I broke it adding features)
+- Claude helped me fix it multiple times
 
-**The workflow that finally worked:**
-1. Write content in Markdown
-2. Run `hugo` to build site
-3. `git add -A`
-4. `git commit -m "description"`
-5. `git push origin main`
-6. Wait ~2 minutes for GitHub Pages to deploy
+**Day 5-6: Customization (with a LOT of Claude's help)**
+- Wanted to add Mermaid diagrams → Claude wrote the integration
+- Wanted image carousel → Claude built the shortcode
+- Wanted custom CSS → Claude showed me how to override theme styles
+- Wanted hot pink accents → Claude helped with CSS
+- Broke navigation twice → Claude fixed it both times
 
-**Current deployment:** Uses GitHub Actions to auto-build on push (so I don't have to run `hugo` manually).
+**What I actually did vs. what Claude did:**
+- **Claude:** Wrote most of the code, explained concepts, debugged errors
+- **Me:** Decided what I wanted, tested features, wrote content, learned by watching Claude work
 
-### Week 3: "Customizing the Theme Without Breaking Everything"
-
-**What I wanted to add:**
-- Custom CSS for tweaks
-- Mermaid diagram support
-- Custom shortcodes
-- Image carousels
-
-**The challenge:** How do you customize a theme without editing the theme files directly (which would make updates impossible)?
-
-**The solution:** Override system.
-- Put custom CSS in `assets/css/custom.css`
-- Put custom layouts in `layouts/` (they override theme defaults)
-- Create shortcodes in `layouts/shortcodes/`
-- Modify `hugo.toml` to import custom CSS
-
-**What I built:**
-- Mermaid diagram rendering
-- Custom image carousel component
-- Modified navigation
-- Dark mode tweaks
-
-**What I broke along the way:**
-- Navigation (twice)
-- Post listings (fixed with layout override)
-- Image paths (learned about `/static/` vs relative paths)
+**The honest truth:** Without Claude, this would have taken weeks or months. With Claude, it took days.
 
 ---
 
