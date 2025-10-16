@@ -1635,19 +1635,376 @@ Before every deploy:
 
 ### Theme Override System
 
-*Coming soon: How to customize without breaking updates*
+**The Golden Rule: Never Edit Theme Files Directly**
+
+Hugo themes are usually Git submodules. Editing them directly means:
+- ❌ Conflicts when updating the theme
+- ❌ Lost changes if you pull theme updates
+- ❌ Difficulty tracking your customizations
+
+**The Hugo Override Hierarchy:**
+
+Hugo looks for files in this order:
+1. `layouts/` (your custom files)
+2. `themes/archie/layouts/` (theme files)
+
+**This means:** Create files in `layouts/` to override theme templates without touching the theme!
+
+**Example: Custom Homepage**
+
+**Theme has:** `themes/archie/layouts/index.html`  
+**You create:** `layouts/index.html`  
+**Result:** Your version is used!
+
+**My actual override:**
+
+```html
+<!-- layouts/index.html -->
+<!DOCTYPE html>
+<html>
+	{{ partial "header.html" . }}
+	<body>
+		<div class="content">
+		{{ partial "head.html" . }}
+		
+		<!-- My custom hero section -->
+		<div class="hero-tagline">
+			See how I use AI to make cool shit
+		</div>
+		
+		<!-- Rest of custom homepage... -->
+```
+
+**Override Strategies:**
+
+**1. Partial Overrides**
+
+Copy just the part you want to change:
+
+```
+layouts/
+└── partials/
+    └── head.html    # Override just the <head> section
+```
+
+**2. Complete Overrides**
+
+Replace entire template:
+
+```
+layouts/
+└── index.html       # Completely custom homepage
+```
+
+**3. Selective Overrides**
+
+Override specific content types:
+
+```
+layouts/
+├── posts/
+│   └── single.html  # Custom layout for blog posts
+└── projects/
+    └── single.html  # Different layout for projects
+```
+
+**Tracking Overrides:**
+
+I keep notes on what I've overridden:
+
+```markdown
+# My Theme Overrides
+
+- `layouts/index.html` - Custom homepage with bio box
+- `layouts/partials/head.html` - Added Mermaid.js script
+- `layouts/_default/_markup/render-codeblock-mermaid.html` - Mermaid rendering
+```
+
+**Updating Themes Safely:**
+
+```bash
+# Update theme
+cd themes/archie
+git pull origin main
+
+# Check if your overrides still work
+hugo server
+
+# Fix any conflicts in YOUR layouts/ folder
+```
 
 ### Custom Layouts
 
-*Coming soon: Building custom page templates*
+**When to Create Custom Layouts:**
+
+- Special landing pages
+- Different post types
+- Unique project showcases
+- Custom list views
+
+**My Custom Layouts:**
+
+**1. Homepage (`layouts/index.html`)**
+
+Completely custom homepage featuring:
+- Hero tagline
+- Hot pink bio box with name
+- Featured project with video
+- Latest 3 blog posts
+
+**Key Hugo templating I learned:**
+
+```html
+<!-- Loop through recent posts -->
+{{ $recentPosts := first 3 (where .Site.RegularPages "Type" "posts") }}
+{{ range $recentPosts }}
+  <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+  <time>{{ dateFormat ":date_medium" .Date }}</time>
+{{ end }}
+```
+
+**2. Mermaid Code Block Renderer**
+
+`layouts/_default/_markup/render-codeblock-mermaid.html`:
+
+```html
+<div class="mermaid">
+  {{- .Inner | safeHTML }}
+</div>
+{{ .Page.Store.Set "hasMermaid" true }}
+```
+
+**Hugo Templating Concepts I Use:**
+
+**Variables:**
+```html
+{{ $variable := "value" }}
+{{ $posts := .Site.RegularPages }}
+```
+
+**Conditionals:**
+```html
+{{ if .Description }}
+  {{ .Description }}
+{{ else }}
+  {{ .Summary }}
+{{ end }}
+```
+
+**Loops:**
+```html
+{{ range .Site.RegularPages }}
+  <li>{{ .Title }}</li>
+{{ end }}
+```
+
+**Filters:**
+```html
+{{ .Description | truncate 100 }}
+{{ .Summary | plainify }}
+{{ .Date | dateFormat ":date_medium" }}
+```
+
+**Common Patterns:**
+
+**Get specific number of items:**
+```html
+{{ $recent := first 5 .Pages }}
+```
+
+**Filter by type:**
+```html
+{{ $posts := where .Site.RegularPages "Type" "posts" }}
+```
+
+**Access front matter:**
+```html
+{{ .Title }}
+{{ .Date }}
+{{ .Params.customField }}
+```
 
 ### Shortcodes I Use
 
-*Coming soon: Reusable components I created*
+**What Are Shortcodes?**
+
+Reusable components you can embed in Markdown. Think of them as custom "widgets."
+
+**My Shortcodes:**
+
+**1. Mermaid Diagrams** (`layouts/shortcodes/mermaid.html`)
+
+Actually, I use the render hook instead (see Custom Layouts), but the concept is the same!
+
+**2. Claude Carousel** (`layouts/shortcodes/claude-carousel.html`)
+
+A 3D rotating carousel for project phases.
+
+**Usage in Markdown:**
+```markdown
+{{</* claude-carousel */>}}
+```
+
+**Structure:**
+```html
+<style>
+  /* All the CSS for 3D transforms */
+</style>
+
+<div class="carousel-scene">
+  <div class="carousel-container">
+    <!-- Cards go here -->
+  </div>
+</div>
+
+<script>
+  // Rotation logic
+</script>
+```
+
+**What I Learned:**
+
+- Shortcodes can include CSS and JavaScript
+- They're isolated components
+- Perfect for complex features you want to reuse
+
+**Future Shortcodes I Want:**
+
+- Image gallery shortcode
+- "Call to action" boxes
+- Syntax-highlighted code with copy button
+- YouTube embed with custom styling
+
+**Shortcode vs Partial:**
+
+**Shortcode:**
+- Called from Markdown
+- User-facing content
+- Example: `{{</* carousel */>}}`
+
+**Partial:**
+- Called from layouts
+- Template components
+- Example: `{{ partial "header.html" . }}`
 
 ### CSS Architecture
 
-*Coming soon: How I organize styles*
+**My CSS Organization:**
+
+**Single file approach:** `assets/css/custom.css`
+
+For this small site, one file works fine. Future: might split into modules.
+
+**Structure:**
+
+```css
+/* === VARIABLES === */
+:root {
+  --hot-pink: #ff1493;
+  --hot-pink-light: #ff69b4;
+  --accent-gold: #ffd700;
+}
+
+/* === GLOBAL === */
+/* Base overrides */
+
+/* === COMPONENTS === */
+/* Mermaid diagrams */
+/* Image sizing system */
+/* Video containers */
+/* Carousel */
+
+/* === UTILITIES === */
+/* Helper classes */
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  /* Mobile overrides */
+}
+```
+
+**CSS Specificity Strategy:**
+
+**Problem:** Theme CSS loads first, has default styles  
+**Solution:** More specific selectors or `!important` (sparingly)
+
+**Examples:**
+
+```css
+/* Instead of: */
+.mermaid {
+  min-height: 400px;
+}
+
+/* Use more specific: */
+.content .mermaid {
+  min-height: 400px !important;
+}
+```
+
+**CSS Variables for Consistency:**
+
+```css
+:root {
+  --hot-pink: #ff1493;
+}
+
+/* Use everywhere: */
+a:hover {
+  color: var(--hot-pink);
+}
+
+.card-header {
+  background: var(--hot-pink);
+}
+```
+
+**Mobile-First vs Desktop-First:**
+
+I use **Desktop-First** (matches theme approach):
+
+```css
+/* Desktop styles */
+.element {
+  width: 500px;
+}
+
+/* Mobile override */
+@media (max-width: 768px) {
+  .element {
+    width: 100%;
+  }
+}
+```
+
+**Naming Convention:**
+
+I use **semantic names**:
+
+```css
+.meme-img      /* What it is */
+.screenshot-img /* What it is */
+.wide-img       /* What it is */
+```
+
+Not:
+```css
+.small   /* Vague */
+.img-1   /* Meaningless */
+```
+
+**Loading Custom CSS:**
+
+In `hugo.toml`:
+```toml
+[params]
+  customCSS = ["css/custom.css"]
+```
+
+Or in your base template:
+```html
+<link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
+```
 
 </details>
 
@@ -1658,19 +2015,554 @@ Before every deploy:
 
 ### Common Problems & Solutions
 
-*Coming soon: Expanded troubleshooting guide*
+**The problems I actually hit and how I fixed them:**
+
+**❌ "Posts won't show up on homepage"**
+
+**Symptoms:** Created a new post, it builds fine, but doesn't appear in lists
+
+**Causes:**
+1. `draft: true` in front matter
+2. Future date in front matter
+3. Wrong content type/section
+
+**Solutions:**
+```yaml
+---
+title: "My Post"
+date: 2025-01-15  # Make sure this is in the past!
+draft: false      # Must be false to show
+---
+```
+
+**Check with:**
+```bash
+hugo list all  # Lists all content including drafts
+```
+
+---
+
+**❌ "Images won't load"**
+
+**Symptoms:** Image shows broken icon, 404 in console
+
+**Causes:**
+1. Wrong path (relative vs absolute)
+2. Image not in `static/` folder
+3. Case-sensitive filename mismatch
+
+**Solutions:**
+
+**Correct:** Put images in `static/images/`, reference as:
+```markdown
+![Alt text](/images/photo.jpg)
+```
+
+**Wrong:**
+```markdown
+![Alt text](../static/images/photo.jpg)  # Don't use relative paths
+![Alt text](images/photo.jpg)            # Missing leading slash
+```
+
+**Debug:**
+```bash
+# Check if file exists
+ls static/images/photo.jpg
+
+# Check exact filename (case matters on GitHub!)
+ls -la static/images/
+```
+
+---
+
+**❌ "Site builds locally but breaks on GitHub Pages"**
+
+**Symptoms:** Works with `hugo server`, but deployed site has issues
+
+**Common causes:**
+
+**1. Case-sensitive paths**
+
+GitHub Pages runs on Linux (case-sensitive)
+
+```markdown
+# Local (Windows/Mac): works
+![Photo](/Images/Photo.jpg)
+
+# GitHub Pages (Linux): BREAKS
+# Must match exactly:
+![Photo](/images/photo.jpg)
+```
+
+**2. baseURL mismatch**
+
+```toml
+# hugo.toml
+baseURL = 'https://yourusername.github.io/'  # Must match exactly!
+```
+
+**3. Public folder not pushed**
+
+Make sure you run `hugo` before pushing!
+
+```bash
+hugo              # Build site
+git add -A        # Stage everything including public/
+git commit -m "Update site"
+git push
+```
+
+---
+
+**❌ "Custom CSS not applying"**
+
+**Symptoms:** Added CSS to `custom.css`, but styles don't show
+
+**Causes:**
+1. CSS not linked in templates
+2. Theme CSS has higher specificity
+3. Browser cache
+4. CSS file in wrong location
+
+**Solutions:**
+
+**1. Link CSS properly:**
+
+In `hugo.toml`:
+```toml
+[params]
+  customCSS = ["css/custom.css"]
+```
+
+Or in `layouts/partials/head.html`:
+```html
+<link rel="stylesheet" href="{{ "css/custom.css" | relURL }}">
+```
+
+**2. Increase CSS specificity:**
+
+```css
+/* Too weak */
+.mermaid {
+  min-height: 400px;
+}
+
+/* Stronger */
+.content .mermaid {
+  min-height: 400px !important;
+}
+```
+
+**3. Clear browser cache:**
+- Hard refresh: `Ctrl+Shift+R` (Windows/Linux) or `Cmd+Shift+R` (Mac)
+- Or open in incognito/private window
+
+---
+
+**❌ "Changes not showing after deployment"**
+
+**Symptoms:** Pushed changes, but site looks the same
+
+**Causes:**
+1. Browser cache
+2. GitHub Pages hasn't rebuilt yet
+3. Forgot to run `hugo` before pushing
+4. CDN cache (if using custom domain)
+
+**Solutions:**
+
+**1. Wait:** GitHub Pages takes 2-3 minutes to rebuild
+
+**2. Force refresh:** `Ctrl+Shift+R`
+
+**3. Check deployment status:**
+- Go to your repo on GitHub
+- Click "Actions" tab (if using GitHub Actions)
+- Or check repo "Environments" section
+
+**4. Verify you built:**
+```bash
+# Proper workflow:
+hugo              # Build first!
+git add -A
+git commit -m "Update"
+git push
+```
+
+---
+
+**❌ "Mermaid diagrams not rendering"**
+
+**Symptoms:** See raw mermaid code instead of diagram
+
+**Causes:**
+1. Mermaid.js not loaded
+2. Render hook not working
+3. Syntax error in diagram
+
+**Solutions:**
+
+**1. Check Mermaid is loaded:**
+
+Look in browser console for errors
+
+**2. Verify render hook exists:**
+```
+layouts/_default/_markup/render-codeblock-mermaid.html
+```
+
+**3. Test diagram syntax:**
+Use [Mermaid Live Editor](https://mermaid.live/) to verify your diagram code
+
+**4. Check code block language:**
+````markdown
+```mermaid  ← Must be exactly "mermaid"
+graph TD
+    A --> B
+```
+````
+
+---
+
+**❌ "Port 1313 already in use"**
+
+**Symptoms:** `hugo server` fails, says port in use
+
+**Cause:** Previous Hugo server still running
+
+**Solutions:**
+
+**Option 1: Kill the process**
+```bash
+# Linux/Mac
+lsof -ti:1313 | xargs kill -9
+
+# Or find and kill
+ps aux | grep hugo
+kill <process_id>
+```
+
+**Option 2: Use different port**
+```bash
+hugo server -p 1314
+```
+
+---
+
+**❌ "Theme submodule issues"**
+
+**Symptoms:** Theme folder empty, site won't build
+
+**Cause:** Git submodules not initialized
+
+**Solution:**
+```bash
+# Clone with submodules
+git clone --recursive <your-repo-url>
+
+# Or if already cloned:
+git submodule update --init --recursive
+```
 
 ### Performance Optimization
 
-*Coming soon: Making the site fast*
+**Current performance: Fast! 🚀**
+
+Hugo generates static files, so the site is inherently fast. But here's what I consider:
+
+**What I do now:**
+
+**1. Hugo minification**
+```bash
+hugo --minify  # Minifies HTML, CSS, JS
+```
+
+**2. Optimized images**
+- Keep images reasonably sized
+- Use appropriate formats (WebP where possible)
+- Compress before uploading
+
+**3. Minimal JavaScript**
+- Only Mermaid.js (loaded conditionally)
+- Carousel logic (minimal, no libraries)
+
+**What I could do (future):**
+
+**Lazy loading images:**
+```html
+<img src="photo.jpg" loading="lazy" alt="Photo">
+```
+
+**Responsive images:**
+```html
+<img 
+  srcset="photo-320.jpg 320w,
+          photo-640.jpg 640w,
+          photo-1024.jpg 1024w"
+  sizes="(max-width: 768px) 100vw, 50vw"
+  src="photo-640.jpg" 
+  alt="Photo">
+```
+
+**Defer non-critical CSS:**
+```html
+<link rel="preload" href="styles.css" as="style" onload="this.rel='stylesheet'">
+```
+
+**Testing performance:**
+
+**Lighthouse audit:**
+1. Open Chrome DevTools (F12)
+2. Go to "Lighthouse" tab
+3. Click "Generate report"
+
+**Current scores:**
+- Performance: 95+
+- Accessibility: 90+
+- Best Practices: 95+
+- SEO: 90+
+
+Not bad for a static site!
 
 ### SEO Basics
 
-*Coming soon: Getting found on search engines*
+**What is SEO?**
+
+Search Engine Optimization - making your site discoverable by search engines (Google, Bing, etc.)
+
+**What I do:**
+
+**1. Descriptive front matter**
+
+Every page has:
+```yaml
+---
+title: "Clear, Descriptive Title"
+description: "Concise summary for search results (150-160 chars)"
+date: 2025-01-15
+---
+```
+
+**2. Semantic HTML**
+
+Use proper heading hierarchy:
+```markdown
+# Main Title (H1) - only one per page
+## Section (H2)
+### Subsection (H3)
+```
+
+**3. Descriptive URLs**
+
+```
+✅ /posts/hugo-tutorial/
+❌ /posts/post-1/
+```
+
+**4. Alt text for images**
+
+```markdown
+![Descriptive alt text](/images/photo.jpg)
+```
+
+**5. Internal linking**
+
+Link between related pages on your site
+
+**Hugo's built-in SEO:**
+
+Hugo generates:
+- Clean URLs
+- Proper meta tags
+- Sitemap (automatically at `/sitemap.xml`)
+- RSS feed (at `/index.xml`)
+
+**Check sitemap:**
+```
+https://yourusername.github.io/sitemap.xml
+```
+
+**What I could add (future):**
+
+**Open Graph tags** (for social media):
+```html
+<meta property="og:title" content="{{ .Title }}">
+<meta property="og:description" content="{{ .Description }}">
+<meta property="og:image" content="{{ .Params.image }}">
+```
+
+**Structured data** (JSON-LD):
+```html
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ .Title }}",
+  "datePublished": "{{ .Date }}"
+}
+</script>
+```
+
+**Analytics:**
+- Plausible (privacy-friendly)
+- Google Search Console
+- Track what content performs
+
+**SEO Tips:**
+
+✅ **DO:**
+- Write for humans first, search engines second
+- Use descriptive titles and headings
+- Link to related content
+- Keep URLs simple and readable
+- Update content regularly
+
+❌ **DON'T:**
+- Keyword stuff
+- Use vague titles like "Post 1"
+- Duplicate content
+- Use generic meta descriptions
 
 ### Best Practices
 
-*Coming soon: What I learned about Hugo best practices*
+**What I learned building this site:**
+
+**1. Start with a theme, customize later**
+
+Don't try to build everything from scratch. Pick a good theme, learn how it works, then customize.
+
+**2. Never edit theme files directly**
+
+Use Hugo's override system (`layouts/` folder)
+
+**3. Test locally before deploying**
+
+```bash
+hugo server  # Always check here first!
+```
+
+**4. Use meaningful commit messages**
+
+```bash
+# Good
+git commit -m "Add Mermaid diagram integration"
+git commit -m "Fix mobile navigation bug"
+
+# Bad
+git commit -m "update"
+git commit -m "changes"
+```
+
+**5. Keep `public/` in `.gitignore`**
+
+Don't commit generated files (unless you must for GitHub Pages setup)
+
+**6. Organize content logically**
+
+```
+content/
+├── posts/      # Blog posts
+├── projects/   # Projects
+└── about.md    # Single pages
+```
+
+**7. Use descriptive filenames**
+
+```
+✅ hugo-deployment-guide.md
+❌ post1.md
+```
+
+**8. Front matter consistency**
+
+Use the same fields consistently:
+```yaml
+---
+title: "..."
+date: ...
+description: "..."
+tags: [...]
+---
+```
+
+**9. Image organization**
+
+```
+static/
+└── images/
+    ├── posts/      # Post images
+    ├── projects/   # Project images
+    └── general/    # General images
+```
+
+**10. Documentation as you go**
+
+Write notes about customizations, problems solved, etc. (Like this page!)
+
+**11. Version control everything**
+
+Commit often, with clear messages
+
+**12. Mobile-first or desktop-first? Be consistent**
+
+Pick an approach and stick with it
+
+**13. CSS organization**
+
+Keep related styles together, use comments liberally
+
+**14. Test in multiple browsers**
+
+At minimum: Chrome, Firefox, Safari (if possible)
+
+**15. Accessibility matters**
+
+- Use semantic HTML
+- Add alt text to images
+- Ensure sufficient color contrast
+- Test keyboard navigation
+
+**Hugo-specific:**
+
+**✅ DO:**
+- Use shortcodes for reusable components
+- Leverage Hugo's built-in functions
+- Keep layouts DRY (Don't Repeat Yourself)
+- Use partials for common elements
+
+**❌ DON'T:**
+- Hardcode site URL (use `{{ .Site.BaseURL }}`)
+- Repeat code (use partials instead)
+- Ignore Hugo's directory structure
+- Mix content and presentation
+
+**My workflow that works:**
+
+1. **Plan** what you want to build
+2. **Research** if Hugo/theme already does it
+3. **Test** in local dev environment
+4. **Commit** small, working changes
+5. **Deploy** and verify
+6. **Document** what you learned
+
+**Debugging tips:**
+
+**When something breaks:**
+
+1. Check browser console for errors
+2. Verify file paths are correct
+3. Test locally with `hugo server`
+4. Check git diff to see what changed
+5. Roll back if needed (`git reset --hard`)
+6. Ask AI for help explaining the error
+
+**When you're stuck:**
+
+1. Read the Hugo docs
+2. Search Hugo forum/GitHub issues
+3. Ask AI to explain the concept
+4. Look at working examples
+5. Break the problem into smaller pieces
 
 </details>
 
@@ -1681,19 +2573,416 @@ Before every deploy:
 
 ### How I Use Cline
 
-*Coming soon: My workflow with AI assistance*
+**What is Cline?**
+
+Cline is an AI coding assistant that runs as a VS Code extension. Think of it as having an expert developer sitting next to you, helping you build things.
+
+**My actual workflow with Cline:**
+
+**1. Describe what I want**
+
+```
+Me: "I want to add a 3D rotating carousel to showcase project phases"
+```
+
+**2. Cline suggests implementation**
+
+Cline analyzes my project structure, understands I'm using Hugo, and proposes:
+- Create a shortcode in `layouts/shortcodes/claude-carousel.html`
+- Use CSS 3D transforms (no libraries needed)
+- Make it mobile responsive
+- Add hot pink styling to match theme
+
+**3. I review the code**
+
+Cline shows me the full code with explanations. I can:
+- Ask questions about parts I don't understand
+- Request modifications
+- Learn how it works before implementing
+
+**4. Test and iterate**
+
+```
+Me: "The cards are too big on mobile"
+Cline: *adds media query to resize*
+
+Me: "Can we make the rotation smoother?"
+Cline: *adds CSS transition*
+```
+
+**5. I learn from the process**
+
+After building the carousel with Cline's help:
+- I understand CSS 3D transforms now
+- I can modify it myself later
+- I learned about shortcode structure
+- I gained transferable skills
+
+**Types of tasks I use Cline for:**
+
+**Creating features:**
+```
+"Add Mermaid diagram support to Hugo"
+"Build a custom homepage with featured project"
+"Create responsive image sizing system"
+```
+
+**Debugging:**
+```
+"Images won't load, getting 404s"
+"Mermaid diagrams show raw code instead of rendering"
+"CSS not applying to elements"
+```
+
+**Explaining concepts:**
+```
+"Explain how Hugo's override system works"
+"What's the difference between partials and shortcodes?"
+"How do I reference images in Markdown?"
+```
+
+**Optimizing:**
+```
+"Make this carousel mobile-responsive"
+"Improve the CSS specificity"
+"Add error handling to this JavaScript"
+```
+
+**Real examples from building this site:**
+
+**Example 1: Mermaid Integration**
+
+**Me:** "I want to use Mermaid diagrams in my posts"
+
+**Cline:** 
+1. Created render hook: `layouts/_default/_markup/render-codeblock-mermaid.html`
+2. Added Mermaid CDN script to `baseof.html`
+3. Configured theme colors to match hot pink
+4. Showed me usage example
+5. Explained how render hooks work
+
+**Result:** I now understand Hugo's content rendering system.
+
+---
+
+**Example 2: Debugging Image Paths**
+
+**Me:** "My images work locally but break on GitHub Pages"
+
+**Cline:** 
+1. Explained case-sensitivity difference (Linux vs Mac/Windows)
+2. Showed me how to check exact filenames
+3. Fixed paths from relative to absolute
+4. Added note to documentation
+
+**Result:** I learned about case-sensitivity in deployments.
+
+---
+
+**Example 3: Custom Homepage**
+
+**Me:** "I want a custom homepage with a bio box, featured project, and latest posts"
+
+**Cline:**
+1. Created `layouts/index.html` override
+2. Explained Hugo templating syntax
+3. Added loops for recent posts
+4. Styled bio box with hot pink
+5. Made it mobile responsive
+
+**Result:** I learned Hugo templating and can now create custom layouts.
 
 ### What AI Does Well
 
-*Coming soon: Where AI really helps*
+**Where Cline excels:**
+
+✅ **Explaining technical concepts in simple terms**
+
+Instead of reading dense documentation, I ask:
+- "What does `{{ range .Site.RegularPages }}` mean?"
+- "How does Git submodules work?"
+- "Why use static site generators?"
+
+Cline explains in context, with examples from MY project.
+
+✅ **Writing boilerplate code**
+
+- HTML structure for layouts
+- CSS reset and base styles
+- JavaScript event handlers
+- Git commands
+
+Saves massive time on repetitive tasks.
+
+✅ **Debugging errors**
+
+Paste error message → Get explanation + fix
+
+```
+Error: "template: index.html:24: executing..."
+
+Cline: "This means Hugo can't find the variable. 
+You need to use .Params.field instead of .field"
+```
+
+✅ **Best practices**
+
+Cline suggests:
+- "Use CSS variables for consistent colors"
+- "Don't commit the public/ folder"
+- "Use semantic HTML for accessibility"
+- "Test on multiple screen sizes"
+
+I learn WHILE building.
+
+✅ **Adapting examples**
+
+I find a code example online for vanilla HTML/CSS. Cline adapts it to:
+- Hugo templating syntax
+- My site's structure
+- My color scheme
+- Mobile responsive
+
+✅ **Documentation**
+
+Cline helps me:
+- Write clear commit messages
+- Document features I build
+- Create this very documentation page!
+- Explain complex concepts to future me
 
 ### What I Still Do Manually
 
-*Coming soon: Where human decisions matter*
+**Where human decisions matter:**
+
+🧠 **Creative direction**
+
+- Site design/aesthetic (hot pink theme was my choice!)
+- Content organization (posts vs projects structure)
+- What features to build
+- Project priorities
+- Brand voice/tone
+
+🧠 **Content writing**
+
+- All blog posts written by me
+- Project descriptions
+- About page
+- This documentation (content, not code)
+
+Cline helps with structure/formatting, but words are mine.
+
+🧠 **Visual design choices**
+
+- Color palette selection
+- Layout decisions
+- Image selection
+- Typography choices
+- Spacing/whitespace
+
+🧠 **User experience decisions**
+
+- Navigation structure
+- What to feature on homepage
+- How to organize projects
+- Mobile UX priorities
+
+🧠 **Strategic decisions**
+
+- Hugo vs other static generators?
+- GitHub Pages vs other hosting?
+- Which theme to start with?
+- When to override vs customize?
+- Deploy workflow (Actions vs manual)
+
+🧠 **Quality assessment**
+
+I test and verify:
+- Does this actually work?
+- Is it mobile responsive?
+- Does it match my vision?
+- Is the code maintainable?
+- Will I understand this in 6 months?
+
+Cline can't judge "is this good enough for MY site."
+
+🧠 **Problem definition**
+
+Cline is great at solving problems, but I define:
+- What problems need solving
+- What features would improve the site
+- What's worth the time investment
+- What's "good enough" vs "perfect"
 
 ### Learning vs Automating
 
-*Coming soon: Finding the balance*
+**The balance I've found:**
+
+**Learning Mode: When building something new**
+
+```
+Me: "I want to add X feature"
+Cline: *suggests approach*
+Me: "Explain how this works step by step"
+Cline: *detailed explanation*
+Me: *implements with understanding*
+```
+
+**Result:** I can now do similar things myself.
+
+**Automation Mode: When doing repetitive tasks**
+
+```
+Me: "Add the same front matter to these 5 posts"
+Cline: *does it quickly*
+```
+
+**Result:** Time saved on boring stuff.
+
+**The key difference:**
+
+**Learning:** "Help me understand HOW to do this"
+- Slower process
+- Ask lots of questions
+- Read the generated code
+- Modify it myself
+- Build capability
+
+**Automating:** "Just do this for me"
+- Faster process
+- Less questioning
+- Accept code as-is
+- Save time
+- Outsource known tasks
+
+**Example: Mermaid Diagrams**
+
+**First time (Learning):**
+```
+Me: "I want Mermaid support. How does it work?"
+Cline: *explains render hooks, shows code, walks through setup*
+Me: *asks clarifying questions, learns Hugo rendering system*
+Result: I understand render hooks now
+```
+
+**Subsequent use (Automating):**
+```
+Me: "Add syntax highlighting for code blocks"
+Cline: *creates render hook, I know what it's doing*
+Result: Quick implementation of known pattern
+```
+
+**When to learn vs automate:**
+
+**Learn when:**
+- It's a core skill you'll use often
+- You want to modify it later
+- It's foundational to your project
+- You're curious how it works
+- It's a new concept
+
+**Automate when:**
+- It's repetitive/boring
+- You understand the concept already
+- Time is limited
+- The task is well-defined
+- You won't need to modify it
+
+**My personal rule:**
+
+> "If I'll need to change this later, I should understand how it works."
+
+**Real example:**
+
+**Homepage layout:** LEARNED
+- Will tweak frequently
+- Core to site identity
+- Need to understand Hugo templating
+
+**Git hooks for commit messages:** AUTOMATED
+- Set once, forget
+- Standard practice
+- Not changing this
+
+**The long-term goal:**
+
+Start with learning, graduate to automation.
+
+**Month 1:** "Explain everything"  
+**Month 2:** "I understand the pattern, just implement it"  
+**Month 3:** "I can do this myself, AI helps with edge cases"
+
+**Current status (Month 1):**
+- Still learning fundamental concepts
+- Ask lots of "why" questions
+- Review all generated code
+- Test everything manually
+
+**Building capability, not just a website.**
+
+### The AI Collaboration Reality
+
+**What it's ACTUALLY like:**
+
+**Not:** "AI does everything while I watch"  
+**Actually:** "AI accelerates my learning and building"
+
+**Not:** "I don't need to understand anything"  
+**Actually:** "I understand MORE because AI explains context"
+
+**Not:** "Copy-paste code without thinking"  
+**Actually:** "Review, understand, modify, learn"
+
+**Not:** "AI replaces web development skills"  
+**Actually:** "AI IS PART OF web development skills now"
+
+**The truth:**
+
+Building with AI assistance is still **hard work**. But it's:
+- Faster than learning alone
+- Less frustrating (get unstuck quickly)
+- More exploratory (try things without fear)
+- Better learning (contextual explanations)
+
+**I'm not learning LESS. I'm learning DIFFERENTLY.**
+
+**Traditional learning:**
+- Read docs → Try it → Debug for hours → Give up → Try again → Eventually works
+
+**AI-assisted learning:**
+- Ask AI to explain → Try it → AI helps debug → Understand faster → Works sooner
+
+**The skillset I'm actually building:**
+
+1. ✅ **How to ask good questions** ("Make it work" vs "Explain how this achieves X")
+2. ✅ **How to evaluate code** (Does this match my needs? Is it maintainable?)
+3. ✅ **How to integrate solutions** (Adapting AI suggestions to my context)
+4. ✅ **Web development concepts** (Hugo, Git, HTML/CSS, JavaScript)
+5. ✅ **Debugging** (AI explains, but I test and verify)
+6. ✅ **System thinking** (How pieces fit together)
+
+**These are REAL skills.**
+
+**The "cheating" concern:**
+
+Is it "cheating" to use AI? 
+
+**My take:** Is it cheating to use Stack Overflow? Google? Documentation? 
+
+AI is a tool. The question is: **Am I learning or just copying?**
+
+**I'm learning.**
+
+Evidence:
+- I can now modify code myself
+- I understand Hugo's structure
+- I can debug basic issues
+- I can explain concepts to others
+- I'm writing this documentation!
+
+**This site exists. I built it. AI helped.**
+
+That's the reality of modern web development.
 
 </details>
 
@@ -1704,15 +2993,541 @@ Before every deploy:
 
 ### Essential Links
 
-*Coming soon: Organized resource list*
+**Official Documentation:**
+
+- **[Hugo Documentation](https://gohugo.io/documentation/)** - The official docs (dense but comprehensive)
+- **[Hugo Forum](https://discourse.gohugo.io/)** - Community help and discussions
+- **[Hugo GitHub](https://github.com/gohugoio/hugo)** - Source code and issue tracker
+
+**My Theme:**
+
+- **[Archie Theme](https://github.com/athul/archie)** - The minimal theme I use
+- **[Hugo Themes Gallery](https://themes.gohugo.io/)** - Browse other themes
+
+**Git & GitHub:**
+
+- **[Git Documentation](https://git-scm.com/doc)** - Official Git docs
+- **[GitHub Pages Docs](https://docs.github.com/en/pages)** - How to deploy on GitHub Pages
+- **[GitHub Actions Docs](https://docs.github.com/en/actions)** - For automated deployments
+
+**Markdown:**
+
+- **[Markdown Guide](https://www.markdownguide.org/)** - Complete Markdown reference
+- **[GitHub Flavored Markdown](https://github.github.com/gfm/)** - Extended Markdown syntax
+
+**Mermaid Diagrams:**
+
+- **[Mermaid Documentation](https://mermaid.js.org/)** - Official Mermaid docs
+- **[Mermaid Live Editor](https://mermaid.live/)** - Test diagrams before adding to site
+- **[Mermaid Examples](https://mermaid.js.org/ecosystem/integrations.html)** - Integration examples
+
+**CSS & Design:**
+
+- **[MDN Web Docs - CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)** - Comprehensive CSS reference
+- **[CSS Tricks](https://css-tricks.com/)** - Tutorials and guides
+- **[Can I Use](https://caniuse.com/)** - Browser compatibility checker
+- **[Color Contrast Checker](https://webaim.org/resources/contrastchecker/)** - Accessibility tool
+
+**Web Development:**
+
+- **[MDN Web Docs](https://developer.mozilla.org/)** - Best web development reference
+- **[W3Schools](https://www.w3schools.com/)** - Tutorials and examples
+- **[Web.dev](https://web.dev/)** - Google's web development resources
+
+**AI Tools I Use:**
+
+- **[Cline](https://github.com/cline/cline)** - AI coding assistant for VS Code
+- **[Claude](https://claude.ai/)** - AI for explanations and learning
+- **[ChatGPT](https://chat.openai.com/)** - Alternative AI assistant
+
+**Performance & SEO:**
+
+- **[Lighthouse](https://developers.google.com/web/tools/lighthouse)** - Audit tool (built into Chrome)
+- **[Google Search Console](https://search.google.com/search-console)** - SEO monitoring
+- **[PageSpeed Insights](https://pagespeed.web.dev/)** - Performance testing
+
+**Tools:**
+
+- **[VS Code](https://code.visualstudio.com/)** - My code editor
+- **[Git](https://git-scm.com/)** - Version control
+- **[Chrome DevTools](https://developer.chrome.com/docs/devtools/)** - Browser debugging
 
 ### Code Snippets Library
 
-*Coming soon: Reusable code I use often*
+**Reusable snippets I use frequently:**
+
+#### Hugo Templating
+
+**Loop through recent posts:**
+```html
+{{ $recentPosts := first 3 (where .Site.RegularPages "Type" "posts") }}
+{{ range $recentPosts }}
+  <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+  <time>{{ dateFormat ":date_medium" .Date }}</time>
+{{ end }}
+```
+
+**Conditional content:**
+```html
+{{ if .Description }}
+  {{ .Description }}
+{{ else }}
+  {{ .Summary }}
+{{ end }}
+```
+
+**Filter by parameter:**
+```html
+{{ $featured := where .Site.RegularPages "Params.featured" true }}
+```
+
+**Safe HTML output:**
+```html
+{{ .Content | safeHTML }}
+```
+
+#### Front Matter Templates
+
+**Blog post:**
+```yaml
+---
+title: "Post Title"
+date: 2025-01-15
+draft: false
+description: "SEO description (150-160 chars)"
+tags: ["tag1", "tag2"]
+---
+```
+
+**Project page:**
+```yaml
+---
+title: "Project Name"
+date: 2025-01-10
+description: "Project description"
+featured: true
+weight: 1
+---
+```
+
+#### Git Commands
+
+**Daily workflow:**
+```bash
+# Check status
+git status
+
+# Stage all changes
+git add -A
+
+# Commit with message
+git commit -m "Descriptive message"
+
+# Push to GitHub
+git push origin main
+```
+
+**Undo last commit (keep changes):**
+```bash
+git reset --soft HEAD~1
+```
+
+**Discard all local changes:**
+```bash
+git reset --hard
+```
+
+**View commit history:**
+```bash
+git log --oneline -n 10
+```
+
+#### CSS Snippets
+
+**Hot pink accents:**
+```css
+:root {
+  --hot-pink: #ff1493;
+  --hot-pink-light: #ff69b4;
+}
+
+a:hover {
+  color: var(--hot-pink);
+}
+```
+
+**Responsive breakpoint:**
+```css
+@media (max-width: 768px) {
+  /* Mobile styles */
+}
+```
+
+**Flexbox centering:**
+```css
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+```
+
+**Fluid images:**
+```css
+img {
+  max-width: 100%;
+  height: auto;
+}
+```
+
+#### Markdown Tricks
+
+**Image with class:**
+```markdown
+![Alt text](/images/photo.jpg){.custom-class}
+```
+
+**Code block with syntax highlighting:**
+````markdown
+```javascript
+const greeting = "Hello, world!";
+console.log(greeting);
+```
+````
+
+**Mermaid diagram:**
+````markdown
+```mermaid
+graph TD
+    A[Start] --> B[End]
+```
+````
+
+**Blockquote:**
+```markdown
+> This is a quote
+```
 
 ### Learning Path
 
-*Coming soon: Recommended learning sequence*
+**My recommended sequence for learning Hugo:**
+
+#### Week 1: Fundamentals
+
+**Day 1-2: Setup & First Site**
+- [ ] Install Hugo
+- [ ] Choose a theme
+- [ ] Create first post
+- [ ] Understand front matter
+- [ ] Run `hugo server` locally
+
+**Resources:**
+- [Hugo Quick Start](https://gohugo.io/getting-started/quick-start/)
+- Pick a simple theme from [Hugo Themes](https://themes.gohugo.io/)
+
+**Day 3-4: Directory Structure**
+- [ ] Understand `content/` organization
+- [ ] Learn about `static/` folder
+- [ ] Explore `layouts/` purpose
+- [ ] Read about Hugo's build process
+
+**Resources:**
+- [Hugo Directory Structure](https://gohugo.io/getting-started/directory-structure/)
+- This documentation page (Hugo Fundamentals section)
+
+**Day 5-7: Content Creation**
+- [ ] Write several blog posts
+- [ ] Add images
+- [ ] Organize content into sections
+- [ ] Experiment with front matter
+
+**Resources:**
+- [Content Organization](https://gohugo.io/content-management/organization/)
+- [Markdown Guide](https://www.markdownguide.org/)
+
+#### Week 2: Git & Deployment
+
+**Day 8-10: Git Basics**
+- [ ] Initialize Git repository
+- [ ] Make first commit
+- [ ] Create GitHub repository
+- [ ] Push to GitHub
+- [ ] Understand basic Git workflow
+
+**Resources:**
+- [Git Documentation](https://git-scm.com/doc)
+- [GitHub Guides](https://guides.github.com/)
+
+**Day 11-14: GitHub Pages Deployment**
+- [ ] Configure `hugo.toml` for deployment
+- [ ] Build site with `hugo`
+- [ ] Deploy to GitHub Pages
+- [ ] Troubleshoot deployment issues
+- [ ] Set up reliable deploy workflow
+
+**Resources:**
+- [Hugo on GitHub Pages](https://gohugo.io/hosting-and-deployment/hosting-on-github/)
+- This documentation (Deployment & Workflow section)
+
+#### Week 3: Customization
+
+**Day 15-17: Theme Understanding**
+- [ ] Explore theme files (don't edit yet!)
+- [ ] Understand override system
+- [ ] Create first override in `layouts/`
+- [ ] Customize CSS
+
+**Resources:**
+- [Hugo Templates](https://gohugo.io/templates/)
+- This documentation (Customization Deep Dives section)
+
+**Day 18-21: Custom Features**
+- [ ] Create a shortcode
+- [ ] Customize homepage
+- [ ] Add custom CSS styling
+- [ ] Make site mobile responsive
+
+**Resources:**
+- [Shortcodes](https://gohugo.io/content-management/shortcodes/)
+- [Template Functions](https://gohugo.io/functions/)
+
+#### Week 4: Advanced Topics
+
+**Day 22-24: Advanced Customization**
+- [ ] Hugo templating (variables, conditionals, loops)
+- [ ] Partials and layouts
+- [ ] Custom list pages
+- [ ] Advanced CSS
+
+**Resources:**
+- [Hugo Template Intro](https://gohugo.io/templates/introduction/)
+- [Go Template Primer](https://gohugo.io/templates/template-primer/)
+
+**Day 25-28: Performance & SEO**
+- [ ] Optimize images
+- [ ] Add SEO meta tags
+- [ ] Test with Lighthouse
+- [ ] Set up analytics (optional)
+- [ ] Submit to search engines
+
+**Resources:**
+- [SEO Best Practices](https://moz.com/beginners-guide-to-seo)
+- This documentation (Troubleshooting & Tips section)
+
+#### Beyond: Continuous Improvement
+
+**Ongoing:**
+- [ ] Write regular content
+- [ ] Experiment with new features
+- [ ] Keep theme updated
+- [ ] Monitor site performance
+- [ ] Learn from other Hugo sites
+
+**Advanced Topics (when ready):**
+- [ ] Custom taxonomies
+- [ ] Multilingual sites
+- [ ] Data-driven content
+- [ ] Custom output formats
+- [ ] Build process automation
+
+### Quick Reference Cards
+
+**Hugo Build Commands:**
+```bash
+hugo                    # Build site
+hugo server             # Local dev server
+hugo server -D          # Include drafts
+hugo --minify          # Minified output
+hugo new posts/my-post.md  # New post
+hugo list all          # List all content
+```
+
+**Git Essentials:**
+```bash
+git status             # Check status
+git add -A             # Stage all
+git commit -m "msg"    # Commit
+git push origin main   # Deploy
+git pull origin main   # Get updates
+git log --oneline -n 5 # Recent commits
+```
+
+**File Paths in Hugo:**
+```
+/images/photo.jpg           → Absolute (use this!)
+images/photo.jpg            → Relative (avoid)
+{{ "css/custom.css" | relURL }}  → Hugo function
+```
+
+**Front Matter Quick Reference:**
+```yaml
+title:       "Required - Page title"
+date:        "Required - Publish date"
+draft:       false/true
+description: "SEO description"
+tags:        ["tag1", "tag2"]
+weight:      1  # Lower = first in lists
+```
+
+### My Personal Workflow Checklist
+
+**Before starting work:**
+- [ ] `git pull origin main` (get latest)
+- [ ] `hugo server` (start dev server)
+- [ ] Open in browser: `localhost:1313`
+
+**While working:**
+- [ ] Make changes, save files
+- [ ] Check live reload in browser
+- [ ] Test on mobile (DevTools)
+
+**Before deploying:**
+- [ ] `hugo` (build site)
+- [ ] Check for errors
+- [ ] Review `git status`
+- [ ] Test locally one more time
+
+**Deploying:**
+- [ ] `git add -A`
+- [ ] `git commit -m "Clear message"`
+- [ ] `git push origin main`
+- [ ] Wait 2-3 minutes
+- [ ] Hard refresh browser (`Ctrl+Shift+R`)
+- [ ] Check live site
+
+**Troubleshooting checklist:**
+- [ ] Check browser console for errors
+- [ ] Verify file paths (case-sensitive!)
+- [ ] Clear browser cache
+- [ ] Check Git commit went through
+- [ ] Verify `baseURL` in `hugo.toml`
+
+### Learning Resources by Topic
+
+**For absolute beginners:**
+- [Codecademy - Learn Git](https://www.codecademy.com/learn/learn-git)
+- [Markdown Tutorial](https://www.markdowntutorial.com/)
+- [HTML & CSS Basics](https://www.freecodecamp.org/learn)
+
+**For Hugo specifically:**
+- [Hugo Quick Start](https://gohugo.io/getting-started/quick-start/) - Official tutorial
+- [Hugo Forum](https://discourse.gohugo.io/) - Ask questions
+- [Mike Dane's Hugo Tutorial](https://www.youtube.com/watch?v=qtIqKaDlqXo&list=PLLAZ4kZ9dFpOnyRlyS-liKL5ReHDcj4G3) - Video series
+
+**For web development:**
+- [MDN Learn Web Development](https://developer.mozilla.org/en-US/docs/Learn)
+- [CSS Tricks](https://css-tricks.com/) - Great CSS tutorials
+- [Web.dev Learn](https://web.dev/learn/) - Google's guides
+
+**For Git:**
+- [Pro Git Book](https://git-scm.com/book/en/v2) - Free, comprehensive
+- [GitHub Skills](https://skills.github.com/) - Interactive learning
+- [Oh Shit, Git!](https://ohshitgit.com/) - Fix common mistakes
+
+### Tools I Actually Use Daily
+
+**Essential:**
+- VS Code (code editor)
+- Chrome DevTools (testing/debugging)
+- Terminal (command line)
+- Git (version control)
+
+**Helpful:**
+- Mermaid Live Editor (diagram testing)
+- Color picker (Chrome extension)
+- Markdown preview (VS Code extension)
+- Cline (AI assistant - VS Code extension)
+
+**For design:**
+- Canva (graphics)
+- Coolors (color palettes)
+- Google Fonts (typography)
+
+### When You Get Stuck
+
+**Checklist for problem-solving:**
+
+1. **Read the error message carefully**
+   - What file is it complaining about?
+   - What line number?
+   - What's the actual error?
+
+2. **Check recent changes**
+   - `git diff` to see what changed
+   - Can you undo the last change?
+
+3. **Search for the error**
+   - Copy exact error message
+   - Search Hugo forum
+   - Search Stack Overflow
+
+4. **Ask for help**
+   - Hugo forum (be specific!)
+   - AI assistant (paste error + context)
+   - GitHub Issues (if it's a bug)
+
+5. **Take a break**
+   - Sometimes fresh eyes help
+   - Sleep on it
+
+**Common "I'm stuck" scenarios:**
+
+**"I changed something and now nothing works"**
+→ `git reset --hard` (reverts all changes)
+→ Start over with small, incremental changes
+
+**"My CSS isn't showing up"**
+→ Hard refresh browser (`Ctrl+Shift+R`)
+→ Check CSS is linked in template
+→ Inspect element to see what's overriding
+
+**"Git is confusing"**
+→ Start simple: add → commit → push
+→ Don't worry about branches yet
+→ Use a GUI like GitHub Desktop if needed
+
+**"Hugo documentation is too dense"**
+→ Ask AI to explain in simple terms
+→ Look for working examples
+→ Start with the basics, ignore advanced stuff
+
+### Final Tips
+
+**Things I wish I knew from the start:**
+
+1. **Start simple, add complexity later**
+   - Don't try to customize everything at once
+   - Get the basics working first
+
+2. **Commit often**
+   - Small commits are easier to undo
+   - Clear commit messages help future you
+
+3. **Test locally always**
+   - Never push without testing with `hugo server`
+   - Saves time and headaches
+
+4. **Case sensitivity matters**
+   - GitHub (Linux) is case-sensitive
+   - Your local machine might not be
+
+5. **Documentation is your friend**
+   - Even if it's dense, it's accurate
+   - AI can help explain it
+
+6. **Break things deliberately**
+   - Best way to learn is by fixing mistakes
+   - That's what Git is for!
+
+7. **Keep notes**
+   - Document problems you solved
+   - You WILL forget how you fixed things
+
+8. **One feature at a time**
+   - Don't add carousel + mermaid + custom CSS at once
+   - Add, test, commit, repeat
+
+**You've got this! 🚀**
 
 </details>
 
