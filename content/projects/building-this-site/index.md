@@ -368,19 +368,291 @@ dominatedbycline/
 
 ### How Hugo Actually Works
 
-*Coming soon: Detailed explanation with diagrams*
+**The Build Process:**
+
+Hugo is a **static site generator** - it takes your content (Markdown files) and templates (HTML layouts) and generates a complete static website.
+
+```
+┌─────────────┐       ┌─────────────┐       ┌─────────────┐
+│   Content   │       │   Layouts   │       │   Static    │
+│  (Markdown) │   +   │    (HTML)   │   =   │    Site     │
+│             │       │             │       │   (HTML)    │
+└─────────────┘       └─────────────┘       └─────────────┘
+```
+
+**Step-by-step:**
+
+1. **You write** Markdown files in `content/`
+2. **Hugo reads** the front matter (metadata at top of file)
+3. **Hugo applies** the appropriate layout template from `layouts/` or `themes/`
+4. **Hugo generates** HTML files in `public/`
+5. **You deploy** the `public/` folder to a web server (e.g., GitHub Pages)
+
+**Why it's fast:**
+- No database queries
+- No server-side processing
+- Pure HTML files served directly
+- Everything is pre-built
 
 ### Directory Structure Deep Dive
 
-*Coming soon: Visual breakdown of each folder*
+**Your Hugo site structure:**
+
+```
+your-site/
+├── archetypes/       # Templates for new content
+│   └── default.md
+├── assets/           # Files to be processed (SCSS, JS)
+│   └── css/
+├── content/          # YOUR CONTENT (Markdown files)
+│   ├── posts/        # Blog posts
+│   ├── projects/     # Project pages
+│   └── about.md      # Single pages
+├── data/             # Data files (JSON, YAML, TOML)
+├── layouts/          # YOUR CUSTOM TEMPLATES
+│   ├── _default/     # Default templates
+│   │   ├── baseof.html    # Base template (wraps everything)
+│   │   ├── single.html    # Individual page template
+│   │   └── list.html      # List page template
+│   ├── partials/     # Reusable components
+│   │   ├── head.html
+│   │   ├── header.html
+│   │   └── footer.html
+│   └── shortcodes/   # Custom content snippets
+│       └── mermaid.html
+├── static/           # Static files (copied as-is)
+│   ├── images/
+│   ├── videos/
+│   └── favicon.ico
+├── themes/           # Theme files (don't edit directly!)
+│   └── archie/
+├── hugo.toml         # Site configuration
+└── public/           # GENERATED SITE (don't edit!)
+```
+
+**Key folders explained:**
+
+**`content/`** - Where you write
+- Organize by section (`posts/`, `projects/`)
+- File structure = URL structure
+- `content/posts/my-post.md` → `/posts/my-post/`
+- `_index.md` creates section landing pages
+
+**`layouts/`** - How it looks
+- Overrides theme templates
+- Hugo looks here FIRST, then in `themes/`
+- Use this to customize without editing theme
+
+**`static/`** - Files copied directly
+- No processing, just copied to `public/`
+- Reference as `/images/photo.jpg` in your content
+
+**`public/`** - Generated output
+- **DO NOT EDIT** - regenerated every build
+- This is what gets deployed
+- Usually in `.gitignore`
 
 ### Front Matter Guide
 
-*Coming soon: Examples and use cases*
+**What is Front Matter?**
+
+The metadata section at the top of your Markdown files, enclosed in `---`:
+
+```yaml
+---
+title: "My Awesome Post"
+date: 2025-01-15
+draft: false
+tags: ["hugo", "web-dev"]
+---
+
+# Your content starts here...
+```
+
+**Essential Fields:**
+
+```yaml
+---
+title: "Post Title"           # Required - page title
+date: 2025-01-15              # Required - publish date
+draft: false                  # false = visible, true = hidden
+description: "Meta desc"      # SEO description
+tags: ["tag1", "tag2"]        # Categories/tags
+weight: 10                    # Order in lists (lower = first)
+---
+```
+
+**Common Use Cases:**
+
+**Blog post:**
+```yaml
+---
+title: "Building with Hugo"
+date: 2025-01-15
+draft: false
+tags: ["hugo", "tutorial"]
+author: "Your Name"
+description: "Learn to build sites with Hugo"
+---
+```
+
+**Project page:**
+```yaml
+---
+title: "My Project"
+date: 2025-01-10
+description: "Project description"
+featured: true
+weight: 1
+---
+```
+
+**About page:**
+```yaml
+---
+title: "About"
+date: 2025-01-01
+menu: "main"          # Adds to navigation
+---
+```
+
+**Front Matter Formats:**
+
+Hugo supports three formats:
+
+**YAML (most common):**
+```yaml
+---
+title: "Post Title"
+tags: ["tag1", "tag2"]
+---
+```
+
+**TOML:**
+```toml
++++
+title = "Post Title"
+tags = ["tag1", "tag2"]
++++
+```
+
+**JSON:**
+```json
+{
+  "title": "Post Title",
+  "tags": ["tag1", "tag2"]
+}
+```
+
+**Pro Tips:**
+
+- Use `draft: true` while writing (won't show in production)
+- `date` determines order in lists
+- `weight` for manual ordering
+- Custom fields work too! (e.g., `featured: true`)
 
 ### Content Organization
 
-*Coming soon: How to structure posts, projects, pages*
+**How to structure your content:**
+
+**1. Section-based organization:**
+
+```
+content/
+├── posts/           # Blog posts
+│   ├── _index.md    # /posts/ landing page
+│   ├── post-1.md    # /posts/post-1/
+│   └── post-2.md    # /posts/post-2/
+├── projects/        # Projects section
+│   ├── _index.md    # /projects/ landing page
+│   ├── project-a/   # Bundle (folder)
+│   │   ├── index.md
+│   │   └── image.jpg
+│   └── project-b.md
+└── about.md         # Single page at /about/
+```
+
+**2. URL structure:**
+
+File path determines URL:
+- `content/posts/hello.md` → `/posts/hello/`
+- `content/about.md` → `/about/`
+- `content/projects/site/index.md` → `/projects/site/`
+
+**3. Page bundles:**
+
+Keep related files together:
+
+```
+content/posts/my-post/
+├── index.md         # The post
+├── image1.jpg       # Referenced as just "image1.jpg"
+└── diagram.png      # No need for full paths!
+```
+
+In `index.md`:
+```markdown
+![Diagram](diagram.png)  ← Simple reference!
+```
+
+**4. Section landing pages (`_index.md`):**
+
+Create a page that lists all items in a section:
+
+```
+content/posts/_index.md
+---
+title: "All Posts"
+---
+
+Here are all my blog posts!
+```
+
+Hugo automatically lists all posts below this.
+
+**5. Best practices:**
+
+✅ **DO:**
+- Use descriptive filenames (`hugo-tutorial.md` not `post1.md`)
+- Organize by section/category
+- Use bundles for posts with images
+- Keep URLs clean and readable
+
+❌ **DON'T:**
+- Put everything in root `content/`
+- Use spaces in filenames
+- Reference images with absolute paths
+- Manually create index pages (use `_index.md`)
+
+**6. Example structure for this site:**
+
+```
+content/
+├── posts/              # Blog posts
+│   ├── _index.md
+│   ├── 2025-01-13-welcome.md
+│   ├── 2025-01-14-ai-creativity.md
+│   └── ...
+├── projects/           # Project showcases
+│   ├── _index.md
+│   ├── artifactum/
+│   │   ├── _index.md
+│   │   └── murder-mystery-1926/
+│   │       └── index.md
+│   ├── building-this-site/
+│   │   └── index.md
+│   └── job-search/
+│       ├── _index.md
+│       └── report.md
+└── about.md            # About page
+```
+
+**This structure creates:**
+- `/` - Home
+- `/posts/` - Blog listing
+- `/projects/` - Projects listing
+- `/projects/building-this-site/` - This page!
+- `/about/` - About page
 
 </details>
 
