@@ -113,7 +113,7 @@
 	{{- end }}
 
 	<!-- GoatCounter Analytics -->
-	{{- if and .Site.Params.goatCounter (not .Site.IsServer) }}
+	{{- if and .Site.Params.goatCounter (not hugo.IsServer) }}
 	<script data-goatcounter="https://{{ .Site.Params.goatCounter }}.goatcounter.com/count"
 	        async src="//gc.zgo.at/count.js"></script>
 	{{- end }}
