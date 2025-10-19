@@ -1,7 +1,7 @@
 ---
 title: "11 Characters, One Murder: AI-Assisted Character Development"
 date: 2024-10-15
-draft: true
+draft: false
 tags: ["artifactum", "murder-mystery", "ai-tools", "game-design", "workflow", "claude"]
 description: "How I built 11 interconnected characters with secret relationships, consistent backstories, and plot threads that weave through 100+ pages of game content."
 ---
