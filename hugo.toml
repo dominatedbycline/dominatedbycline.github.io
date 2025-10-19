@@ -24,7 +24,7 @@ pygmentsCodeFencesGuessSyntax = true
   mode = "auto"  # color-mode: light, dark, toggle, or auto
   useCDN = false  # serve fonts/icons locally
   subtitle = "Building ridiculous projects with AI assistance (and documenting every weird decision)"
-  customCSS = ["css/custom.css", "css/code-copy.css", "css/reading-progress.css", "css/back-to-top.css", "css/print.css"]
+  customCSS = ["css/custom.css", "css/code-copy.css", "css/reading-progress.css", "css/back-to-top.css", "css/print.css", "css/dark-mode-toggle.css"]
 
   # Math support (optional)
   mathjax = false
@@ -38,7 +38,7 @@ pygmentsCodeFencesGuessSyntax = true
   description = "Building ridiculous projects with AI assistance"
 
   # Custom JS
-  customJS = ["js/code-copy.js", "js/reading-progress.js", "js/back-to-top.js", "js/keyboard-shortcuts.js"]
+  customJS = ["js/code-copy.js", "js/reading-progress.js", "js/back-to-top.js", "js/keyboard-shortcuts.js", "js/dark-mode-toggle.js", "js/image-lightbox.js"]
 
   # Analytics - GoatCounter (privacy-friendly, free, open source)
   # Sign up at https://goatcounter.com (FREE!)
@@ -90,3 +90,13 @@ pygmentsCodeFencesGuessSyntax = true
   name = "About"
   url = "/about"
   weight = 6
+
+[[menu.main]]
+  name = "Uses"
+  url = "/uses"
+  weight = 7
+
+[[menu.main]]
+  name = "Now"
+  url = "/now"
+  weight = 8

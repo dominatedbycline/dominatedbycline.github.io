@@ -1,0 +1,30 @@
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  {{ range .Data.Pages }}
+  {{- if not .Params.private -}}
+  <url>
+    <loc>{{ .Permalink }}</loc>
+    {{ if not .Lastmod.IsZero }}
+    <lastmod>{{ .Lastmod.Format "2006-01-02T15:04:05-07:00" | safeHTML }}</lastmod>{{ end }}
+    {{- with .Sitemap.ChangeFreq }}
+    <changefreq>{{ . }}</changefreq>{{ end }}
+    {{- if .IsHome }}
+    <priority>1.0</priority>
+    {{- else if eq .Type "guides" }}
+    <priority>0.9</priority>
+    {{- else if eq .Type "posts" }}
+    <priority>0.8</priority>
+    {{- else if or (eq .Title "About") (eq .Title "Uses") (eq .Title "Now") }}
+    <priority>0.7</priority>
+    {{- else if eq .Kind "section" }}
+    <priority>0.6</priority>
+    {{- else if eq .Kind "taxonomy" }}
+    <priority>0.5</priority>
+    {{- else }}
+    <priority>0.5</priority>
+    {{- end }}
+  </url>
+  {{- end -}}
+  {{ end }}
+</urlset>

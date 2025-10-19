@@ -1,0 +1,43 @@
+/* Dark mode toggle button */
+.dark-mode-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: 2px solid #ddd;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dark-mode-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Dark mode styles for the toggle itself */
+@media (prefers-color-scheme: dark) {
+  .dark-mode-toggle {
+    background: rgba(0, 0, 0, 0.9);
+    border-color: #444;
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .dark-mode-toggle {
+    top: 0.75rem;
+    right: 0.75rem;
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+}
