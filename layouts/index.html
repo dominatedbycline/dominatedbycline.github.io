@@ -4,11 +4,11 @@
 	<body>
 		<div class="content">
 		{{ partial "head.html" . }}
-		
+
 	<div class="hero-tagline">
 		See how I use AI to make cool shit
 	</div>
-	
+
 	<main class="list">
 	<!-- Hero Section -->
 	<section class="hero-section">
@@ -17,13 +17,13 @@
 				Marilu
 			</h1>
 			<p style="margin-top: 0; line-height: 1.6;">
-				I'm learning to code and build things with heavy AI assistance. 
-				This site documents my experiments—from murder mystery games to web development—showing 
+				I'm learning to code and build things with heavy AI assistance.
+				This site documents my experiments—from murder mystery games to web development—showing
 				what's possible when you combine curiosity, AI tools, and stubborn determination.
 			</p>
 			<p style="margin-top: 0.75rem; line-height: 1.6; color: #666;">
-				<strong>What you'll find here:</strong> Project breakdowns, honest learning logs, 
-				AI collaboration insights, and proof that you don't need to be a "real developer" 
+				<strong>What you'll find here:</strong> Project breakdowns, honest learning logs,
+				AI collaboration insights, and proof that you don't need to be a "real developer"
 				to ship creative work.
 			</p>
 			<p style="margin-top: 0.75rem; line-height: 1.6;">
@@ -35,48 +35,295 @@
 		</div>
 	</section>
 
-			<!-- Featured Project Section -->
-			<section class="featured-project">
-				<h2>Featured Project</h2>
+	<!-- Featured Guides Section -->
+	<section class="featured-guides">
+		<h2>Start Here: Beginner Guides</h2>
+		<div class="guides-grid">
+			<div class="guide-card">
+				<div class="guide-number">Part 1</div>
+				<h3><a href="/guides/getting-started/">Getting Started</a></h3>
+				<p>From zero to first project. Setup Claude Code, understand the tools, and fix common problems.</p>
+				<div class="guide-tags">
+					<span>Setup</span>
+					<span>Installation</span>
+					<span>Troubleshooting</span>
+				</div>
+			</div>
+			<div class="guide-card">
+				<div class="guide-number">Part 2</div>
+				<h3><a href="/guides/building-real-projects/">Building Real Projects</a></h3>
+				<p>How to actually build with AI. Real examples, honest truths, and the ADHD perspective.</p>
+				<div class="guide-tags">
+					<span>Workflow</span>
+					<span>Real Projects</span>
+					<span>AI Reality</span>
+				</div>
+			</div>
+		</div>
+		<div class="guides-cta">
+			<a href="/guides/">View all guides →</a>
+		</div>
+	</section>
+
+	<!-- Featured Project Section -->
+	<section class="featured-project">
+		<h2>Featured Project</h2>
 		<div class="project-card">
 			<h3>Artifactum Mystery Crimes</h3>
 			<p class="project-subtitle">Christmas Murder Mystery 1926</p>
 			<div class="project-teaser">
-					<video width="100%" style="max-width: 500px; border-radius: 8px; margin: 1rem auto; display: block;" controls>
-						<source src="/videos/teaser.mp4" type="video/mp4">
-						Your browser does not support the video tag.
-					</video>
-				</div>
-		<p>An interactive murder mystery set in 1926. Solve the crime using AI-generated clues, characters, and plot twists. My first complete AI game project.</p>
-		<a href="/projects/artifactum/" class="project-cta">Explore this project →</a>
-	</div>
-			</section>
-
-				<!-- Latest Updates Section -->
-				<section class="latest-updates">
-					<h2>Latest Updates</h2>
-					{{ $recentPosts := first 3 (where .Site.RegularPages "Type" "posts") }}
-					{{ range $recentPosts }}
-					<article class="update-item">
-						<h3 class="title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
-						<time>{{ dateFormat ":date_medium" .Date }}</time>
-						<p class="excerpt">
-							{{ if .Description }}
-								{{ .Description | truncate 100 }}
-							{{ else }}
-								{{ .Summary | plainify | truncate 100 }}
-							{{ end }}
-						</p>
-					</article>
-					{{ end }}
-					<div class="see-all">
-						<a href="/posts">See all posts →</a>
-					</div>
-				</section>
-
-			</main>
-			{{ partial "footer.html" . }}
+				<video width="100%" style="max-width: 500px; border-radius: 8px; margin: 1rem auto; display: block;" controls>
+					<source src="/videos/teaser.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+				</video>
+			</div>
+			<p>An interactive murder mystery set in 1926. Solve the crime using AI-generated clues, characters, and plot twists. My first complete AI game project.</p>
+			<a href="/projects/artifactum/" class="project-cta">Explore this project →</a>
 		</div>
-		
+	</section>
+
+	<!-- Latest Updates Section -->
+	<section class="latest-updates">
+		<h2>Latest Posts</h2>
+		{{ $recentPosts := first 5 (where .Site.RegularPages "Type" "posts") }}
+		<div class="posts-grid">
+			{{ range $recentPosts }}
+			<article class="post-card">
+				<h3 class="title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+				<div class="post-meta">
+					<time>{{ dateFormat ":date_medium" .Date }}</time>
+					{{ if .ReadingTime }} • {{ .ReadingTime }} min read{{ end }}
+				</div>
+				<p class="excerpt">
+					{{ if .Description }}
+						{{ .Description | truncate 150 }}
+					{{ else }}
+						{{ .Summary | plainify | truncate 150 }}
+					{{ end }}
+				</p>
+				{{ if .Params.tags }}
+				<div class="post-tags-preview">
+					{{ range first 3 .Params.tags }}
+					<span class="tag">{{ . }}</span>
+					{{ end }}
+				</div>
+				{{ end }}
+			</article>
+			{{ end }}
+		</div>
+		<div class="see-all">
+			<a href="/posts">See all posts →</a>
+		</div>
+	</section>
+
+	</main>
+	{{ partial "footer.html" . }}
+	</div>
+
 	</body>
 </html>
+
+<style>
+/* Featured Guides Section */
+.featured-guides {
+	margin: 3rem 0;
+	padding: 2rem;
+	background: #f8f9fa;
+	border-radius: 12px;
+}
+
+.featured-guides h2 {
+	margin-top: 0;
+	margin-bottom: 1.5rem;
+	text-align: center;
+}
+
+.guides-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 1.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.guide-card {
+	background: white;
+	border: 2px solid #e0e0e0;
+	border-radius: 8px;
+	padding: 1.5rem;
+	transition: all 0.3s;
+}
+
+.guide-card:hover {
+	border-color: #0066cc;
+	box-shadow: 0 4px 12px rgba(0, 102, 204, 0.15);
+	transform: translateY(-2px);
+}
+
+.guide-number {
+	display: inline-block;
+	background: #0066cc;
+	color: white;
+	padding: 0.25rem 0.75rem;
+	border-radius: 4px;
+	font-size: 0.75rem;
+	font-weight: bold;
+	margin-bottom: 0.75rem;
+}
+
+.guide-card h3 {
+	margin: 0 0 0.75rem;
+	font-size: 1.3rem;
+}
+
+.guide-card h3 a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.guide-card h3 a:hover {
+	color: #0066cc;
+}
+
+.guide-card p {
+	margin: 0 0 1rem;
+	color: #555;
+	line-height: 1.6;
+}
+
+.guide-tags {
+	display: flex;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+}
+
+.guide-tags span {
+	font-size: 0.75rem;
+	padding: 0.25rem 0.6rem;
+	background: #e8f4ff;
+	color: #0066cc;
+	border-radius: 3px;
+	font-weight: 500;
+}
+
+.guides-cta {
+	text-align: center;
+	margin-top: 1.5rem;
+}
+
+.guides-cta a {
+	font-weight: 600;
+	color: #0066cc;
+	text-decoration: none;
+}
+
+.guides-cta a:hover {
+	text-decoration: underline;
+}
+
+/* Improve Posts Grid */
+.posts-grid {
+	display: grid;
+	gap: 1.5rem;
+}
+
+.post-card {
+	padding: 1.5rem;
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+	transition: all 0.2s;
+}
+
+.post-card:hover {
+	border-color: #999;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.post-card .title {
+	margin: 0 0 0.5rem;
+}
+
+.post-card .title a {
+	text-decoration: none;
+	color: inherit;
+	font-size: 1.2rem;
+}
+
+.post-card .title a:hover {
+	color: #0066cc;
+}
+
+.post-meta {
+	font-size: 0.85rem;
+	color: #666;
+	margin-bottom: 0.75rem;
+}
+
+.post-card .excerpt {
+	margin: 0 0 1rem;
+	color: #555;
+	line-height: 1.5;
+}
+
+.post-tags-preview {
+	display: flex;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+}
+
+.post-tags-preview .tag {
+	font-size: 0.75rem;
+	padding: 0.25rem 0.5rem;
+	background: #f0f0f0;
+	border-radius: 3px;
+	color: #666;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+	.featured-guides {
+		background: #1a1a1a;
+	}
+
+	.guide-card {
+		background: #0a0a0a;
+		border-color: #333;
+	}
+
+	.guide-card:hover {
+		border-color: #0066cc;
+		box-shadow: 0 4px 12px rgba(0, 102, 204, 0.3);
+	}
+
+	.guide-card p {
+		color: #aaa;
+	}
+
+	.guide-tags span {
+		background: #1a3a5a;
+		color: #6ba7ff;
+	}
+
+	.post-card {
+		border-color: #333;
+		background: #0a0a0a;
+	}
+
+	.post-card:hover {
+		border-color: #555;
+		box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+	}
+
+	.post-meta {
+		color: #999;
+	}
+
+	.post-card .excerpt {
+		color: #aaa;
+	}
+
+	.post-tags-preview .tag {
+		background: #2a2a2a;
+		color: #999;
+	}
+}
+</style>

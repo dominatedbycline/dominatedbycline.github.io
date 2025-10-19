@@ -329,6 +329,13 @@ details summary::-moz-details-marker {
 
 /* Mobile responsive - everything fits screen width on mobile */
 @media (max-width: 768px) {
+  /* Force white background on mobile */
+  body,
+  html,
+  .content {
+    background-color: #ffffff !important;
+  }
+
   .meme-img,
   .screenshot-img,
   .photo-img,

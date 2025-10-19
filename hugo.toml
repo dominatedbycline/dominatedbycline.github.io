@@ -3,6 +3,7 @@ languageCode = "en-us"
 title = "Dominated by Cline"
 theme = "archie"
 copyright = "© Maria Lu"
+enableRobotsTXT = true
 
 # Code Highlighting
 pygmentsStyle = "monokai"
@@ -23,11 +24,42 @@ pygmentsCodeFencesGuessSyntax = true
   mode = "auto"  # color-mode: light, dark, toggle, or auto
   useCDN = false  # serve fonts/icons locally
   subtitle = "Building ridiculous projects with AI assistance (and documenting every weird decision)"
-  customCSS = ["css/custom.css"]
-  
+  customCSS = ["css/custom.css", "css/code-copy.css"]
+
   # Math support (optional)
   mathjax = false
   katex = false
+
+  # RSS
+  rssLimit = 20
+
+  # Author info for SEO
+  author = "Maria Lu"
+  description = "Building ridiculous projects with AI assistance"
+
+  # Custom JS
+  customJS = ["js/code-copy.js"]
+
+  # Analytics - Choose one:
+  # Option 1: Plausible (privacy-friendly, recommended)
+  # Sign up at https://plausible.io/ and add your domain
+  # Then uncomment and add this to customJS:
+  # customJS = ["js/code-copy.js", "https://plausible.io/js/script.js"]
+  # And add: data-domain="your-domain.com" attribute
+  #
+  # Option 2: Google Analytics
+  # Uncomment the line below and add your GA4 ID:
+  # googleAnalytics = "G-XXXXXXXXXX"
+
+  # Giscus comments (GitHub Discussions)
+  # To enable: Go to https://giscus.app/ and fill in your repo details
+  # Then uncomment and fill these values:
+  # [params.giscus]
+  #   repo = "marialu1/dominatedbycline"  # your-username/your-repo
+  #   repoId = "YOUR_REPO_ID"  # get from giscus.app
+  #   category = "General"  # or "Announcements"
+  #   categoryId = "YOUR_CATEGORY_ID"  # get from giscus.app
+  #   theme = "preferred_color_scheme"  # or "light" or "dark"
 
 # Social links
 [[params.social]]
@@ -42,16 +74,26 @@ pygmentsCodeFencesGuessSyntax = true
   weight = 1
 
 [[menu.main]]
+  name = "Guides"
+  url = "/guides"
+  weight = 2
+
+[[menu.main]]
   name = "Projects"
   url = "/projects"
-  weight = 2
+  weight = 3
 
 [[menu.main]]
   name = "Blog"
   url = "/posts"
-  weight = 3
+  weight = 4
+
+[[menu.main]]
+  name = "Tags"
+  url = "/tags"
+  weight = 5
 
 [[menu.main]]
   name = "About"
   url = "/about"
-  weight = 4
+  weight = 6

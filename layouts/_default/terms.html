@@ -1,0 +1,191 @@
+{{ define "main" }}
+<main>
+  <div class="tags-page">
+    <h1>{{ .Title }}</h1>
+    <p class="subtitle">Browse all posts by topic</p>
+
+    <div class="tags-cloud">
+      {{ $maxCount := 0 }}
+      {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+        {{ if gt (len .Pages) $maxCount }}
+          {{ $maxCount = len .Pages }}
+        {{ end }}
+      {{ end }}
+      {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+        {{ $count := len .Pages }}
+        {{ $weight := 0 }}
+        {{ if gt $maxCount 0 }}
+          {{ $weight = div (mul $count 100) $maxCount }}
+        {{ end }}
+        <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}"
+           class="tag-item"
+           style="font-size: calc(0.9rem + {{ div $weight 10 }}%);"
+           title="{{ $count }} {{ cond (eq $count 1) "post" "posts" }}">
+          {{ $name }} <span class="tag-count">({{ $count }})</span>
+        </a>
+      {{ end }}
+    </div>
+
+    <hr>
+
+    <div class="tags-list">
+      {{ range $name, $taxonomy := .Site.Taxonomies.tags }}
+        <div class="tag-section">
+          <h2 id="{{ $name | urlize }}">
+            <a href="{{ "/tags/" | relLangURL }}{{ $name | urlize }}">{{ $name }}</a>
+            <span class="tag-count-header">({{ len .Pages }})</span>
+          </h2>
+          <ul>
+            {{ range .Pages }}
+              <li>
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                <span class="post-date">{{ .Date.Format "Jan 2, 2006" }}</span>
+              </li>
+            {{ end }}
+          </ul>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</main>
+
+<style>
+.tags-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+.tags-page h1 {
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.tags-cloud {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+  padding: 2rem;
+  background: #f8f8f8;
+  border-radius: 8px;
+}
+
+.tag-item {
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.tag-item:hover {
+  color: #0066cc;
+  transform: scale(1.05);
+}
+
+.tag-count {
+  font-size: 0.8em;
+  opacity: 0.7;
+}
+
+hr {
+  margin: 3rem 0;
+  border: none;
+  border-top: 1px solid #e0e0e0;
+}
+
+.tags-list {
+  display: grid;
+  gap: 2rem;
+}
+
+.tag-section h2 {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.tag-section h2 a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.tag-section h2 a:hover {
+  color: #0066cc;
+}
+
+.tag-count-header {
+  font-size: 1rem;
+  color: #666;
+  font-weight: normal;
+}
+
+.tag-section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tag-section li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.tag-section li:last-child {
+  border-bottom: none;
+}
+
+.tag-section li a {
+  text-decoration: none;
+  color: inherit;
+  flex: 1;
+}
+
+.tag-section li a:hover {
+  color: #0066cc;
+}
+
+.post-date {
+  font-size: 0.85rem;
+  color: #999;
+  white-space: nowrap;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .subtitle {
+    color: #999;
+  }
+
+  .tags-cloud {
+    background: #1a1a1a;
+  }
+
+  hr {
+    border-top-color: #333;
+  }
+
+  .tag-count-header {
+    color: #999;
+  }
+
+  .tag-section li {
+    border-bottom-color: #2a2a2a;
+  }
+
+  .post-date {
+    color: #666;
+  }
+}
+</style>
+{{ end }}

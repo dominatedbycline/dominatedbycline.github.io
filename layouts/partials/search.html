@@ -1,0 +1,214 @@
+<div class="search-container">
+  <input type="text" id="search-input" placeholder="Search posts and guides..." />
+  <div id="search-results"></div>
+</div>
+
+<script>
+// Simple client-side search
+const searchInput = document.getElementById('search-input');
+const searchResults = document.getElementById('search-results');
+
+// Build search index from page content
+const buildSearchIndex = () => {
+  const posts = [];
+  {{ range .Site.RegularPages }}
+  posts.push({
+    title: {{ .Title | jsonify }},
+    url: {{ .Permalink | jsonify }},
+    content: {{ .Plain | jsonify }},
+    description: {{ if .Description }}{{ .Description | jsonify }}{{ else }}""{{ end }},
+    tags: {{ .Params.tags | jsonify }},
+    date: {{ .Date.Format "2006-01-02" | jsonify }}
+  });
+  {{ end }}
+  return posts;
+};
+
+const searchIndex = buildSearchIndex();
+
+// Search function
+const search = (query) => {
+  if (!query || query.length < 2) {
+    searchResults.innerHTML = '';
+    searchResults.style.display = 'none';
+    return;
+  }
+
+  const lowerQuery = query.toLowerCase();
+  const results = searchIndex.filter(post => {
+    return post.title.toLowerCase().includes(lowerQuery) ||
+           post.content.toLowerCase().includes(lowerQuery) ||
+           post.description.toLowerCase().includes(lowerQuery) ||
+           (post.tags && post.tags.some(tag => tag.toLowerCase().includes(lowerQuery)));
+  }).slice(0, 8); // Limit to 8 results
+
+  if (results.length === 0) {
+    searchResults.innerHTML = '<div class="no-results">No results found</div>';
+    searchResults.style.display = 'block';
+    return;
+  }
+
+  const html = results.map(post => {
+    // Find matching snippet
+    const contentLower = post.content.toLowerCase();
+    const index = contentLower.indexOf(lowerQuery);
+    let snippet = '';
+    if (index !== -1) {
+      const start = Math.max(0, index - 50);
+      const end = Math.min(post.content.length, index + lowerQuery.length + 100);
+      snippet = '...' + post.content.substring(start, end) + '...';
+    } else {
+      snippet = post.description || post.content.substring(0, 150) + '...';
+    }
+
+    return `
+      <div class="search-result">
+        <a href="${post.url}">
+          <h4>${post.title}</h4>
+          <p class="snippet">${snippet}</p>
+          <div class="result-meta">
+            ${post.date}
+            ${post.tags ? ' • ' + post.tags.slice(0, 2).join(', ') : ''}
+          </div>
+        </a>
+      </div>
+    `;
+  }).join('');
+
+  searchResults.innerHTML = html;
+  searchResults.style.display = 'block';
+};
+
+// Event listeners
+searchInput.addEventListener('input', (e) => {
+  search(e.target.value);
+});
+
+// Close results when clicking outside
+document.addEventListener('click', (e) => {
+  if (!e.target.closest('.search-container')) {
+    searchResults.style.display = 'none';
+  }
+});
+
+// Show results again when clicking search input
+searchInput.addEventListener('focus', () => {
+  if (searchInput.value.length >= 2) {
+    searchResults.style.display = 'block';
+  }
+});
+</script>
+
+<style>
+.search-container {
+  position: relative;
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+#search-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+#search-input:focus {
+  border-color: #0066cc;
+}
+
+#search-results {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 0.5rem;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-height: 500px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.search-result {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.search-result:last-child {
+  border-bottom: none;
+}
+
+.search-result a {
+  display: block;
+  padding: 1rem;
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.2s;
+}
+
+.search-result a:hover {
+  background: #f8f8f8;
+}
+
+.search-result h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  color: #0066cc;
+}
+
+.search-result .snippet {
+  margin: 0 0 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.result-meta {
+  font-size: 0.8rem;
+  color: #999;
+}
+
+.no-results {
+  padding: 1.5rem;
+  text-align: center;
+  color: #999;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  #search-input {
+    background: #1a1a1a;
+    border-color: #333;
+    color: #ddd;
+  }
+
+  #search-input:focus {
+    border-color: #0066cc;
+  }
+
+  #search-results {
+    background: #1a1a1a;
+    border-color: #333;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  }
+
+  .search-result {
+    border-bottom-color: #2a2a2a;
+  }
+
+  .search-result a:hover {
+    background: #2a2a2a;
+  }
+
+  .search-result .snippet {
+    color: #aaa;
+  }
+}
+</style>

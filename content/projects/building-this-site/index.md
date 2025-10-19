@@ -821,6 +821,10 @@ function rotateCarousel(direction) {
 
 That's it! The cards are hardcoded in the shortcode (for now).
 
+**Live Example:**
+
+{{< claude-carousel >}}
+
 **Features:**
 - ✅ Click any card to rotate it to front
 - ✅ Smooth animations

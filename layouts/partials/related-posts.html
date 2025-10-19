@@ -1,0 +1,133 @@
+{{ if .IsPage }}
+{{ $related := .Site.RegularPages.Related . | first 3 }}
+{{ if $related }}
+<div class="related-posts">
+  <h3>Related Posts</h3>
+  <div class="related-posts-grid">
+    {{ range $related }}
+    <article class="related-post-card">
+      <a href="{{ .Permalink }}">
+        <h4>{{ .Title }}</h4>
+        <p class="related-post-meta">
+          {{ .Date.Format "Jan 2, 2006" }}
+          {{ if .ReadingTime }} • {{ .ReadingTime }} min read{{ end }}
+        </p>
+        {{ if .Description }}
+        <p class="related-post-description">{{ .Description }}</p>
+        {{ else }}
+        <p class="related-post-description">{{ .Summary | truncate 120 }}</p>
+        {{ end }}
+        {{ if .Params.tags }}
+        <div class="related-post-tags">
+          {{ range first 3 .Params.tags }}
+          <span class="tag">{{ . }}</span>
+          {{ end }}
+        </div>
+        {{ end }}
+      </a>
+    </article>
+    {{ end }}
+  </div>
+</div>
+
+<style>
+.related-posts {
+  margin: 4rem 0 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.related-posts h3 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.related-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.related-post-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  transition: all 0.2s;
+}
+
+.related-post-card:hover {
+  border-color: #999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.related-post-card a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.related-post-card h4 {
+  margin: 0 0 0.5rem;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+.related-post-meta {
+  font-size: 0.85rem;
+  color: #666;
+  margin: 0 0 1rem;
+}
+
+.related-post-description {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+}
+
+.related-post-tags {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.related-post-tags .tag {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  background: #f0f0f0;
+  border-radius: 3px;
+  color: #666;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .related-posts {
+    border-top-color: #333;
+  }
+
+  .related-post-card {
+    border-color: #333;
+    background: #1a1a1a;
+  }
+
+  .related-post-card:hover {
+    border-color: #555;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+  }
+
+  .related-post-meta {
+    color: #999;
+  }
+
+  .related-post-description {
+    color: #aaa;
+  }
+
+  .related-post-tags .tag {
+    background: #2a2a2a;
+    color: #999;
+  }
+}
+</style>
+{{ end }}
+{{ end }}
