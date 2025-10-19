@@ -38,7 +38,7 @@ pygmentsCodeFencesGuessSyntax = true
   description = "Building ridiculous projects with AI assistance"
 
   # Custom JS
-  customJS = ["js/code-copy.js", "js/reading-progress.js", "js/back-to-top.js"]
+  customJS = ["js/code-copy.js", "js/reading-progress.js", "js/back-to-top.js", "js/keyboard-shortcuts.js"]
 
   # Analytics - GoatCounter (privacy-friendly, free, open source)
   # Sign up at https://goatcounter.com (FREE!)

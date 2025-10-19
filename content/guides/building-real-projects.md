@@ -3,6 +3,8 @@ title: "Part 2: Building Real Projects"
 date: 2024-10-19
 draft: false
 weight: 2
+series: "AI-Assisted Development for Beginners"
+seriesOrder: 2
 tags: ["guide", "tutorial", "claude-code", "projects", "workflow", "real-world"]
 description: "How to actually build real projects with AI. Honest truths about what works, what doesn't, and how to maintain flow. Includes a walkthrough of building a 100+ page murder mystery game."
 ---

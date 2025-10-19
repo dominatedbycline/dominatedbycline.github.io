@@ -3,6 +3,8 @@ title: "Part 1: Getting Started"
 date: 2024-10-18
 draft: false
 weight: 1
+series: "AI-Assisted Development for Beginners"
+seriesOrder: 1
 tags: ["guide", "tutorial", "claude-code", "setup", "beginner", "installation"]
 description: "The brutally honest guide to setting up Claude Code and your dev environment. This is what I wish someone had told me - complete with all the frustrating parts and how to fix them."
 ---

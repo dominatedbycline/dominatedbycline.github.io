@@ -1,0 +1,55 @@
+{{/* Series navigation for guides */}}
+{{ if isset .Params "series" }}
+<div class="series-nav" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin: 2rem 0; border-left: 4px solid #667eea;">
+  <h4 style="margin-top: 0; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.5px; color: #667eea;">
+    📚 Series: {{ .Params.series }}
+  </h4>
+
+  {{ $currentPage := . }}
+  {{ $series := .Params.series }}
+  {{ $pages := where .Site.RegularPages "Params.series" "eq" $series }}
+  {{ $pages := $pages.ByParam "seriesOrder" }}
+
+  <ol style="margin: 1rem 0 0; padding-left: 1.5rem;">
+    {{ range $pages }}
+      <li style="margin: 0.5rem 0;">
+        {{ if eq . $currentPage }}
+          <strong>{{ .Title }}</strong> <span style="color: #667eea;">← You are here</span>
+        {{ else }}
+          <a href="{{ .Permalink }}">{{ .Title }}</a>
+        {{ end }}
+      </li>
+    {{ end }}
+  </ol>
+
+  {{/* Previous/Next navigation */}}
+  <div style="display: flex; justify-content: space-between; margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid #ddd;">
+    {{ $currentIndex := 0 }}
+    {{ range $index, $page := $pages }}
+      {{ if eq $page $currentPage }}
+        {{ $currentIndex = $index }}
+      {{ end }}
+    {{ end }}
+
+    {{/* Previous */}}
+    {{ if gt $currentIndex 0 }}
+      {{ $prevPage := index $pages (sub $currentIndex 1) }}
+      <a href="{{ $prevPage.Permalink }}" style="color: #667eea;">
+        ← {{ $prevPage.Title }}
+      </a>
+    {{ else }}
+      <span style="color: #ccc;">← Previous</span>
+    {{ end }}
+
+    {{/* Next */}}
+    {{ if lt $currentIndex (sub (len $pages) 1) }}
+      {{ $nextPage := index $pages (add $currentIndex 1) }}
+      <a href="{{ $nextPage.Permalink }}" style="color: #667eea;">
+        {{ $nextPage.Title }} →
+      </a>
+    {{ else }}
+      <span style="color: #ccc;">Next →</span>
+    {{ end }}
+  </div>
+</div>
+{{ end }}

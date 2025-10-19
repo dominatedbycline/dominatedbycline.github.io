@@ -1,0 +1,34 @@
+<!-- Author box at end of posts -->
+{{ if and (ne .Type "page") (not (isset .Params "hideAuthor")) }}
+<div class="author-box" style="background: #f8f9fa; border-radius: 8px; padding: 2rem; margin: 3rem 0; display: flex; gap: 1.5rem; align-items: start;">
+  <!-- Avatar (emoji for now, can replace with image) -->
+  <div style="font-size: 4rem; line-height: 1;">
+    🤖
+  </div>
+
+  <div style="flex: 1;">
+    <h4 style="margin: 0 0 0.5rem; font-size: 1.2rem;">
+      {{ .Site.Params.author | default "Maria Lu" }}
+    </h4>
+
+    <p style="margin: 0 0 1rem; color: #666; line-height: 1.6;">
+      Building ridiculous projects with AI assistance and documenting every weird decision.
+      Not a traditional developer, but I make things work anyway.
+      ADHD-powered coding adventures.
+    </p>
+
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+      {{ if .Site.Params.social }}
+        {{ range .Site.Params.Social }}
+          <a href="{{ .url }}" style="text-decoration: none; color: #667eea; font-size: 0.9rem;">
+            {{ .name }} →
+          </a>
+        {{ end }}
+      {{ end }}
+      <a href="/about" style="text-decoration: none; color: #667eea; font-size: 0.9rem;">
+        More about me →
+      </a>
+    </div>
+  </div>
+</div>
+{{ end }}

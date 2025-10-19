@@ -17,6 +17,10 @@
           <strong>tl;dr:</strong>
           {{ .Params.tldr }}
         </div>{{ end }}
+
+        <!-- Series Navigation -->
+        {{- partial "series-nav.html" . -}}
+
         <section class="body">
           {{ .Content }}
         </section>
@@ -39,6 +43,9 @@
 
         <!-- Related Posts -->
         {{- partial "related-posts.html" . -}}
+
+        <!-- Author Box -->
+        {{- partial "author-box.html" . -}}
       </div>
     </div>
 
