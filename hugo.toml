@@ -40,16 +40,11 @@ pygmentsCodeFencesGuessSyntax = true
   # Custom JS
   customJS = ["js/code-copy.js"]
 
-  # Analytics - Choose one:
-  # Option 1: Plausible (privacy-friendly, recommended)
-  # Sign up at https://plausible.io/ and add your domain
-  # Then uncomment and add this to customJS:
-  # customJS = ["js/code-copy.js", "https://plausible.io/js/script.js"]
-  # And add: data-domain="your-domain.com" attribute
-  #
-  # Option 2: Google Analytics
-  # Uncomment the line below and add your GA4 ID:
-  # googleAnalytics = "G-XXXXXXXXXX"
+  # Analytics - GoatCounter (privacy-friendly, free, open source)
+  # Sign up at https://goatcounter.com (FREE!)
+  # Get your username and add it below:
+  goatCounter = "dominatedbycline"  # Your GoatCounter username
+  # Dashboard: https://dominatedbycline.goatcounter.com
 
   # Giscus comments (GitHub Discussions)
   [params.giscus]

@@ -112,6 +112,9 @@
 	{{- end }}
 	{{- end }}
 
-	<!-- Umami Analytics -->
-	<script defer src="https://cloud.umami.is/script.js" data-website-id="41e7b417-3392-4731-aef9-86b67189fb5c"></script>
+	<!-- GoatCounter Analytics -->
+	{{- if and .Site.Params.goatCounter (not .Site.IsServer) }}
+	<script data-goatcounter="https://{{ .Site.Params.goatCounter }}.goatcounter.com/count"
+	        async src="//gc.zgo.at/count.js"></script>
+	{{- end }}
 </head>
