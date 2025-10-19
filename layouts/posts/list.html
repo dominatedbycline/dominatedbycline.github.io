@@ -1,0 +1,287 @@
+{{ define "main" }}
+
+<div class="blog-header">
+	<h1>Blog</h1>
+	<p class="blog-subtitle">Documenting my AI-assisted building experiments</p>
+</div>
+
+<!-- Artifactum Series -->
+{{ $artifactumPosts := where .Pages "Params.tags" "intersect" (slice "artifactum") }}
+{{ if $artifactumPosts }}
+<section class="blog-section">
+	<div class="section-header">
+		<h2>🎭 Artifactum Series</h2>
+		<p>Building a murder mystery game with AI - the full story</p>
+	</div>
+	<div class="posts-list">
+		{{ range $artifactumPosts }}
+		<article class="post-card">
+			<h3 class="title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+			<div class="post-meta">
+				<time>{{ dateFormat ":date_medium" .Date }}</time>
+				{{ if .ReadingTime }} • {{ .ReadingTime }} min read{{ end }}
+			</div>
+			<p class="excerpt">
+				{{ if .Description }}
+					{{ .Description | truncate 150 }}
+				{{ else }}
+					{{ .Summary | plainify | truncate 150 }}
+				{{ end }}
+			</p>
+			{{ if .Params.tags }}
+			<div class="post-tags-preview">
+				{{ range first 3 .Params.tags }}
+				<span class="tag">{{ . }}</span>
+				{{ end }}
+			</div>
+			{{ end }}
+		</article>
+		{{ end }}
+	</div>
+</section>
+{{ end }}
+
+<!-- Web Development & Learning -->
+{{ $webdevPosts := where .Pages "Params.tags" "intersect" (slice "web-development" "building-in-public") }}
+{{ if $webdevPosts }}
+<section class="blog-section">
+	<div class="section-header">
+		<h2>💻 Web Development & Learning</h2>
+		<p>Building in public, learning AI-assisted development</p>
+	</div>
+	<div class="posts-list">
+		{{ range $webdevPosts }}
+		<article class="post-card">
+			<h3 class="title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+			<div class="post-meta">
+				<time>{{ dateFormat ":date_medium" .Date }}</time>
+				{{ if .ReadingTime }} • {{ .ReadingTime }} min read{{ end }}
+			</div>
+			<p class="excerpt">
+				{{ if .Description }}
+					{{ .Description | truncate 150 }}
+				{{ else }}
+					{{ .Summary | plainify | truncate 150 }}
+				{{ end }}
+			</p>
+			{{ if .Params.tags }}
+			<div class="post-tags-preview">
+				{{ range first 3 .Params.tags }}
+				<span class="tag">{{ . }}</span>
+				{{ end }}
+			</div>
+			{{ end }}
+		</article>
+		{{ end }}
+	</div>
+</section>
+{{ end }}
+
+<!-- Career & Personal -->
+{{ $careerPosts := where .Pages "Params.tags" "intersect" (slice "career-transition" "personal" "strategic-planning") }}
+{{ if $careerPosts }}
+<section class="blog-section">
+	<div class="section-header">
+		<h2>🎯 Career & Personal</h2>
+		<p>Career pivots, planning, and personal growth</p>
+	</div>
+	<div class="posts-list">
+		{{ range $careerPosts }}
+		<article class="post-card">
+			<h3 class="title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+			<div class="post-meta">
+				<time>{{ dateFormat ":date_medium" .Date }}</time>
+				{{ if .ReadingTime }} • {{ .ReadingTime }} min read{{ end }}
+			</div>
+			<p class="excerpt">
+				{{ if .Description }}
+					{{ .Description | truncate 150 }}
+				{{ else }}
+					{{ .Summary | plainify | truncate 150 }}
+				{{ end }}
+			</p>
+			{{ if .Params.tags }}
+			<div class="post-tags-preview">
+				{{ range first 3 .Params.tags }}
+				<span class="tag">{{ . }}</span>
+				{{ end }}
+			</div>
+			{{ end }}
+		</article>
+		{{ end }}
+	</div>
+</section>
+{{ end }}
+
+<!-- Meta & Updates -->
+{{ $metaPosts := where .Pages "Params.tags" "intersect" (slice "meta" "introduction") }}
+{{ if $metaPosts }}
+<section class="blog-section">
+	<div class="section-header">
+		<h2>👋 Meta & Updates</h2>
+		<p>About this blog and site updates</p>
+	</div>
+	<div class="posts-list">
+		{{ range $metaPosts }}
+		<article class="post-card">
+			<h3 class="title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+			<div class="post-meta">
+				<time>{{ dateFormat ":date_medium" .Date }}</time>
+				{{ if .ReadingTime }} • {{ .ReadingTime }} min read{{ end }}
+			</div>
+			<p class="excerpt">
+				{{ if .Description }}
+					{{ .Description | truncate 150 }}
+				{{ else }}
+					{{ .Summary | plainify | truncate 150 }}
+				{{ end }}
+			</p>
+			{{ if .Params.tags }}
+			<div class="post-tags-preview">
+				{{ range first 3 .Params.tags }}
+				<span class="tag">{{ . }}</span>
+				{{ end }}
+			</div>
+			{{ end }}
+		</article>
+		{{ end }}
+	</div>
+</section>
+{{ end }}
+
+<style>
+.blog-header {
+	margin-bottom: 3rem;
+	text-align: center;
+}
+
+.blog-header h1 {
+	font-size: 2.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.blog-subtitle {
+	color: #666;
+	font-size: 1.1rem;
+}
+
+.blog-section {
+	margin-bottom: 4rem;
+}
+
+.section-header {
+	margin-bottom: 2rem;
+	padding-bottom: 1rem;
+	border-bottom: 3px solid #f06292;
+}
+
+.section-header h2 {
+	margin: 0 0 0.5rem;
+	color: #e91e63;
+	font-size: 1.8rem;
+}
+
+.section-header p {
+	margin: 0;
+	color: #666;
+	font-size: 0.95rem;
+}
+
+.posts-list {
+	display: grid;
+	gap: 1.5rem;
+}
+
+.post-card {
+	padding: 1.5rem;
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+	transition: all 0.2s;
+}
+
+.post-card:hover {
+	border-color: #f06292;
+	box-shadow: 0 2px 8px rgba(233, 30, 99, 0.1);
+}
+
+.post-card .title {
+	margin: 0 0 0.5rem;
+}
+
+.post-card .title a {
+	text-decoration: none;
+	color: inherit;
+	font-size: 1.3rem;
+}
+
+.post-card .title a:hover {
+	color: #e91e63;
+}
+
+.post-meta {
+	font-size: 0.85rem;
+	color: #666;
+	margin-bottom: 0.75rem;
+}
+
+.post-card .excerpt {
+	margin: 0 0 1rem;
+	color: #555;
+	line-height: 1.6;
+}
+
+.post-tags-preview {
+	display: flex;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+}
+
+.post-tags-preview .tag {
+	font-size: 0.75rem;
+	padding: 0.25rem 0.5rem;
+	background: #ffe8f3;
+	color: #e91e63;
+	border-radius: 3px;
+	font-weight: 500;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+	.blog-subtitle {
+		color: #aaa;
+	}
+
+	.section-header {
+		border-bottom-color: #f06292;
+	}
+
+	.section-header p {
+		color: #aaa;
+	}
+
+	.post-card {
+		border-color: #333;
+		background: #0a0a0a;
+	}
+
+	.post-card:hover {
+		border-color: #f06292;
+		box-shadow: 0 2px 8px rgba(240, 98, 146, 0.2);
+	}
+
+	.post-meta {
+		color: #999;
+	}
+
+	.post-card .excerpt {
+		color: #aaa;
+	}
+
+	.post-tags-preview .tag {
+		background: #3a1f31;
+		color: #ff6090;
+	}
+}
+</style>
+
+{{ end }}
