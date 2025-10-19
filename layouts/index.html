@@ -35,6 +35,16 @@
 		</div>
 	</section>
 
+	<!-- What I'm Doing Now Section -->
+	<section class="now-section">
+		<div class="now-highlight">
+			<div class="now-emoji-big">🚀</div>
+			<h2>What I'm Working On</h2>
+			<p class="now-tagline">Building EventFlow (event platform), writing guides, learning AI workflows</p>
+			<a href="/now" class="now-button">See what I'm up to →</a>
+		</div>
+	</section>
+
 	<!-- Featured Guides Section -->
 	<section class="featured-guides">
 		<h2>Start Here: Beginner Guides</h2>
@@ -124,6 +134,79 @@
 </html>
 
 <style>
+/* What I'm Doing Now Section */
+.now-section {
+	margin: 3rem 0;
+}
+
+.now-highlight {
+	background: linear-gradient(135deg, #f06292 0%, #ec407a 100%);
+	border-radius: 16px;
+	padding: 3rem 2rem;
+	text-align: center;
+	box-shadow: 0 8px 24px rgba(233, 30, 99, 0.25);
+	position: relative;
+	overflow: hidden;
+}
+
+.now-highlight::before {
+	content: '';
+	position: absolute;
+	top: -50%;
+	right: -50%;
+	width: 200%;
+	height: 200%;
+	background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+	pointer-events: none;
+}
+
+.now-emoji-big {
+	font-size: 4rem;
+	margin-bottom: 1rem;
+	animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+	0%, 100% { transform: translateY(0px); }
+	50% { transform: translateY(-10px); }
+}
+
+.now-highlight h2 {
+	color: white;
+	margin: 0 0 1rem;
+	font-size: 2rem;
+	text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.now-tagline {
+	color: rgba(255, 255, 255, 0.95);
+	font-size: 1.1rem;
+	margin: 0 0 2rem;
+	line-height: 1.6;
+	max-width: 600px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.now-button {
+	display: inline-block;
+	background: white;
+	color: #e91e63;
+	padding: 0.875rem 2rem;
+	border-radius: 8px;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 1.05rem;
+	transition: all 0.3s;
+	box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.now-button:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+	background: #fff;
+}
+
 /* Featured Guides Section */
 .featured-guides {
 	margin: 3rem 0;
@@ -280,6 +363,11 @@
 
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
+	.now-highlight {
+		background: linear-gradient(135deg, #d81b60 0%, #c2185b 100%);
+		box-shadow: 0 8px 24px rgba(216, 27, 96, 0.4);
+	}
+
 	.featured-guides {
 		background: #1a1a1a;
 	}
