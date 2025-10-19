@@ -1,0 +1,53 @@
+/* Back to top button */
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-to-top:hover {
+  background: #333;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top:active {
+  transform: translateY(-1px);
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: 1rem;
+    right: 1rem;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .back-to-top {
+    background: #fff;
+    color: #000;
+  }
+
+  .back-to-top:hover {
+    background: #f0f0f0;
+  }
+}

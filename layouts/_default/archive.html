@@ -1,0 +1,52 @@
+{{ define "main" }}
+<main>
+  <article>
+    <div class="title">
+      <h1>{{ .Title }}</h1>
+      <div class="meta">{{ .Description }}</div>
+    </div>
+
+    <section class="body">
+      {{ .Content }}
+
+      {{/* Get all regular pages (posts + guides) */}}
+      {{ $pages := where .Site.RegularPages "Type" "in" (slice "posts" "guides") }}
+      {{ $pages = $pages.ByDate.Reverse }}
+
+      {{/* Group by year */}}
+      {{ range $pages.GroupByDate "2006" }}
+        <h2 style="margin-top: 2rem; margin-bottom: 1rem; border-bottom: 2px solid #eee; padding-bottom: 0.5rem;">
+          {{ .Key }}
+        </h2>
+
+        {{/* Group by month within year */}}
+        {{ range .Pages.GroupByDate "January" }}
+          <h3 style="margin-top: 1.5rem; margin-bottom: 0.75rem; color: #666; font-size: 1.1rem;">
+            {{ .Key }}
+          </h3>
+
+          <ul style="list-style: none; padding: 0;">
+            {{ range .Pages }}
+              <li style="margin-bottom: 0.75rem; display: flex; align-items: baseline; gap: 1rem;">
+                <time datetime="{{ .Date.Format "2006-01-02" }}" style="color: #999; font-size: 0.9rem; min-width: 60px;">
+                  {{ .Date.Format "Jan 02" }}
+                </time>
+                <a href="{{ .Permalink }}" style="flex: 1;">
+                  {{ .Title }}
+                </a>
+                {{ if eq .Type "guides" }}
+                  <span style="color: #999; font-size: 0.85rem; font-style: italic;">[Guide]</span>
+                {{ end }}
+              </li>
+            {{ end }}
+          </ul>
+        {{ end }}
+      {{ end }}
+
+      <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #eee; color: #666; font-size: 0.9rem;">
+        <strong>{{ len $pages }}</strong> total posts and guides
+      </div>
+    </section>
+  </article>
+</main>
+{{ end }}

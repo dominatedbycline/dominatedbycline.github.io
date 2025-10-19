@@ -1,0 +1,48 @@
+{{ define "main" }}
+<main>
+  <div class="error-page" style="text-align: center; padding: 4rem 2rem; max-width: 600px; margin: 0 auto;">
+    <h1 style="font-size: 6rem; margin: 0; line-height: 1;">404</h1>
+    <h2 style="margin: 1rem 0;">Page Not Found</h2>
+    <p style="margin: 2rem 0; color: #666; line-height: 1.6;">
+      Oops! The page you're looking for doesn't exist. It might have been moved, deleted, or the link might be broken.
+    </p>
+
+    <div style="margin: 3rem 0;">
+      <a href="/" style="display: inline-block; padding: 0.75rem 1.5rem; background: #000; color: #fff; text-decoration: none; border-radius: 4px; margin: 0.5rem;">
+        ← Back to Home
+      </a>
+      <a href="/posts" style="display: inline-block; padding: 0.75rem 1.5rem; background: #000; color: #fff; text-decoration: none; border-radius: 4px; margin: 0.5rem;">
+        View Blog Posts
+      </a>
+      <a href="/guides" style="display: inline-block; padding: 0.75rem 1.5rem; background: #000; color: #fff; text-decoration: none; border-radius: 4px; margin: 0.5rem;">
+        Browse Guides
+      </a>
+    </div>
+
+    <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #eee;">
+      <h3 style="margin-bottom: 1rem;">Popular Pages:</h3>
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin: 0.5rem 0;">
+          <a href="/guides/getting-started" style="color: #0066cc;">Getting Started with Claude Code</a>
+        </li>
+        <li style="margin: 0.5rem 0;">
+          <a href="/guides/building-real-projects" style="color: #0066cc;">Building Real Projects</a>
+        </li>
+        <li style="margin: 0.5rem 0;">
+          <a href="/posts/2024-10-14-ai-cant-be-creative-i-was-wrong" style="color: #0066cc;">AI Can't Be Creative - I Was Wrong</a>
+        </li>
+        <li style="margin: 0.5rem 0;">
+          <a href="/about" style="color: #0066cc;">About Me</a>
+        </li>
+      </ul>
+    </div>
+
+    <div style="margin-top: 2rem;">
+      <p style="color: #999; font-size: 0.9rem;">
+        If you think this is a mistake, feel free to
+        <a href="https://github.com/dominatedbycline/dominatedbycline.github.io/issues" style="color: #0066cc;">report it on GitHub</a>.
+      </p>
+    </div>
+  </div>
+</main>
+{{ end }}
