@@ -52,14 +52,12 @@ pygmentsCodeFencesGuessSyntax = true
   # googleAnalytics = "G-XXXXXXXXXX"
 
   # Giscus comments (GitHub Discussions)
-  # To enable: Go to https://giscus.app/ and fill in your repo details
-  # Then uncomment and fill these values:
-  # [params.giscus]
-  #   repo = "marialu1/dominatedbycline"  # your-username/your-repo
-  #   repoId = "YOUR_REPO_ID"  # get from giscus.app
-  #   category = "General"  # or "Announcements"
-  #   categoryId = "YOUR_CATEGORY_ID"  # get from giscus.app
-  #   theme = "preferred_color_scheme"  # or "light" or "dark"
+  [params.giscus]
+    repo = "dominatedbycline/dominatedbycline.github.io"
+    repoId = "R_kgDOQBj2TA"
+    category = "Announcements"
+    categoryId = "DIC_kwDOQBj2TM4Cw0_X"
+    theme = "preferred_color_scheme"
 
 # Social links
 [[params.social]]
