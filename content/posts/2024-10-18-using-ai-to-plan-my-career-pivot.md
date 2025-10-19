@@ -1,6 +1,6 @@
 ---
 title: "Using AI to Plan My Career Pivot: From Interior Designer to Creative Technologist"
-date: 2025-01-18
+date: 2024-10-18
 draft: false
 tags: ["career-transition", "ai-tools", "strategic-planning", "personal", "claude"]
 description: "I used Claude to research my entire career transition. Here's what I learned about using AI for strategic life decisions—and why my interior design background might actually be an advantage."

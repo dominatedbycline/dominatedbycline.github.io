@@ -1,6 +1,6 @@
 ---
 title: "Building in Public: Learning Web Dev With AI - Part 1"
-date: 2025-01-19
+date: 2024-10-19
 draft: false
 tags: ["web-development", "hugo", "ai-tools", "learning", "building-in-public", "cline"]
 description: "I'm learning web development from scratch using AI assistance. Here's the honest, messy, confusing journey of building this site - Week 1: WTF is Hugo?"
@@ -111,7 +111,7 @@ Every content file needs this at the top:
 ```yaml
 ---
 title: "Post Title"
-date: 2025-01-19
+date: 2024-10-19
 draft: false
 tags: ["tag1", "tag2"]
 ---

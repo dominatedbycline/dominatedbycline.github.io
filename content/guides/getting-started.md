@@ -1,6 +1,6 @@
 ---
 title: "Part 1: Getting Started"
-date: 2025-01-18
+date: 2024-10-18
 draft: false
 weight: 1
 tags: ["guide", "tutorial", "claude-code", "setup", "beginner", "installation"]

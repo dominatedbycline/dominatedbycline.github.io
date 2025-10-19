@@ -1,6 +1,6 @@
 ---
 title: "Why lm-arena > Standalone Sora (And I Have No Idea Why)"
-date: 2025-01-16
+date: 2024-10-16
 draft: true
 tags: ["artifactum", "ai-tools", "video-generation", "workflow", "mystery"]
 description: "Same tool. Different platform. Completely different results. I tested Sora on Fal.ai (shit) and lm-arena (quite different, better). Why? No fucking clue. But it worked."

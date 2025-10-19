@@ -1,6 +1,6 @@
 ---
 title: "Cline: You Have My Heart 💙"
-date: 2025-01-17
+date: 2024-10-17
 draft: true
 tags: ["artifactum", "ai-tools", "workflow", "automation", "cline", "love-letter"]
 description: "The AI coding assistant that made the entire automation pipeline possible. Without Cline, this project wouldn't exist. A love letter to the tool that built what I couldn't."

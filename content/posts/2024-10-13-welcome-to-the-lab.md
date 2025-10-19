@@ -1,7 +1,7 @@
 ---
 title: "Welcome to the Lab"
 description: "Where AI tools meet creative chaos (and everything gets documented)"
-date: 2025-01-13T13:00:00Z
+date: 2024-10-13T13:00:00Z
 draft: false
 tags: ["meta", "ai-tools", "introduction"]
 ---

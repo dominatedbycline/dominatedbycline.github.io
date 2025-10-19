@@ -1,6 +1,6 @@
 ---
 title: "'AI Can't Be Creative' - I Was Wrong"
-date: 2025-01-14
+date: 2024-10-14
 draft: false
 tags: ["artifactum", "murder-mystery", "ai-tools", "origin-story", "workflow"]
 description: "The beach conversation that changed everything. How I went from 'AI can't be creative' to building an entire murder mystery game in 2 weeks."

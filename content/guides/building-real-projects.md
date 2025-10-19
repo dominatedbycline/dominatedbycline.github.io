@@ -1,6 +1,6 @@
 ---
 title: "Part 2: Building Real Projects"
-date: 2025-01-19
+date: 2024-10-19
 draft: false
 weight: 2
 tags: ["guide", "tutorial", "claude-code", "projects", "workflow", "real-world"]
