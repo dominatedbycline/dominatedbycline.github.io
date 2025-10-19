@@ -88,7 +88,7 @@ For advanced users, you can set up automated OG image generation with Hugo:
 
 Match your site:
 - Background: `#f8f9fa` (light) or `#1a1a1a` (dark)
-- Primary: `#667eea` (purple gradient)
+- Primary: `#f06292` (pink gradient)
 - Text: `#000` (light mode) or `#fff` (dark mode)
 
 ## Testing Your OG Images
