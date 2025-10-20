@@ -108,14 +108,14 @@
     text-decoration: none !important;
   }
 
-  /* Ensure header and nav text is visible */
+  /* Ensure header and nav text is visible in dark mode */
   header,
   header a,
   nav,
   nav a,
   header .main,
   header .main a {
-    color: #ffffff !important;
+    color: #ffffff;
   }
 
   .header nav,
