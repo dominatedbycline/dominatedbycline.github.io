@@ -10,7 +10,7 @@ tags: ["project", "eventflow", "full-stack", "ai-tools", "fastapi", "work-in-pro
 # EventFlow - AI-Powered Event Planning Platform
 
 **Status:** 🔨 In Development (95% complete, currently testing)
-**Timeline:** 3+ weeks of intensive building
+**Timeline:** 1 week of intensive building
 **Tech Stack:** FastAPI, SQLite, Gradio, AI Integration, Telegram Bots
 **Nature:** Real production project, not a tutorial exercise
 
@@ -36,13 +36,23 @@ This is documentation of a **real build process**—messy, complex, and ongoing.
 
 ## How This Started
 
-After completing the [murder mystery game](/projects/artifactum/murder-mystery-1926/), I wanted a **real project**. Not a tutorial. Not a toy app. Something **production-ready**.
+A friend asked me to help organize her wedding.
 
-**The Idea:** An event planning platform that I'd actually use.
+I looked at existing event planning tools. They were either:
+- Too expensive
+- Too complicated
+- Too generic
+- Not smart enough
+
+**The moment:** "I could build something better."
+
+After the [murder mystery game](/projects/artifactum/murder-mystery-1926/), I had the confidence. After learning FastAPI and AI integration, I had the tools.
+
+**The decision:** Build a real event planning platform. For my friend's wedding. And for anyone else who needs it.
 
 ### The Research Phase
 
-Before writing a single line of code, I spent days researching:
+Before writing a single line of code, I researched:
 - Existing event planning tools (what works, what doesn't)
 - Tech stacks for full-stack apps
 - AI integration possibilities
