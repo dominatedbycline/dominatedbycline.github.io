@@ -50,27 +50,82 @@ After the [murder mystery game](/projects/artifactum/murder-mystery-1926/), I ha
 
 **The decision:** Build a real event planning platform. For my friend's wedding. And for anyone else who needs it.
 
-### The Research Phase
+### The Research Phase: One Full Day Before Any Code
 
-**I spent a full day researching before writing any code.**
+**The Problem I Discovered:**
 
-This wasn't tutorial-following. This was deep market analysis with Claude:
-- Analyzed existing event planning tools (tested 5+ platforms)
-- Discovered the real pain point: **Guest list management takes 20-30 hours per event**
-- Evaluated tech stacks (Next.js + Supabase vs FastAPI + SQLite)
-- Researched AI agent frameworks (Smolagents vs alternatives)
-- Planned database architecture (SQLite MVP → PostgreSQL production)
-- Studied production deployment patterns
+Professional event planners spend **20-30 hours per event** just on guest list management. This is insane. Manual work, spreadsheets, endless emails, tracking RSVPs, dietary restrictions, plus-ones, check-ins.
 
-**The Decision:** FastAPI. Play to my Python strengths. Ship in 1 week, not 6 weeks.
+**Market Analysis - What Already Exists:**
 
-**The Documentation:** Everything saved in research docs (`idea-seed.md`, `mvp-refs.md`)
+**The Expensive Ones** ($100-300/month):
+- Full-featured but over-complicated
+- Designed for enterprise, not flexible
+- More time managing the tool than planning events
+
+**The Simple Ones:**
+- Easy but lack depth
+- No AI, no automation
+- Just digitized spreadsheets
+
+**The Generic Ones:**
+- Try to do everything (project management + events)
+- Not specialized for event planners' workflows
+
+**The Gap:** A tool that's **complex under the hood but simple to use** + **AI-powered to eliminate manual work**.
+
+**The MVP Strategy - 3 Priority Levels:**
+
+**🔴 LEVEL 1: CORE (Must Have First)**
+- Event management (CRUD operations)
+- Guest list with RSVP system (solve the 20-30h problem!)
+- Basic dashboard
+
+**Why Start Here:** If I solve guest list management brilliantly, planners will save 20-30 hours per event. That's the hook.
+
+**🟡 LEVEL 2: DIFFERENTIATORS**
+- Vendor management (LinkedIn-style profiles)
+- Budget tracking (estimated vs real, alerts)
+- Task/timeline management (deadlines, assignments)
+
+**🟢 LEVEL 3: WOW FACTOR**
+- AI-powered vendor recommendations
+- Automated timeline generation
+- Smart suggestions based on event type
+- Chatbot for guest FAQs
+
+**The Tech Stack Decision:**
+
+**Path A: Next.js + Supabase**
+- Pros: Popular, great tutorials, fast prototyping
+- Cons: Learning React + Next.js + TypeScript from scratch
+- Estimated MVP: 4-6 weeks
+
+**Path B: FastAPI + SQLite + Gradio**
+- Pros: I already know Python, FastAPI is fast, Gradio prototypes UI instantly
+- Cons: Not trendy, will need to replace Gradio later
+- Estimated MVP: 1-2 weeks
+
+**My Decision:** FastAPI. Play to my strengths. Ship in 1 week, not 6 weeks. Replace Gradio with React later if needed.
+
+**The Full Stack Chosen:**
+- Backend: FastAPI + SQLAlchemy + SQLite (→ PostgreSQL for production)
+- Frontend: Gradio (rapid prototyping, replace later)
+- AI: Groq API (GPT-OSS-120B) + Smolagents framework
+- Telegram: Python-telegram-bot for Caroline AI
+- Database: SQLite with Alembic migrations (easy PostgreSQL migration)
+
+**Research Resources Created:**
+- `idea-seed.md` - Full market analysis, MVP planning, stack comparison
+- `mvp-refs.md` - Technical deep dive: Smolagents patterns, FastAPI production, PostgreSQL migration, Docker deployment, authentication
+
+**The Timeline:**
+- Day 1: Research + planning with Claude
+- Days 2-7: Building (shipped 95% of features)
 
 **Read the full research process:**
 - 📚 [The Research Phase - Market Analysis & Planning](/posts/eventflow-research-phase/)
 - 🛠️ [Why FastAPI Over Next.js - Tech Stack Decision](/posts/eventflow-tech-stack-decision/)
-
-**The Goal:** Build something real. Learn deeply. Ship properly.
 
 ### Why EventFlow?
 
@@ -457,10 +512,52 @@ Using systematic approach (see `/tests/TESTING-CHECKLIST.md` in repo):
 ### Process Lessons
 
 1. **Architecture matters:** Good structure makes changes easy
+   - Modular FastAPI structure meant adding vendors/meetings/analytics was simple
+   - Nobody's guidance on proper structure saved weeks of refactoring
+
 2. **Testing saves time:** Finding bugs early is cheaper
+   - Should have written tests from day 1 (learning this the hard way)
+   - Current phase: comprehensive testing revealing edge cases I'd never find otherwise
+
 3. **Documentation helps:** Future-you will thank present-you
+   - Research seeds (`idea-seed.md`, `mvp-refs.md`) saved me when stuck
+   - API auto-docs from FastAPI are lifesavers
+
 4. **Iteration works:** Build → Test → Learn → Improve
+   - Gradio → React (planned): frontend can be replaced independently
+   - SQLite → PostgreSQL: database migration path clear from day 1
+   - Don't over-engineer early, but plan the upgrade path
+
 5. **Collaboration amplifies:** Nobody + AI + Me > Me alone
+   - Nobody: Architecture wisdom I didn't have
+   - Claude Code: Implementation speed (47 tools built fast)
+   - Me: Vision, product decisions, relentless iteration
+
+### Concrete Technical Learnings
+
+**Database Design:**
+- Foreign keys prevent orphaned data
+- Migrations with Alembic = no data loss on schema changes
+- Normalization vs denormalization trade-offs
+- Soft deletes > hard deletes (keep audit trail)
+
+**AI Agent Patterns:**
+- CodeAgent > ToolCallingAgent (30% fewer steps, more expressive)
+- Structured returns (dict/list) > string parsing
+- Temperature 0.3-0.5 = reliable but not robotic
+- Planning interval prevents agent from getting lost
+
+**FastAPI Production:**
+- Dependency injection for database sessions
+- Pydantic schemas catch bugs at request time
+- Background tasks for async operations
+- Health checks for monitoring
+
+**Deployment Strategy:**
+- Docker Compose for local development
+- Environment variables for all secrets (.env file, never commit)
+- Nginx for SSL and reverse proxy
+- PostgreSQL connection pooling for performance
 
 </details>
 
@@ -479,40 +576,118 @@ Pydantic==2.5.0         # Data validation
 Uvicorn==0.24.0         # ASGI server
 ```
 
+**Why FastAPI:**
+- Automatic OpenAPI docs at `/docs`
+- Type hints everywhere (catches bugs early)
+- Fast async support
+- Clean, readable code
+
+**Modular Structure:**
+```
+backend/
+├── api/
+│   ├── events.py      # Event management endpoints
+│   ├── tasks.py       # Task system endpoints
+│   ├── vendors.py     # Vendor marketplace endpoints
+│   └── guests.py      # Guest management endpoints
+├── models.py          # SQLAlchemy database models
+├── schemas.py         # Pydantic validation schemas
+└── main.py            # FastAPI app initialization
+```
+
 ### Frontend Stack
 ```python
-Gradio==5.49.1          # UI framework
+Gradio==5.49.1          # UI framework (rapid prototyping)
 Bootstrap==5.3          # CSS framework
 Chart.js==4.4.0         # Data visualization
 Jinja2==3.1.2           # Template engine
 ```
 
+**Gradio MCP Server:**
+- `mcp_server=True` enables both web UI AND MCP server
+- Chat interface built-in (perfect for AI assistant)
+- 20 lines of code = full chat UI
+
 ### AI & Integration
 ```python
-groq==0.4.1             # Groq API client
+groq==0.4.1             # Groq API client (GPT-OSS-120B)
 litellm==1.17.0         # Multi-LLM interface
-smolagents==0.1.0       # Agent framework
+smolagents==0.1.0       # Agent framework (HuggingFace)
 python-telegram-bot     # Telegram integration
 ```
+
+**Smolagents Architecture Decisions:**
+- **CodeAgent** (not ToolCallingAgent) - more expressive, 30% fewer steps
+- Structured tool returns (dict/list, not strings)
+- Temperature 0.3-0.5 for reliability
+- Planning interval every 3 steps for complex tasks
+- 47+ tools for complete event management
+
+**Tool Design Pattern:**
+```python
+@tool
+def create_event(name: str, date: str, venue: str) -> dict:
+    """
+    Creates a new event in the system.
+
+    Args:
+        name: Event name (max 100 chars)
+        date: ISO format YYYY-MM-DD
+        venue: Full venue address or name
+
+    Returns:
+        dict: Created event with id, name, date, status
+    """
+    # Implementation with error handling
+    return {"success": True, "data": result}
+```
+
+### Database Architecture
+- **SQLite** (development) - zero setup, perfect for iterating
+- **Alembic** migrations from day 1 (clean schema changes)
+- Migration path to **PostgreSQL** (production)
+- **SQLAlchemy** ORM (same code works with both databases)
+
+**Key Design Patterns:**
+- Foreign key relationships (events → tasks → vendors)
+- Proper normalization (no data duplication)
+- Index on frequently queried fields
+- Soft deletes (keep history)
 
 ### Development Tools
 ```bash
 Git                     # Version control
 VSCode + Claude Code    # Development environment
-Pytest                  # Testing framework
+Pytest                  # Testing framework (not used enough yet!)
+Alembic                 # Database migrations
 ```
 
-### Database
-- **SQLite** (development)
-- Migration path to **PostgreSQL** (production)
-- **SQLAlchemy** ORM for database operations
+### Production Deployment Plan
 
-### Deployment (Planned)
-- Docker containers
-- Nginx reverse proxy
-- PostgreSQL database
-- Redis for caching
-- SSL with Let's Encrypt
+**Docker Compose Architecture:**
+```yaml
+services:
+  postgres:     # PostgreSQL database
+  backend:      # FastAPI (4 workers)
+  frontend:     # Gradio UI
+  nginx:        # Reverse proxy + SSL
+```
+
+**Stack Considered:**
+- Railway.app (easiest, automatic PostgreSQL)
+- Fly.io (global edge, great free tier)
+- DigitalOcean App Platform (balanced)
+- AWS ECS + RDS (most scalable, more complex)
+
+**Security & Production Readiness:**
+- JWT authentication (planned)
+- Environment variables for all secrets
+- Health check endpoints
+- Structured logging (JSON format)
+- Rate limiting
+- CORS configuration
+- PostgreSQL connection pooling
+- Automated backups
 
 </details>
 
