@@ -1,173 +1,220 @@
-/* Dark theme overrides */
-body {
-  color: var(--color-text-dark, #ffffff);
-  background-color: var(--color-background-dark, #202124);
-}
+/* Dark theme - only active when system prefers dark mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Override CSS variables for dark mode */
+    --color-primary: #f06292;
+    --color-primary-hover: #e91e63;
+    --color-border: #f06292;
+    --color-text: #ffffff;
+    --color-text-muted: #dddddd;
+    --color-text-meta: #aaaaaa;
+    --color-background: #202124;
+    --color-background-code: #3a3a3a;
+    --color-background-pre: #272822;
+    --color-background-toc: #272822;
+    --color-background-draft: #f06292;
+    --color-callout: #f06292;
+  }
 
-::-moz-selection {
-  background: var(--color-primary-dark, #f06292);
-  color: #ffffff;
-  text-shadow: none;
-}
+  body {
+    color: #ffffff;
+    background-color: #202124;
+  }
 
-::selection {
-  background: var(--color-primary-dark, #f06292);
-  color: #ffffff;
-  text-shadow: none;
-}
+  ::-moz-selection {
+    background: #f06292;
+    color: #ffffff;
+    text-shadow: none;
+  }
 
-hr {
-  border-block-start: 3px dotted var(--color-border-dark, #f06292);
-}
+  ::selection {
+    background: #f06292;
+    color: #ffffff;
+    text-shadow: none;
+  }
 
-code {
-  background-color: var(--color-background-code-dark, #3a3a3a);
-  color: var(--color-text-dark, #ffffff);
-}
+  hr {
+    border-block-start: 3px dotted #f06292;
+  }
 
-pre {
-  background-color: var(--color-background-pre-dark, #272822);
-  border-color: var(--color-border-dark, #f06292);
-}
+  code {
+    background-color: #3a3a3a;
+    color: #ffffff;
+  }
 
-blockquote {
-  border-color: var(--color-border-dark, #f06292);
-  color: var(--color-text-muted-dark, #dddddd);
-}
+  pre {
+    background-color: #272822;
+    border-color: #f06292;
+  }
 
-/* Headings */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  color: var(--color-text-muted-dark, #dddddd);
-}
+  blockquote {
+    border-color: #f06292;
+    color: #dddddd;
+  }
 
-h1::before { color: var(--color-primary-dark, #f06292); }
-h2::before { color: var(--color-primary-dark, #f06292); }
-h3::before { color: var(--color-primary-dark, #f06292); }
-h4::before { color: var(--color-primary-dark, #f06292); }
-h5::before { color: var(--color-primary-dark, #f06292); }
-h6::before { color: var(--color-primary-dark, #f06292); }
+  /* Headings */
+  h1, h2, h3, h4, h5, h6 {
+    color: #dddddd;
+  }
 
-.toc {
-  background-color: var(--color-background-toc-dark, #272822);
-  color: var(--color-text-dark, #ffffff);
-  border-color: var(--color-border-dark, #f06292);
-}
+  h1::before { color: #f06292; }
+  h2::before { color: #f06292; }
+  h3::before { color: #f06292; }
+  h4::before { color: #f06292; }
+  h5::before { color: #f06292; }
+  h6::before { color: #f06292; }
 
-/* Links */
-a {
-  border-block-end: 3px solid var(--color-primary-dark, #f06292);
-  color: inherit;
-}
+  .toc {
+    background-color: #272822;
+    color: #ffffff;
+    border-color: #f06292;
+  }
 
-a:hover,
-a:focus {
-  background-color: var(--color-primary-dark, #f06292);
-  color: #ffffff;
-  outline-color: var(--color-primary-dark, #f06292);
-}
+  /* Links */
+  a {
+    border-block-end: 3px solid #f06292;
+    color: inherit;
+  }
 
-.site-description a {
-  color: var(--color-text-muted-dark, #dddddd);
-}
+  a:hover,
+  a:focus {
+    background-color: #f06292;
+    color: #ffffff;
+    outline-color: #f06292;
+  }
 
-.site-description a:hover,
-.site-description a:focus {
-  color: #ffffff;
-}
+  .site-description a {
+    color: #dddddd;
+  }
 
-/* Tags */
-.tags a {
-  border-block-end: 3px solid var(--color-primary-dark, #f06292);
-}
+  .site-description a:hover,
+  .site-description a:focus {
+    color: #ffffff;
+  }
 
-.tags a:hover,
-.tags a:focus {
-  background-color: var(--color-primary-dark, #f06292);
-  color: #ffffff;
-}
+  /* Tags */
+  .tags a {
+    border-block-end: 3px solid #f06292;
+  }
 
-.site-title a {
-  color: var(--color-text-dark, #ffffff);
-  text-decoration: none !important;
-}
+  .tags a:hover,
+  .tags a:focus {
+    background-color: #f06292;
+    color: #ffffff;
+  }
 
-.header nav,
-footer {
-  border-color: var(--color-border-dark, #f06292);
-}
+  .site-title a {
+    color: #ffffff;
+    text-decoration: none !important;
+  }
 
-.highlight {
-  background-color: var(--color-background-pre-dark, #272822);
-}
+  /* Ensure header and nav text is visible */
+  header,
+  header a,
+  nav,
+  nav a,
+  header .main,
+  header .main a {
+    color: #ffffff !important;
+  }
 
-.soc:hover,
-.soc:focus {
-  color: var(--color-primary-dark, #f06292);
-}
+  .header nav,
+  footer {
+    border-color: #f06292;
+  }
 
-.draft-label {
-  color: var(--color-text-dark, #ffffff);
-  background-color: var(--color-background-draft-dark, #f06292);
-}
+  .highlight {
+    background-color: #272822;
+  }
 
-/* Tables in dark mode */
-table th {
-  background-color: var(--color-background-pre-dark, #272822);
-  color: var(--color-text-dark, #ffffff);
-  border-color: var(--color-border-dark, #f06292);
-}
+  .soc:hover,
+  .soc:focus {
+    color: #f06292;
+    outline-color: #f06292;
+  }
 
-table td {
-  border-color: var(--color-border-dark, #f06292);
-  color: var(--color-text-dark, #ffffff);
-}
+  .draft-label {
+    color: #ffffff;
+    background-color: #f06292;
+  }
 
-table tr:nth-child(even) {
-  background-color: var(--color-background-code-dark, #3a3a3a);
-}
+  /* Tables in dark mode */
+  table th {
+    background-color: #272822;
+    color: #ffffff;
+    border-color: #f06292;
+  }
 
-/* Navigation toggle in dark mode */
-.nav-toggle {
-  color: var(--color-text-dark, #ffffff);
-}
+  table td {
+    border-color: #f06292;
+    color: #ffffff;
+  }
 
-.nav-toggle:hover,
-.nav-toggle:focus {
-  background-color: var(--color-primary-dark, #f06292);
-  color: #ffffff;
-  outline-color: var(--color-primary-dark, #f06292);
-}
-/* Language badges inherit from main.css - no duplicates needed */
+  table tr:nth-child(even) {
+    background-color: #3a3a3a;
+  }
 
-/* Callouts in dark mode */
-.callout {
-  background-color: var(--color-background-pre-dark, #272822);
-  color: var(--color-text-dark, #ffffff);
-}
+  /* Navigation toggle in dark mode */
+  .nav-toggle {
+    color: #ffffff;
+  }
 
-.callout-alert {
-  color: #f8d7da;
-  background-color: #2d1b1d;
-  border-color: #842029;
-}
+  .nav-toggle:hover,
+  .nav-toggle:focus {
+    background-color: #f06292;
+    color: #ffffff;
+    outline-color: #f06292;
+  }
 
-.callout-tip {
-  color: #d1ecf1;
-  background-color: #0c2428;
-  border-color: #0f5132;
-}
+  /* Callouts in dark mode */
+  .callout {
+    background-color: #272822;
+    color: #ffffff;
+  }
 
-.callout-warning {
-  color: #fff3cd;
-  background-color: #332701;
-  border-color: #997404;
-}
+  .callout-alert {
+    color: #f8d7da;
+    background-color: #2d1b1d;
+    border-color: #842029;
+  }
 
-.callout-custom {
-  color: var(--color-text-dark, #ffffff);
+  .callout-tip {
+    color: #d1ecf1;
+    background-color: #0c2428;
+    border-color: #0f5132;
+  }
+
+  .callout-warning {
+    color: #fff3cd;
+    background-color: #332701;
+    border-color: #997404;
+  }
+
+  .callout-custom {
+    color: #ffffff;
+  }
+
+  /* List bullets */
+  ul > li::before {
+    color: #f06292;
+  }
+
+  /* Images */
+  img {
+    border-color: #272822;
+  }
+
+  /* Figure captions */
+  figure h4::before {
+    color: #f06292;
+  }
+
+  /* Meta text */
+  .meta {
+    color: #aaaaaa;
+  }
+
+  time {
+    color: #dddddd;
+  }
 }
