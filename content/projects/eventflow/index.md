@@ -52,13 +52,23 @@ After the [murder mystery game](/projects/artifactum/murder-mystery-1926/), I ha
 
 ### The Research Phase
 
-Before writing a single line of code, I researched:
-- Existing event planning tools (what works, what doesn't)
-- Tech stacks for full-stack apps
-- AI integration possibilities
-- Open source vs paid tools
-- Database design patterns
-- API architecture best practices
+**I spent a full day researching before writing any code.**
+
+This wasn't tutorial-following. This was deep market analysis with Claude:
+- Analyzed existing event planning tools (tested 5+ platforms)
+- Discovered the real pain point: **Guest list management takes 20-30 hours per event**
+- Evaluated tech stacks (Next.js + Supabase vs FastAPI + SQLite)
+- Researched AI agent frameworks (Smolagents vs alternatives)
+- Planned database architecture (SQLite MVP → PostgreSQL production)
+- Studied production deployment patterns
+
+**The Decision:** FastAPI. Play to my Python strengths. Ship in 1 week, not 6 weeks.
+
+**The Documentation:** Everything saved in research docs (`idea-seed.md`, `mvp-refs.md`)
+
+**Read the full research process:**
+- 📚 [The Research Phase - Market Analysis & Planning](/posts/eventflow-research-phase/)
+- 🛠️ [Why FastAPI Over Next.js - Tech Stack Decision](/posts/eventflow-tech-stack-decision/)
 
 **The Goal:** Build something real. Learn deeply. Ship properly.
 
@@ -568,6 +578,24 @@ Pytest                  # Testing framework
 **This is what building looks like.** Messy. Real. Delicious.
 
 And I'm not even close to finished. 🚀
+
+---
+
+## Read the Build Process
+
+I'm documenting the entire EventFlow journey in detailed blog posts:
+
+**Planning & Research:**
+- 📚 [The Research Phase - Before Writing Any Code](/posts/eventflow-research-phase/)
+- 🛠️ [Why I Chose FastAPI Over Next.js](/posts/eventflow-tech-stack-decision/)
+
+**Coming Soon:**
+- 🤖 Building Caroline AI (Telegram bot architecture)
+- 📊 Database Design Lessons (SQLite → PostgreSQL migration)
+- 🧪 Testing a Real Product (current phase)
+- 🚀 Production Deployment (Docker, nginx, the works)
+
+**Follow along:** [#eventflow](/tags/eventflow/) for all updates
 
 ---
 
