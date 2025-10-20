@@ -353,6 +353,45 @@ details summary::-moz-details-marker {
     color: #232333 !important;
   }
 
+  /* Override dark mode for guides section on mobile */
+  .featured-guides {
+    background: #f8f9fa !important;
+  }
+
+  .guide-card {
+    background: white !important;
+    border-color: #e0e0e0 !important;
+  }
+
+  .guide-card p,
+  .guide-card h3,
+  .guide-card h3 a {
+    color: #232333 !important;
+  }
+
+  .guide-tags span {
+    background: #e8f4ff !important;
+    color: #e91e63 !important;
+  }
+
+  /* Override dark mode for posts section on mobile */
+  .post-card {
+    background: white !important;
+    border-color: #e0e0e0 !important;
+  }
+
+  .post-card .title,
+  .post-card .title a,
+  .post-card .excerpt,
+  .post-meta {
+    color: #232333 !important;
+  }
+
+  .post-tags-preview .tag {
+    background: #f0f0f0 !important;
+    color: #666 !important;
+  }
+
   .meme-img,
   .screenshot-img,
   .photo-img,
