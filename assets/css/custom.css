@@ -329,11 +329,28 @@ details summary::-moz-details-marker {
 
 /* Mobile responsive - everything fits screen width on mobile */
 @media (max-width: 768px) {
-  /* Force white background on mobile */
+  /* Force light mode on mobile - white background with black text */
   body,
   html,
   .content {
     background-color: #ffffff !important;
+    color: #232333 !important;
+  }
+
+  /* Force all text elements to black on mobile */
+  p,
+  h1, h2, h3, h4, h5, h6,
+  strong, em, b, i,
+  span, div,
+  header, header a,
+  nav, nav a,
+  header .main, header .main a {
+    color: #232333 !important;
+  }
+
+  /* Ensure links are visible */
+  a {
+    color: #232333 !important;
   }
 
   .meme-img,
