@@ -21,7 +21,7 @@
 				This site documents my experiments—from murder mystery games to web development—showing
 				what's possible when you combine curiosity, AI tools, and stubborn determination.
 			</p>
-			<p style="margin-top: 0.75rem; line-height: 1.6; color: #666;">
+			<p style="margin-top: 0.75rem; line-height: 1.6;">
 				<strong>What you'll find here:</strong> Project breakdowns, honest learning logs,
 				AI collaboration insights, and proof that you don't need to be a "real developer"
 				to ship creative work.
@@ -179,7 +179,7 @@
 }
 
 .now-tagline {
-	color: rgba(255, 255, 255, 0.95);
+	color: white;
 	font-size: 1.1rem;
 	margin: 0 0 2rem;
 	line-height: 1.6;
@@ -363,6 +363,19 @@
 
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
+	/* Mini bio section */
+	.mini-bio p {
+		color: #ffffff;
+	}
+
+	.mini-bio strong {
+		color: #ffffff;
+	}
+
+	.mini-bio em {
+		color: #dddddd;
+	}
+
 	.now-highlight {
 		background: linear-gradient(135deg, #d81b60 0%, #c2185b 100%);
 		box-shadow: 0 8px 24px rgba(216, 27, 96, 0.4);
