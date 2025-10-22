@@ -213,6 +213,8 @@ Why? I don't know. But lm-arena became my favorite video generation tool.
 
 <img src="/images/kdenlive.png" alt="Kdenlive timeline" class="wide-img" />
 
+**Want the full workflow?** Read the complete [Video Production Pipeline](/posts/2024-10-18-murder-mystery-video-pipeline/) and [Why lm-arena beats Fal.ai](/posts/2024-10-16-lm-arena-beats-falai-sora/) posts.
+
 ---
 
 ### The Development Backbone: Cline (VS Code)
@@ -416,7 +418,7 @@ graph LR
 <details>
 <summary><h2 class="inline-heading">Bloopers & Failures</h2></summary>
 
-Coming soon: Screenshots and stories of what went spectacularly wrong.
+**The reality of AI-assisted creation:** Not everything works the first time. Or the tenth time.
 
 **Video Generation Gone Wrong:**
 
@@ -431,28 +433,34 @@ Coming soon: Screenshots and stories of what went spectacularly wrong.
 
 > Extreme macro close-up, broken piano wire approximately 30cm length coiled on dark wood surface (mahogany desk), wire diameter 0.8mm visible in sharp detail, dark brownish-red stains on sections of wire (dried blood implication), one end shows clean break with metal fiber separation visible, wire casts dramatic shadow from single key light above left, camera slow rotation orbit 270 degrees around wire over 6 seconds revealing different angles and stain patterns, slight movement as if wire has subtle life (micro-vibration), shot with 100mm macro lens f/2.0, ultra-sharp focus showing steel wire texture, color grading dark noir with cool blue tones, stains appear darker brown, photorealistic metal material and forensic detail, 8K macro, unsettling
 
-**Preview:**
+**What I got:** ...that weird moving thing. 😂
+
+**My reaction:**
 
 <img src="/images/blooper-confused.png" alt="When you don't understand what just happened" class="screenshot-img" />
 
 <img src="/images/blooper-frustrated.png" alt="Frustration with character files" class="screenshot-img" />
 
-More chaos documentation coming! 💀
+**Want more chaos?** Read the full [Bloopers & Failures post](/posts/2024-10-17-murder-mystery-bloopers/) with all the weird outputs, failed generations, and "wtf just happened" moments. 💀
 
 </details>
 
 ---
 
 <details>
-<summary><h2 class="inline-heading">Future Posts</h2></summary>
+<summary><h2 class="inline-heading">Deep Dive Posts</h2></summary>
 
-Detailed breakdowns coming:
+**Published:**
+- ✅ [Why lm-arena Beats Fal.ai (And Standalone Sora)](/posts/2024-10-16-lm-arena-beats-falai-sora/)
+- ✅ [Murder Mystery Bloopers: When AI Gets Creative (In the Wrong Way)](/posts/2024-10-17-murder-mystery-bloopers/)
+- ✅ [Video Production Pipeline: From Concept to Final Cut](/posts/2024-10-18-murder-mystery-video-pipeline/)
+- ✅ [11 Characters, One Murder](/posts/2024-10-15-11-characters-one-murder/)
+
+**Coming soon:**
 - AI-assisted character development workflow
-- Why lm-arena > standalone Sora
 - Automated typesetting with Typst
-- Video production pipeline
 - Modular content architecture for creative projects
-- Full bloopers post
+- Git for creative projects (version control for storytelling)
 
 **Want updates?** Follow [#artifactum](/tags/artifactum/)
 

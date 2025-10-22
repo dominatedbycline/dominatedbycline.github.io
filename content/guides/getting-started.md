@@ -29,7 +29,9 @@ This is the guide I wish existed. The one that doesn't skip the "obvious" parts.
 
 **This is Part 1:** Getting your environment set up and working.
 
-**Part 2** (coming soon): Building real projects and the honest truths about AI development.
+**[Part 2](/guides/building-real-projects/):** Building real projects and the honest truths about AI development.
+
+**[Part 3](/guides/building-with-hugo/):** Building websites with Hugo and deploying to GitHub Pages.
 
 ---
 
@@ -654,19 +656,28 @@ cp -r project project-backup-$(date +%Y-%m-%d)
 
 ## What's Next?
 
-**Part 2** (coming soon) covers:
+**Continue the guide series:**
+
+**[Part 2: Building Real Projects](/guides/building-real-projects/)** covers:
 - Building real projects (walkthrough of my 100+ page murder mystery game)
 - When to use Claude web vs Claude Code vs Cline
 - What AI can and can't do (honest truths)
 - The ADHD perspective and maintaining flow
 - Resources that actually help
-- Advanced topics
+
+**[Part 3: Building with Hugo](/guides/building-with-hugo/)** covers:
+- Building websites with Hugo
+- Deploying to GitHub Pages
+- Automated workflows
+- Common problems and solutions
+
+**Want to see the messy reality?** Check out the **[Building in Public](/tags/building-in-public/)** series where I document the actual learning process (with all the failures).
 
 **You've got the basics now.**
 
 The environment is set up. You know the tools. You can create projects and fix common problems.
 
-**In Part 2, we'll build something real.** 💙
+**Next: Build something real.** 💙
 
 ---
 

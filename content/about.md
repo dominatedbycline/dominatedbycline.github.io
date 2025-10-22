@@ -85,6 +85,39 @@ I built this site from scratch using Hugo, a static site generator I'd never tou
 
 [Read the build series →](/projects/building-this-site/)
 
+### 📅 EventFlow: Building a Real Product (Not Just a Tutorial)
+
+**EventFlow** is a full-stack event planning platform I built in 2 weeks. This isn't a tutorial project — it's solving a real problem.
+
+**The problem:** I'm organizationally chaotic. Post-its everywhere, lists scattered across 5 apps, can't keep track of simple tasks. But I LOVE planning elaborate dinners and events. The irony is real.
+
+**The trigger:** A friend asked me to help plan her wedding. My reaction: "Yes! I love this!" Also my reaction: "Oh shit. How do I not lose my mind?"
+
+**The moment:** Looking at event planning tools ($100-300/month?! Too complicated! No AI?!) and thinking... "Wait. I could just build something better?"
+
+**What I built:**
+- Full-stack platform (FastAPI backend, Bootstrap 5 frontend)
+- AI-powered extraction (Caroline bot with 47 type-safe tools)
+- Type-safe from LLM → Database (Pydantic schemas, JSON mode enforcement)
+- 87.5% accuracy on messy, interrupted, conflicting meeting notes
+- Extraction review workflow (planner approves before database commit)
+- Analytics, vendor marketplace, guest RSVPs, task templates
+- **Current status:** 96% feature-complete, testing phase
+
+**What makes it different:**
+- Built for chaotic planners like me (creative vision, scattered execution)
+- Caroline AI can't corrupt the database even if she hallucinates (type safety!)
+- Real production app, not a portfolio piece
+- Using it for an actual wedding (survival mode = best motivator)
+
+**The hardest part:** Making LLMs reliable. Building 47 tools was straightforward. Teaching an LLM to follow rules? 3 days of Pydantic schemas, testing with progressive difficulty levels (casual chat → messy interruptions → multi-language chaos), and Nobody explaining type theory to me.
+
+**Nobody's impact:** Architecture guidance saved weeks of mistakes. Modular structure, migration paths, validation patterns — expertise I didn't have.
+
+**The meta:** Building a tool to solve my own chaos. While being chaotic. This is either genius or insane. Maybe both.
+
+[Read the full EventFlow story →](/projects/eventflow/) | [Caroline AI Type-Safe Upgrade →](/posts/eventflow-caroline-pydantic-upgrade/)
+
 ### 🎯 Career Pivot: AI Creative Producer
 
 I'm actively exploring roles that combine creativity with AI — specifically **AI Creative Producer** positions that need someone who can:
@@ -95,12 +128,6 @@ I'm actively exploring roles that combine creativity with AI — specifically **
 - Document and communicate process
 
 **This site is my portfolio.** Every project here demonstrates skills relevant to that path.
-
-### 💍 Wedding Planning (2027) with AI
-
-Yes, really. I'm planning a wedding using AI methods and documenting the process.
-
-Because if AI can help me create murder mystery games and build websites, why not life's big moments too?
 
 </details>
 

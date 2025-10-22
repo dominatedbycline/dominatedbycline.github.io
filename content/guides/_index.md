@@ -56,6 +56,25 @@ How to actually build with AI, what works, what doesn't, and honest truths.
 
 ---
 
+### 🌐 [Part 3: Building with Hugo & Static Sites](/guides/building-with-hugo/)
+**Complete Guide to Building Websites - From Zero to Deployed Portfolio**
+
+Learn Hugo, build a portfolio site, deploy to GitHub Pages with automated workflows.
+
+**Perfect for:** Building a portfolio, creating a blog, getting your work online, understanding static sites.
+
+**Covers:**
+- What static site generators are (and why they're awesome)
+- Hugo from scratch (no assumptions)
+- Building a blog/portfolio structure
+- Deploying to GitHub Pages with automation
+- Common problems and solutions
+- Customization and next steps
+
+**Search keywords:** hugo, static site generator, github pages, deployment, website, blog, portfolio, markdown, git, theme, localhost, baseURL, front matter, hugo server, hugo new, layouts, static folder, content folder, build errors, blank page, css not loading, submodule, workflow, automation, GitHub Actions, YAML, commit, push
+
+---
+
 ## Quick Reference: Common Problems
 
 Looking for a specific fix? Search for these:
@@ -90,12 +109,22 @@ Looking for a specific fix? Search for these:
 - **"learning with AI"** → Part 2, Section 3
 - **"ADHD workflow"** → Part 2, Section 4
 
+### Hugo & Static Sites
+- **"what is static site"** → Part 3, Section 1
+- **"hugo installation"** → Part 3, Section 2
+- **"create hugo site"** → Part 3, Section 2
+- **"add theme"** → Part 3, Section 2
+- **"site is blank"** → Part 3, Section 5
+- **"css not loading"** → Part 3, Section 5
+- **"github pages deployment"** → Part 3, Section 4
+- **"baseURL configuration"** → Part 3, Section 4
+
 ---
 
 ## How to Use These Guides
 
 ### 1. **Linear Reading**
-Start with Part 1 if you're brand new. Then move to Part 2.
+Start with Part 1 if you're brand new. Then Part 2 (workflow), then Part 3 (building websites).
 
 ### 2. **Reference Mode**
 Use **Ctrl+F / Cmd+F** to search for specific keywords.
@@ -109,9 +138,12 @@ Both guides have checklists you can follow step-by-step.
 
 ## About These Guides
 
-These were originally one massive 11,000-word post (too long!).
+These were originally one massive post (way too long!).
 
-Split into 2 digestible parts for readability.
+Now split into 3 digestible parts:
+- **Part 1:** Setup and environment (the prerequisites)
+- **Part 2:** Workflow and real projects (the reality check)
+- **Part 3:** Building websites with Hugo (the practical guide)
 
 Written from the perspective of someone who's **not a developer** but built real projects with AI.
 
@@ -121,10 +153,12 @@ Honest, practical, and covers the "obvious" stuff that nobody explains.
 
 ## Coming Soon
 
+- **Part 4: Building Production Apps** - FastAPI, databases, real backends
 - **Advanced Git Workflows** - Branching, merging, collaboration
 - **MCP Server Deep Dive** - Building custom integrations
 - **Project Templates** - Starter structures for common projects
 - **Debugging Guide** - Systematic troubleshooting
+- **AI Agent Development** - Building tools like Caroline
 
 ---
 

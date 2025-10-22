@@ -12,9 +12,15 @@ description: "How to actually build real projects with AI. Honest truths about w
 # From Zero to AI-Powered Developer
 ## Part 2: Building Real Projects (The Reality Check)
 
-**Read Part 1 first** if you haven't set up your environment yet.
+**[Read Part 1: Getting Started](/guides/getting-started/)** first if you haven't set up your environment yet.
 
-In Part 1, we covered:
+**This is Part 2:** Building real projects and understanding what AI can (and can't) do.
+
+**[Part 3: Building with Hugo](/guides/building-with-hugo/)** covers building and deploying websites.
+
+---
+
+**In Part 1, we covered:**
 - Setting up Claude Code
 - Understanding the tools
 - Your first project
@@ -22,8 +28,8 @@ In Part 1, we covered:
 
 **Now in Part 2:**
 - When to use which tool
-- Real project walkthrough
-- What AI can and can't do
+- Real project walkthrough (100+ page murder mystery)
+- What AI can and can't do (honest)
 - The ADHD perspective
 - Resources and next steps
 
@@ -417,6 +423,20 @@ What does it mean and how do I fix it?"
 **Don't rush these.**
 
 Master the basics first.
+
+---
+
+## Continue Your Journey
+
+**Ready to build a website?** Check out **[Part 3: Building with Hugo](/guides/building-with-hugo/)** for a complete guide to:
+- Building portfolio sites
+- Hugo from scratch
+- GitHub Pages deployment
+- Automated workflows
+
+**Want to see real examples?** The **[Building in Public](/tags/building-in-public/)** series documents my actual learning process (including all the mistakes).
+
+**Need EventFlow inspiration?** Read about [building a production app](/projects/eventflow/) with FastAPI, AI agents, and type-safe extraction.
 
 ---
 

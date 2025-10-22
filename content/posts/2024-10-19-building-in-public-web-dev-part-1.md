@@ -326,7 +326,11 @@ Follow along. Watch someone learn web development in public, one confused commit
 
 **Part of the [Building This Site](/projects/building-this-site/) project**
 
-[Read Part 2 →](#) _(coming soon)_
+[Read Part 2 → Deployment & GitHub Pages](/posts/2024-10-26-building-in-public-web-dev-part-2/)
+
+---
+
+**Want to build your own site?** Check out the [Complete Hugo Guide](/guides/building-with-hugo/) for step-by-step instructions.
 
 ---
 

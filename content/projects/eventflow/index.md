@@ -1,17 +1,17 @@
 ---
 title: "EventFlow - AI-Powered Event Planning Platform"
 description: "Building a full-stack event platform. Learning by doing, one feature at a time."
-date: 2025-10-20
+date: 2025-10-22
 draft: false
 featured: true
-tags: ["project", "eventflow", "full-stack", "ai-tools", "fastapi", "work-in-progress"]
+tags: ["project", "eventflow", "full-stack", "ai-tools", "fastapi", "pydantic", "type-safety", "work-in-progress"]
 ---
 
 # EventFlow - AI-Powered Event Planning Platform
 
-**Status:** 🔨 In Development (95% complete, currently testing)
-**Timeline:** 1 week of intensive building
-**Tech Stack:** FastAPI, SQLite, Gradio, AI Integration, Telegram Bots
+**Status:** 🔨 In Development (96% complete, Caroline AI type-safe upgrade done! ✨)
+**Timeline:** Week 1 - Core features | Week 2 - Type safety & extraction system
+**Tech Stack:** FastAPI, SQLite, Gradio, Pydantic, LiteLLM, Telegram Bots
 **Nature:** Real production project, not a tutorial exercise
 
 ---
@@ -36,106 +36,297 @@ This is documentation of a **real build process**—messy, complex, and ongoing.
 
 ## How This Started
 
-A friend asked me to help organize her wedding.
+**The honest truth:** I'm organizationally chaotic.
 
-I looked at existing event planning tools. They were either:
-- Too expensive
-- Too complicated
-- Too generic
-- Not smart enough
+Post-its everywhere. Half-finished lists. Notes scattered across 5 apps. The kind of person who loses track of simple tasks but somehow *loves* planning elaborate dinners and events.
 
-**The moment:** "I could build something better."
+**The irony:** I'm actually good at planning events. The vision is there. The execution? That's where things get messy.
 
-After the [murder mystery game](/projects/artifactum/murder-mystery-1926/), I had the confidence. After learning FastAPI and AI integration, I had the tools.
+**Then reality hit:** A friend asked me to help organize her wedding. Not just "give some suggestions." Actually help plan it. Guest lists. Vendors. Timeline. Budget. The whole thing.
 
-**The decision:** Build a real event planning platform. For my friend's wedding. And for anyone else who needs it.
+**My reaction:** "Yes! I love this!"
 
-### The Research Phase: One Full Day Before Any Code
+**Also my reaction:** "Oh shit. How do I not lose my mind?"
 
-**The Problem I Discovered:**
+I looked at existing event planning tools:
+- Too expensive ($100-300/month?!)
+- Too complicated (I need an MBA to use this?)
+- Too generic (Why is this also project management software?)
+- Not smart enough (No AI? In 2025?!)
 
-Professional event planners spend **20-30 hours per event** just on guest list management. This is insane. Manual work, spreadsheets, endless emails, tracking RSVPs, dietary restrictions, plus-ones, check-ins.
+**The moment:** "Wait. I could just... build something better?"
 
-**Market Analysis - What Already Exists:**
+After the [murder mystery game](/projects/artifactum/murder-mystery-1926/), I had proof I could build real things. After learning FastAPI and AI integration, I had the tools.
 
-**The Expensive Ones** ($100-300/month):
-- Full-featured but over-complicated
-- Designed for enterprise, not flexible
-- More time managing the tool than planning events
+**The decision:** Build EventFlow. For my friend's wedding. For anyone like me who loves planning but needs help staying organized.
 
-**The Simple Ones:**
-- Easy but lack depth
-- No AI, no automation
-- Just digitized spreadsheets
+**The meta irony:** Building a tool to solve my own chaos. While being chaotic. This is either genius or insane. Maybe both.
 
-**The Generic Ones:**
-- Try to do everything (project management + events)
-- Not specialized for event planners' workflows
+![EventFlow Dashboard](/images/eventflow/dashboard.png)
+*The EventFlow dashboard. Pink theme because why not. Built in 2 weeks while learning FastAPI, Pydantic, and how to not lose my mind.*
 
-**The Gap:** A tool that's **complex under the hood but simple to use** + **AI-powered to eliminate manual work**.
+---
 
-**The MVP Strategy - 3 Priority Levels:**
+### The Build Strategy
 
-**🔴 LEVEL 1: CORE (Must Have First)**
-- Event management (CRUD operations)
-- Guest list with RSVP system (solve the 20-30h problem!)
-- Basic dashboard
+**Day 1: Research with Nobody** - Spent a full day planning instead of diving straight into code. Nobody helped me avoid rookie mistakes: use FastAPI (I know Python), start with SQLite (migrate to PostgreSQL later), build modular from day 1 (avoid spaghetti code).
 
-**Why Start Here:** If I solve guest list management brilliantly, planners will save 20-30 hours per event. That's the hook.
+**Why FastAPI over Next.js?** Everyone says "use Next.js for SaaS." But I'd need to learn React + TypeScript + Next.js = 4-6 weeks to MVP. FastAPI? I already know Python. MVP in 1-2 weeks. Play to strengths, ship fast, polish later.
 
-**🟡 LEVEL 2: DIFFERENTIATORS**
-- Vendor management (LinkedIn-style profiles)
-- Budget tracking (estimated vs real, alerts)
-- Task/timeline management (deadlines, assignments)
+**Days 2-7: Building** - Core event management, guest lists, vendor marketplace, task system, Caroline AI bot with 47 tools.
 
-**🟢 LEVEL 3: WOW FACTOR**
-- AI-powered vendor recommendations
-- Automated timeline generation
-- Smart suggestions based on event type
-- Chatbot for guest FAQs
+**Week 2: Type Safety Upgrade** - Made Caroline AI reliable with Pydantic schemas. Now she can't corrupt the database even if she hallucinates. [Read that story →](/posts/eventflow-caroline-pydantic-upgrade/)
 
-**The Tech Stack Decision:**
+**The MVP hierarchy:**
+- 🔴 **Core:** Events + guest lists (solve the 20-30h manual work problem)
+- 🟡 **Differentiators:** Vendors, budget, tasks
+- 🟢 **Wow factor:** AI extraction, smart suggestions, Telegram bot
 
-**Path A: Next.js + Supabase**
-- Pros: Popular, great tutorials, fast prototyping
-- Cons: Learning React + Next.js + TypeScript from scratch
-- Estimated MVP: 4-6 weeks
+**Full research docs:**
+- 📚 [The Research Phase](/posts/eventflow-research-phase/) - Market analysis, MVP planning
+- 🛠️ [Why FastAPI Over Next.js](/posts/eventflow-tech-stack-decision/) - Tech stack decisions
 
-**Path B: FastAPI + SQLite + Gradio**
-- Pros: I already know Python, FastAPI is fast, Gradio prototypes UI instantly
-- Cons: Not trendy, will need to replace Gradio later
-- Estimated MVP: 1-2 weeks
-
-**My Decision:** FastAPI. Play to my strengths. Ship in 1 week, not 6 weeks. Replace Gradio with React later if needed.
-
-**The Full Stack Chosen:**
-- Backend: FastAPI + SQLAlchemy + SQLite (→ PostgreSQL for production)
-- Frontend: Gradio (rapid prototyping, replace later)
-- AI: Groq API (GPT-OSS-120B) + Smolagents framework
-- Telegram: Python-telegram-bot for Caroline AI
-- Database: SQLite with Alembic migrations (easy PostgreSQL migration)
-
-**Research Resources Created:**
-- `idea-seed.md` - Full market analysis, MVP planning, stack comparison
-- `mvp-refs.md` - Technical deep dive: Smolagents patterns, FastAPI production, PostgreSQL migration, Docker deployment, authentication
-
-**The Timeline:**
-- Day 1: Research + planning with Claude
-- Days 2-7: Building (shipped 95% of features)
-
-**Read the full research process:**
-- 📚 [The Research Phase - Market Analysis & Planning](/posts/eventflow-research-phase/)
-- 🛠️ [Why FastAPI Over Next.js - Tech Stack Decision](/posts/eventflow-tech-stack-decision/)
+---
 
 ### Why EventFlow?
 
-Event planning is:
-- **Complex enough** to be interesting
-- **Simple enough** to understand
-- **Real-world** useful (I actually need this)
-- **AI-friendly** (lots of opportunities for smart features)
+**Personal:** I needed this. Creative vision, scattered execution. EventFlow works for chaotic planners like me.
 
-Perfect learning project.
+**Technical:** Event planning is perfect for learning. Complex enough (multi-table DB, AI integration, real workflows) but simple enough (everyone understands events).
+
+**Meta:** Building to solve your own problem = maximum motivation. Every feature tested with real use cases. Every bug actually matters. This isn't a portfolio project. **This is survival mode.**
+
+</details>
+
+---
+
+<details>
+<summary><h2 class="inline-heading">Technical Deep Dive: Type-Safe AI Extraction</h2></summary>
+
+## Making Caroline AI Reliable (Week 2 Upgrade)
+
+**The Problem:** LLMs hallucinate formats. Caroline would create:
+- Budget: "twenty thousand" (should be: "20000")
+- Date: "next Friday" (should be: "2025-10-25")
+- Priority: "super mega urgent!!" (should be: "critical")
+
+**The Solution:** Pydantic schemas + LLM JSON mode enforcement.
+
+**The Architecture:**
+
+### 1. Pydantic Schema Layer
+
+Created 7 main schemas with strict validation:
+
+```python
+class CreateEventInput(BaseModel):
+    name: str = Field(..., min_length=1, max_length=255)
+    event_date: str = Field(..., pattern=r'^\d{4}-\d{2}-\d{2}$')
+    event_type: Literal['wedding', 'conference', 'party', 'birthday', 'corporate']
+    budget: Optional[str] = Field(None, pattern=r'^\d+\.?\d*$')
+    expected_guests: Optional[int] = Field(None, gt=0, lt=100000)
+```
+
+**Key Design Decisions:**
+- Enums for controlled vocabularies (no hallucinated categories)
+- Date validation with custom validators (must be future dates)
+- Numeric strings for money (avoid floating point issues)
+- Required vs optional fields clearly defined
+
+### 2. LLM JSON Mode Enforcement
+
+Using LiteLLM's `response_format` parameter:
+
+```python
+response = completion(
+    model="groq/llama-3.3-70b-versatile",
+    messages=[...],
+    response_format=CreateEventInput  # 🎯 Forces schema compliance
+)
+
+# Parse and validate
+event = CreateEventInput(**json.loads(response.choices[0].message.content))
+# ✅ Guaranteed valid! Types match from LLM → API → Database
+```
+
+**What this gives:**
+- LLM can't return invalid JSON structure
+- Dates always YYYY-MM-DD format
+- Enums always valid values
+- Numbers always numeric strings
+- Type safety end-to-end
+
+### 3. Testing Methodology: 5 Difficulty Levels
+
+Created progressive test scenarios:
+
+**Level 1 - Easy (100% expected):**
+```
+Formal meeting notes, structured format, all info clear
+Result: 100% accuracy ✅
+```
+
+**Level 2 - Medium (95% expected):**
+```
+Casual WhatsApp chat, relative dates ("próxima semana")
+Result: 98% accuracy ✅
+```
+
+**Level 3 - Hard (90% expected):**
+```
+Multiple events mixed in same notes
+Result: 92% accuracy ✅
+```
+
+**Level 4 - Very Hard (85% expected):**
+```
+Messy, interrupted conversation:
+- João changes date 3 times (december → november → jan 18 → jan 17)
+- Budget negotiation (15k → 20k → 25k → 20k final)
+- Math needed (45 + 20 + 15 = 80 guests)
+- Call drops, critical info AFTER reconnection (vegan requirement!)
+- Client undecided (DJ vs banda)
+
+Result: 87.5% accuracy ✅
+```
+
+**Impressive achievements:**
+- Tracked through 3 date corrections
+- Did math with client's self-corrections
+- Picked conservative budget (20k not 25k)
+- Flagged vegan as CRITICAL (mentioned after call dropped!)
+- Marked music as BLOCKED (client undecided)
+
+**Level 5 - Expert (80% expected):**
+```
+Multi-language chaos (PT + EN + emojis + slang)
+Status: Not tested yet 🙈
+```
+
+### 4. Extraction Review Workflow
+
+**Problem:** Even at 87.5% accuracy, humans need control.
+
+**Solution:** All extractions go through planner review before database commit.
+
+**Architecture:**
+
+```python
+class EventExtractionReview(BaseModel):
+    extraction_id: str
+    meeting_notes: str
+    extracted_event: CreateEventInput
+    extracted_tasks: list[ExtractedTaskWithOptions]
+    field_extractions: dict[str, FieldExtraction]  # Traceability!
+    review_status: ExtractionReviewStatus
+    event_confidence: float
+    needs_attention: list[str]
+```
+
+**Key Features:**
+
+**Traceability (Excerpt + Justification):**
+```python
+{
+  "field": "budget",
+  "value": "20000.00",
+  "excerpt": "João: sei lá... 15k? ou é pouco? talvez 20k então...",
+  "justification": "Client discussed progression: 15k → 20k → 25k available. Picked conservative 20k.",
+  "confidence": 0.8
+}
+```
+
+**Multiple Options for Ambiguity:**
+When client says "não sei se DJ ou banda":
+```python
+{
+  "decision_required": true,
+  "options": [
+    {
+      "option_label": "Option A: DJ",
+      "excerpt": "João: música... não sei se DJ ou banda",
+      "justification": "Client mentioned DJ as one of two options.",
+      "confidence": 0.5
+    },
+    {
+      "option_label": "Option B: Live Band",
+      "excerpt": "João: música... não sei se DJ ou banda",
+      "justification": "Client mentioned banda as alternative option.",
+      "confidence": 0.5
+    }
+  ]
+}
+```
+
+**Planner Actions:**
+- ✅ Approve All (high confidence, looks good)
+- ✏️ Edit & Approve (tweak values, then create)
+- ❌ Reject (extract manually)
+
+### 5. What Nobody Taught Me
+
+**Architecture Wisdom I Didn't Have:**
+
+**Type Safety End-to-End:**
+"You need validation at EVERY boundary: LLM → Parser → API → Database. Pydantic gives you this." - Nobody
+
+**Enum Design for LLMs:**
+"Make enums match natural language. Not `TASK_CATEGORY_VENUE`, but `Venue`. LLMs understand human language better." - Nobody
+
+**Confidence Scores Strategy:**
+"Always extract confidence. If LLM says 0.5, that's a human review flag. If 0.9+, probably safe to auto-approve." - Nobody
+
+**Traceability Pattern:**
+"LLMs should cite their sources. Extract which text led to which value. This builds trust and catches hallucinations." - Nobody
+
+**Ambiguity Handling:**
+"When client is undecided, don't pick randomly. Create BOTH options with equal confidence. Let planner choose." - Nobody
+
+**Time saved by Nobody's guidance:** Weeks of trial-and-error and refactoring.
+
+### 6. The Results
+
+**Before Pydantic Upgrade:**
+- Caroline created data ✅
+- Sometimes formats wrong ❌
+- No validation ❌
+- Database could get corrupted ❌
+
+**After Pydantic Upgrade:**
+- Caroline creates data ✅
+- Formats ALWAYS correct ✅
+- Full validation ✅
+- Database protected ✅
+- Planner reviews extractions ✅
+- Traceability (excerpt + justification) ✅
+- Multiple options for ambiguity ✅
+- 87.5% accuracy on chaos ✅
+
+**The Unlock:** Can now trust Caroline with production data. Even when she infers or estimates, the *types* are always valid.
+
+### 7. Files Created
+
+**Schema System:**
+- `utils/caroline_schemas.py` (700+ lines) - All Pydantic schemas
+- `utils/caroline_extraction_review.py` - Review workflow
+
+**Tests:**
+- `test_caroline_pydantic.py` - 11 unit tests (100% passing)
+- `test_caroline_litellm_extraction.py` - Real LLM test
+- `test_level_4_extraction.py` - Very hard scenario
+- `test_meeting_extraction_mock.py` - Mock tests
+
+**Documentation:**
+- `CAROLINE_PYDANTIC_SCHEMAS.md` - Full schema docs
+- `EXTRACTION_DIFFICULTY_LEVELS.md` - 5 test levels explained
+- `EXPECTED_VS_ACTUAL_EXTRACTION.md` - What LLM actually does
+- `ANSWER_TO_MISHA_MEETING_EXTRACTION.md` - Type analysis
+
+**Time investment:** 3 days of intense work.
+**Lines of code:** ~2000+ (schemas, tests, docs, review system)
+**Result:** Type-safe AI that can handle real-world chaos.
+
+**Read the full story:** [Caroline AI Gets Type-Safe: Teaching an LLM to Follow the Rules](/posts/eventflow-caroline-pydantic-upgrade/)
 
 </details>
 
@@ -197,6 +388,9 @@ Perfect learning project.
 ```
 Nobody's expertise → My vision → AI tools execution → Real product
 ```
+
+![Caroline AI - Telegram Bot](/images/eventflow/caroline-chat.png)
+*Caroline AI in action. 47 tools, all type-safe now. She can create events from natural language, extract info from messy meeting notes, and (as of Week 2) can't break the database even if she tries. Progress.*
 
 </details>
 
@@ -282,6 +476,9 @@ Clean separation. Each feature is independent. Easy to maintain.
 - Date tracking and venue management
 - Event validation and status tracking
 
+![Event Details View](/images/eventflow/event-details.png)
+*Event details page showing tasks, guests, budget tracking. Each event has its own dashboard with real-time progress.*
+
 ### ✅ Task System
 - Task creation and management
 - Categories: logistics, catering, venue, guests, vendors, decor
@@ -297,6 +494,9 @@ Clean separation. Each feature is independent. Easy to maintain.
 - Booking management
 - Quote tracking
 - **AI-powered budget estimation** based on marketplace data
+
+![Vendor Marketplace](/images/eventflow/vendor-marketplace.png)
+*Vendor marketplace with search, filters, ratings. Built like a mini LinkedIn for event vendors. Still needs real data, but the structure works.*
 
 ### ✅ Guest Management
 - Guest lists with categories (VIP, family, friends, colleagues)
@@ -322,19 +522,32 @@ Clean separation. Each feature is independent. Easy to maintain.
 - Stuck vendor bookings
 - Auto-refresh every 2 minutes
 
-### ✅ Meetings & LLM Extraction
+### ✅ Meetings & LLM Extraction (NEW: Type-Safe! 🎉)
 - Meeting notes with AI extraction
+- **Pydantic schema enforcement** (LLM can't create invalid data!)
 - Automatic action items detection
 - Decisions and concerns extraction
 - Assignee and deadline identification
-- Groq API integration
+- **Extraction review workflow** (planner approves before DB)
+- **Traceability system** (excerpt + justification for every field)
+- **Multiple options for ambiguity** (client undecided? Create both!)
+- **5 difficulty levels tested** (87.5% accuracy on "very hard" messy notes)
+- Groq API + LiteLLM integration
 
-### ✅ Caroline AI (Telegram Bot)
-- 47 tools for event management
+### ✅ Caroline AI (Telegram Bot) - Type-Safe Edition
+- **47 tools with Pydantic validation** (no more "vinte mil" in budget field!)
 - Natural language interface
+- **Type-safe from LLM → Database** (enums, date formats, validation)
 - Memory system for context
 - Auto-refresh for tool updates
 - Accessible from phone anywhere
+- **Confidence scores** for extraction quality
+- **Handles chaos**: interruptions, corrections, client changing mind
+
+![AI Inbox - Client Conversations](/images/eventflow/ai-inbox.png)
+*AI Inbox where planners chat with Caroline about events. She can extract info from natural conversation and create structured data. This was HARD to build - getting LLMs to be reliable took 3 days of Pydantic schemas and testing.*
+
+**Honest note:** Caroline works in tests (87.5% accuracy on messy notes!) but I haven't tested her manually in production yet. The Pydantic schemas ensure she can't break the database, but real-world chaos? That's the next test.
 
 ### 🔄 In Testing
 - End-to-end workflows
@@ -342,15 +555,35 @@ Clean separation. Each feature is independent. Easy to maintain.
 - Edge cases and error handling
 - Performance optimization
 
+### ✅ Authentication & Onboarding (Week 2 Addition!)
+- Login/register system with bcrypt password hashing
+- Profile creation flow (2-step onboarding)
+- Session management
+- Welcome screens with CTAs
+
+![Auth System & Onboarding](/images/eventflow/auth-system.png)
+*Login verification screen. Added auth system in Week 2 because I realized "wait, multiple planners need accounts." Rookie oversight, but caught it before shipping.*
+
+### ✅ Project Creation Flow
+- Multi-step project wizard
+- Event type templates (wedding, corporate, etc.)
+- Auto-generate initial task lists
+- Client profile creation
+
+![Create Project Wizard](/images/eventflow/create-project.png)
+*Create project wizard with templates. This generates 30+ tasks automatically based on event type. Saves planners from starting from scratch every time.*
+
 ### ❌ Not Built Yet
-- User authentication system
 - Payment processing
 - Email notifications
-- Multi-tenant support
-- Production deployment
-- Comprehensive documentation
+- Multi-tenant support (but architecture ready)
+- Production deployment (Docker + PostgreSQL planned)
+- Comprehensive user docs
 
-**Honestly:** ~95% of planned features work. The last 5% is polish and production readiness.
+**Honestly:** ~96% of planned features work. The last 4% is polish and production readiness.
+
+![EventFlow Analytics Dashboard](/images/eventflow/analytics.png)
+*Analytics showing task progress, guest RSVPs, and vendor bookings. The data viz actually helps you see what's happening at a glance. Pink charts are a vibe.*
 
 </details>
 
@@ -388,10 +621,26 @@ Clean separation. Each feature is independent. Easy to maintain.
 - Learned about webhooks vs polling
 - Implemented memory system for context
 
+**UI Evolution - From Gradio to Beautiful Templates:**
+- **Week 1:** Started with Gradio (rapid prototyping, functional but basic)
+- **Week 2:** Realized "this looks like a prototype, not a product"
+- **Pivot:** Kept FastAPI backend, built custom Jinja2 templates
+- **Result:** Bootstrap 5 + Chart.js + custom CSS = actually looks professional
+- **Lesson:** Gradio was perfect for MVP speed, but UI matters for real users
+
+**Caroline AI - The Hardest Part:**
+- Building 47 tools was time-consuming but straightforward
+- Making LLMs RELIABLE? That was the challenge
+- 3 days on Pydantic schemas, JSON mode enforcement, testing
+- Created 5 difficulty levels to stress-test extraction
+- **Current status:** 87.5% accuracy on chaos, but not manually tested yet
+- **Honest truth:** Tests pass, but real-world usage? That's the scary part
+
 **Testing Everything:**
 - Created comprehensive testing checklist
 - Learning to think about edge cases
 - Understanding user flows
+- **Reality check:** Automated tests ≠ real user testing (still need to do that)
 
 ### The Surprises
 
@@ -413,6 +662,9 @@ Clean separation. Each feature is independent. Easy to maintain.
 2. **Database normalization:** Finally got why foreign keys matter
 3. **AI tool composition:** Realized agents are just well-structured function calls
 4. **Testing importance:** Found bugs I would have NEVER caught without systematic testing
+
+![EventFlow Calendar View](/images/eventflow/calendar.png)
+*Calendar interface for managing events and meetings. Testing this revealed so many edge cases. Delete button placement? Check. Toast notifications? Check. Not losing data when you accidentally click something? Also check. Building in public means showing the messy learning process.*
 
 </details>
 
@@ -490,11 +742,15 @@ Using systematic approach (see `/tests/TESTING-CHECKLIST.md` in repo):
 - User experience thinking
 
 **AI Integration:**
-- LLM API usage
+- LLM API usage (Groq, LiteLLM)
 - Agent frameworks (Smolagents)
 - Tool composition
 - Context management
 - Prompt engineering
+- **Pydantic + LLM JSON mode** (type-safe outputs!)
+- **Schema enforcement** (can't create invalid data)
+- **Extraction validation patterns** (confidence scores, traceability)
+- **Handling LLM uncertainty** (multiple options, review workflows)
 
 **DevOps (Learning):**
 - Environment management
@@ -693,6 +949,24 @@ services:
 
 ---
 
+## Visual Journey: From Prototype to (Almost) Product
+
+Throughout this build, the UI evolved from "functional Gradio" to "actually looks like software people would use":
+
+- **Dashboard:** Pink theme (non-negotiable), real-time stats, notifications
+- **Calendar:** Full CRUD, modals, toast notifications, color coding
+- **Analytics:** Chart.js visualizations showing actual progress
+- **Vendor Marketplace:** Search, filters, ratings (mini LinkedIn vibes)
+- **AI Inbox:** Natural language → structured data (the hardest part!)
+- **Auth System:** Week 2 addition (rookie oversight, caught in time)
+- **Project Wizard:** Templates that auto-generate 30+ tasks
+
+**What you see in screenshots:** Weeks of iteration, broken features fixed, edge cases caught, UI polished.
+
+**What you don't see:** The Gradio prototype I started with (RIP functional but ugly MVP).
+
+---
+
 ## The Reality Check
 
 ### What Worked
@@ -764,8 +1038,11 @@ I'm documenting the entire EventFlow journey in detailed blog posts:
 - 📚 [The Research Phase - Before Writing Any Code](/posts/eventflow-research-phase/)
 - 🛠️ [Why I Chose FastAPI Over Next.js](/posts/eventflow-tech-stack-decision/)
 
+**AI & Type Safety:**
+- 🎯 [Caroline AI Gets Type-Safe: Teaching an LLM to Follow the Rules](/posts/eventflow-caroline-pydantic-upgrade/) **NEW!**
+
 **Coming Soon:**
-- 🤖 Building Caroline AI (Telegram bot architecture)
+- 🤖 Building Caroline AI Architecture (Telegram bot deep dive)
 - 📊 Database Design Lessons (SQLite → PostgreSQL migration)
 - 🧪 Testing a Real Product (current phase)
 - 🚀 Production Deployment (Docker, nginx, the works)
@@ -774,6 +1051,7 @@ I'm documenting the entire EventFlow journey in detailed blog posts:
 
 ---
 
-*Last Updated: October 20, 2025*
-*Status: Testing phase (day 1)*
+*Last Updated: October 22, 2025*
+*Status: Caroline AI Type-Safe Upgrade Complete ✅ | Testing Continues*
+*Latest: Pydantic schemas + extraction review system + 87.5% accuracy on chaos*
 *Next post: Testing discoveries and first user feedback*

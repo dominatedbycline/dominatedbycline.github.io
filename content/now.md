@@ -1,13 +1,13 @@
 ---
 title: "What I'm Doing Now"
-date: 2024-10-19
+date: 2025-10-22
 draft: false
 description: "Current projects, focus areas, and what I'm learning"
 ---
 
 # What I'm Doing Now
 
-*Updated: October 19, 2024*
+*Updated: October 22, 2025*
 
 This is a [now page](https://nownownow.com/about), inspired by Derek Sivers. It's what I'd tell a friend I haven't seen in a year.
 
@@ -31,22 +31,34 @@ Building a platform to document my journey with AI-assisted development.
 ---
 
 ### **2. EventFlow** (Event Planning Platform)
-A full-stack event planning app with AI integration.
+Full-stack event planning app with AI integration. Built in 2 weeks to solve my own chaos.
 
-**Status:** 🔨 95% complete
+**Status:** 🔨 96% complete (Caroline AI type-safe upgrade done! ✨)
 
-**Features built:**
-- Planner dashboard
-- Vendor marketplace
-- Guest management & RSVP
-- AI chat assistant
-- Telegram bot integration (Caroline)
-- Task management
-- Budget tracking
+**Recent breakthroughs (Week 2):**
+- **Caroline AI type-safe upgrade** - Pydantic schemas, LLM JSON mode enforcement
+- **87.5% accuracy** on messy, interrupted, conflicting meeting notes
+- **Extraction review workflow** - Planner approves before database commit
+- **Traceability system** - Excerpt + justification for every field extracted
+- **Auth system** - Added login/register (rookie oversight, caught in time!)
+- **9 screenshots** showing real features in action
 
-**Tech stack:** FastAPI, SQLite, Jinja2, JavaScript, Telegram Bot API, AI agents
+**Features working:**
+- Dashboard with real-time analytics
+- Vendor marketplace (mini LinkedIn for event vendors)
+- Guest management & RSVP system
+- Calendar with full CRUD + modals + toast notifications
+- AI Inbox for client conversations → structured data
+- Caroline (Telegram bot, 47 type-safe tools)
+- Task templates (auto-generate 30+ tasks based on event type)
+- Project creation wizard with templates
+- Authentication & onboarding flow
 
-**What's left:** Final polish, deployment, documentation
+**Tech stack:** FastAPI, SQLite, Pydantic, LiteLLM, Groq API, Jinja2, Bootstrap 5, Chart.js, python-telegram-bot
+
+**What's left:** Manual testing Caroline in production (tests pass, but real chaos?), deployment to production
+
+**Read the full story:** [EventFlow Project Page](/projects/eventflow/) | [Caroline AI Type-Safe Upgrade](/posts/eventflow-caroline-pydantic-upgrade/)
 
 ---
 
@@ -67,10 +79,14 @@ A 100+ page interactive murder mystery with automated typesetting.
 
 ## 📚 Currently Learning
 
-- **FastAPI** - Python web framework (loving it!)
+- **Pydantic + LLM JSON mode** - Type-safe AI extraction (game-changer!)
+- **LiteLLM** - Multi-provider LLM integration
+- **Testing AI systems** - Progressive difficulty levels for reliability
+- **FastAPI production patterns** - Database migrations, Docker, PostgreSQL
+- **AI Agent workflows** - Building smarter, more reliable AI assistants
+- **Telegram Bot API** - Caroline integration (47 type-safe tools)
+- **Type safety end-to-end** - LLM → Parser → API → Database
 - **Hugo** - Static site generators (this site!)
-- **AI Agent workflows** - Building smarter AI assistants
-- **Telegram Bot API** - Integrating bots with apps
 - **DevOps basics** - Deployment, CI/CD, proper workflows
 
 ---
@@ -78,12 +94,14 @@ A 100+ page interactive murder mystery with automated typesetting.
 ## 📖 Currently Reading
 
 **Tech:**
-- Hugo documentation (building this site!)
-- FastAPI docs (for EventFlow)
-- AI agent frameworks (smolagents, etc)
+- Pydantic documentation (type-safe AI is fascinating!)
+- LiteLLM guides (multi-provider LLM magic)
+- FastAPI production patterns (Docker, PostgreSQL, deployment)
+- AI agent frameworks (smolagents, testing methodologies)
 
 **Non-tech:**
-- (Add what you're reading!)
+- Dark romance novels (you probably don't care hihi 🖤)
+- Dark fantasy series (escapism from debugging sessions)
 
 ---
 
@@ -99,10 +117,15 @@ A 100+ page interactive murder mystery with automated typesetting.
 
 ## 💭 Thinking About
 
+- **Making LLMs reliable for production** - Type safety, validation, traceability
+- **Testing AI-extracted data** - Automated tests vs real-world chaos (the scary part!)
+- **Building trust in AI systems** - Confidence scores, excerpts, justifications
+- **AI for chaotic brains** - EventFlow works for me because it solves my own chaos
+- **Next project: Interior Design App** - Integrate with EventFlow in the future (event styling + venue design)
+- **Nobody's teaching impact** - Architecture wisdom that saved weeks of mistakes
 - How to make technical content more accessible
-- The intersection of ADHD and coding
+- The intersection of ADHD and coding (ADHD = advantage with AI tools!)
 - Building sustainable learning habits with AI
-- Community building around AI-assisted development
 
 ---
 
@@ -118,7 +141,7 @@ A 100+ page interactive murder mystery with automated typesetting.
 ## 📫 Want to Connect?
 
 - **GitHub:** [@marialu1](https://github.com/marialu1)
-- **Email:** (Add if you want)
+- **Email:** marialuismartins01@gmail.com
 - **Comments:** Leave a comment on any post!
 
 ---
@@ -136,4 +159,6 @@ A 100+ page interactive murder mystery with automated typesetting.
 
 *This page gets updated whenever something major changes. Think of it as a snapshot of my current priorities.*
 
-**Last update: October 19, 2024**
+**Last update: October 22, 2025**
+
+**Latest:** Caroline AI type-safe upgrade complete! EventFlow now 96% feature-complete with 9 screenshots showing real progress. Testing phase begins.

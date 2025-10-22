@@ -1,6 +1,6 @@
 ---
 title: "Uses"
-date: 2024-10-19
+date: 2025-10-22
 draft: false
 description: "Tools, software, and setup I use for building projects with AI"
 ---
@@ -9,25 +9,26 @@ description: "Tools, software, and setup I use for building projects with AI"
 
 My current setup for building ridiculous projects with AI assistance.
 
-*Last updated: October 2024*
+*Last updated: October 2025*
 
 ---
 
 ## 💻 Hardware
 
-- **Laptop:** (Your laptop here - you can update this!)
-- **Monitor:** (If you have one)
-- **Keyboard:** (Your keyboard)
-- **Mouse:** (Your mouse)
+*Building weird projects from a chaotic workspace. Hardware details less important than the ideas.*
 
 ---
 
 ## 🛠️ Software & Tools
 
-### AI Assistants
+### AI Assistants & LLM Tools
 - **[Claude Code](https://claude.com/claude-code)** - My primary coding assistant (CLI tool)
 - **[Claude.ai](https://claude.ai)** - For planning and brainstorming
 - **[Cline](https://github.com/cline/cline)** - VS Code extension for AI-assisted coding
+- **[LiteLLM](https://litellm.ai/)** - Unified interface for multiple LLMs (game-changer!)
+- **[Groq API](https://groq.com/)** - Super fast LLM inference (llama-3.3-70b-versatile)
+- **[Pydantic](https://docs.pydantic.dev/)** - Type-safe data validation (makes LLMs reliable!)
+- **[Smolagents](https://github.com/huggingface/smolagents)** - HuggingFace agent framework
 
 ### Code Editors
 - **[VS Code](https://code.visualstudio.com/)** - Primary code editor
@@ -50,11 +51,44 @@ My current setup for building ridiculous projects with AI assistance.
 - **Terminal:** (Your terminal app)
 - **Multiplexer:** tmux / screen / none
 
-###Productivity
-- **Browser:** (Chrome/Firefox/Brave?)
-- **Notes:** (Notion/Obsidian/Markdown files?)
-- **To-do:** (Todoist/Things/Paper?)
-- **Music:** (Spotify/YouTube/Silence?)
+### Productivity
+- **Browser:** Chrome (for dev tools) + Firefox (for testing)
+- **Notes:** Markdown files everywhere (chaos but searchable)
+- **To-do:** Paper + post-its (I know, I know... EventFlow is supposed to fix this)
+- **Music:** Silence or instrumental (ADHD brain needs focus)
+
+---
+
+## 📅 EventFlow Stack
+
+**What I use to build a production event planning platform:**
+
+### Backend
+- **[FastAPI](https://fastapi.tiangolo.com/)** - Python web framework (automatic OpenAPI docs!)
+- **[SQLAlchemy](https://sqlalchemy.org/)** - ORM for database operations
+- **[SQLite](https://sqlite.org/)** - Development database (migrating to PostgreSQL)
+- **[Alembic](https://alembic.sqlalchemy.org/)** - Database migrations
+- **[Pydantic](https://docs.pydantic.dev/)** - Data validation + LLM JSON schema enforcement
+
+### Frontend
+- **[Jinja2](https://jinja.palletsprojects.com/)** - Template engine
+- **[Bootstrap 5](https://getbootstrap.com/)** - CSS framework (pink theme customizations!)
+- **[Chart.js](https://chartjs.org/)** - Data visualization for analytics
+- **Vanilla JavaScript** - Interactive features (modals, toasts, AJAX)
+
+### AI Integration
+- **[LiteLLM](https://litellm.ai/)** - Multi-provider LLM interface
+- **[Groq API](https://groq.com/)** - Fast LLM inference (llama-3.3-70b)
+- **[Smolagents](https://github.com/huggingface/smolagents)** - AI agent framework (47 tools!)
+- **[python-telegram-bot](https://python-telegram-bot.org/)** - Caroline AI bot integration
+
+### Testing & Deployment (Planned)
+- **pytest** - Python testing framework
+- **Docker** - Containerization
+- **PostgreSQL** - Production database
+- **nginx** - Reverse proxy + SSL
+
+**Why this stack?** FastAPI because I know Python. Bootstrap because UI matters. Pydantic because LLMs need rules. Everything else because Nobody recommended it and he was right.
 
 ---
 
