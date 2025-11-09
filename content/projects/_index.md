@@ -7,6 +7,19 @@ Welcome to the project showcase. Each project here is an experiment in AI-assist
 
 ## Current Projects
 
+### The Pantheon Portfolio
+
+**A mythological journey through my work.**
+
+An interactive portfolio designed as a Greek temple with four chambers, each dedicated to a different god and a different facet of my work and personality. This isn't just a portfolio; it's an experience.
+
+**Status:** In Development 🚧
+**Tags:** #nextjs #react #tailwindcss #threejs #ai #portfolio
+
+[Explore the Pantheon →](/projects/pantheon-portfolio/)
+
+---
+
 ### Artifactum Mystery Crimes
 
 **Murder, Mayhem, and Machine Learning**
