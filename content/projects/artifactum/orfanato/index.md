@@ -100,18 +100,92 @@ Using AI throughout development for:
 - Character roster (20+ witnesses)
 - Game structure (4 phases + intro/conclusion)
 - Evidence and impossibilities designed
+- Lock/code puzzle system (0333, 1960, MIGUEL, 2008)
+- Hint system design (3-level progressive hints)
+- App architecture (PWA with React)
+- Video production pipeline (AI images + ElevenLabs)
 - GitHub repo: [artefactum_games](https://github.com/marialu1/artefactum_games)
 
 ### In Progress
-- Game Design Document (defining all mechanics)
-- Lock/code puzzle system
-- Phase content inventory
+- **Technical R&D:** Electronic locks controlled by app
+- Testimony writing (11 documents)
+- Physical-digital connection system
 
 ### Next
+- Order ESP32/ESP8266 components (~€15-20)
+- Build prototype with solenoid locks
 - Write all testimonies and documents
-- Design app functionality
-- Prototype physical box
+- Develop companion app
 - Playtest
+
+---
+
+## Technical Exploration: App-Controlled Locks
+
+One of my goals with Artefactum games is to **implement new tech in each project**. For Orfanato, I'm exploring electronic locks controlled by the companion app.
+
+### The Challenge
+
+How do you make a physical box that opens when the app says so?
+
+### Options Explored
+
+| Approach | Cost | Complexity | iOS Support |
+|----------|------|------------|-------------|
+| Manual combo locks | €10 | Zero | Yes |
+| ESP8266 + WiFi/WebSocket | €15 | Medium | Yes |
+| ESP32 + Bluetooth | €20 | Medium | No* |
+| NFC tags | €5 | Low | Limited |
+
+*Web Bluetooth API not supported on iOS/Safari
+
+### Current Direction: ESP8266 + WebSocket
+
+The most promising budget solution:
+
+```
+📱 Phone connects to "Orfanato-Box" WiFi
+         │
+         ▼ WebSocket
+┌─────────────────────┐
+│      ESP8266        │
+│         │           │
+│    ┌────┴────┐      │
+│    │  RELAY  │      │
+│    └────┬────┘      │
+│         │           │
+│    ┌────┴────┐      │
+│    │SOLENOID │      │
+│    │  LOCK   │      │
+│    └─────────┘      │
+└─────────────────────┘
+```
+
+**Total cost:** ~€15 for 3 electronic locks
+
+### Open Source Resources
+
+Projects I'm studying:
+- [ArduinoProps](https://github.com/xcape-io/ArduinoProps) - Escape room prop library
+- [Node-REDscape](https://github.com/playfultechnology/node-redscape) - Complete control system
+- [arduinoWebSockets](https://github.com/Links2004/arduinoWebSockets) - WebSocket library
+
+### Questions I'm Working Through
+
+1. **ESP8266 vs ESP32-C3?** - €2 vs €3, Bluetooth worth the extra?
+2. **WiFi AP mode vs existing network?** - Portability vs convenience
+3. **Battery life?** - How many unlocks per charge?
+4. **Fallback for failures?** - Manual override needed?
+
+### Shopping List (AliExpress)
+
+```
+- Wemos D1 Mini (ESP8266): €2
+- 3x Solenoid Lock 12V: €9
+- 4-channel Relay Module: €1.50
+- Battery holder + wires: €2
+Total: ~€15
+```
 
 ---
 
@@ -119,6 +193,10 @@ Using AI throughout development for:
 
 - **Repository:** [github.com/marialu1/artefactum_games](https://github.com/marialu1/artefactum_games)
 - **GDD:** [Game Design Document](https://github.com/marialu1/artefactum_games/blob/main/orfanato/docs/GDD.md)
+- **Technical Docs:**
+  - [Physical-Digital Connection Options](https://github.com/marialu1/artefactum_games/blob/main/orfanato/docs/PHYSICAL_DIGITAL_CONNECTION.md)
+  - [Electronic Locks Guide](https://github.com/marialu1/artefactum_games/blob/main/orfanato/docs/TECHNICAL_ELECTRONIC_LOCKS.md)
+  - [Budget & Open Source Options](https://github.com/marialu1/artefactum_games/blob/main/orfanato/docs/BUDGET_OPENSOURCE_OPTIONS.md)
 
 ---
 
@@ -128,6 +206,8 @@ Using AI throughout development for:
 |------|--------|
 | Dec 2024 | Initial concept created |
 | Dec 7, 2024 | Restructured project, started GDD, GitHub repo created |
+| Dec 7, 2024 | Defined puzzle system, codes, hints, app architecture |
+| Dec 7, 2024 | Researched electronic locks, open source options, budget solutions |
 
 ---
 
