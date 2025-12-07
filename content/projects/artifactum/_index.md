@@ -26,15 +26,18 @@ An interactive murder mystery set in 1926. My first complete AI game project.
 
 [View project details →](/projects/artifactum/murder-mystery-1926/)
 
-### [The Artefactum App](/projects/artifactum/artefactum-app/)
+---
 
-The AI-powered engine behind the mystery. A deep dive into the tech that brings the stories to life.
+### [Orfanato Nossa Senhora das Dores](/projects/artifactum/orfanato/)
+
+A supernatural murder mystery investigation game. Three nuns dead simultaneously—impossible evidence that leads to spectral vengeance.
 
 **Status:** In Development 🚧
-**Tech:** Python, FastAPI, LLMs
-**Goal:** A reusable platform for generating endless mystery scenarios.
+**Players:** 4-10 (cooperative)
+**Format:** Hybrid physical box + companion app
+**Setting:** Portuguese orphanage, present day
 
-[View project details →](/projects/artifactum/artefactum-app/)
+[View project details →](/projects/artifactum/orfanato/)
 
 ---
 
