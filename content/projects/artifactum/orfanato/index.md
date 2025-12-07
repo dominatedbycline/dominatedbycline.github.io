@@ -97,9 +97,15 @@ Using AI throughout development for:
 
 ### Done
 - Core concept and narrative
-- Character roster (20+ witnesses)
+- **Complete Narrative Bible** (700+ lines)
+- **10 fully developed characters:**
+  - 3 murdered nuns (Conceição, Beatriz, Carmo)
+  - 3 ghost children (Miguel, Sofia, João)
+  - 2 staff witnesses (Manuel, Rosa)
+  - 1 complicit priest (Padre Henrique)
+  - 5 survivor witnesses (Carla, Tomás, Inês, Rui, Vera)
 - Game structure (4 phases + intro/conclusion)
-- Evidence and impossibilities designed
+- **Subtle impossible deaths** - each mirrors how the child died
 - Lock/code puzzle system (0333, 1960, MIGUEL, 2008)
 - Hint system design (3-level progressive hints)
 - App architecture (PWA with React)
@@ -107,14 +113,14 @@ Using AI throughout development for:
 - GitHub repo: [artefactum_games](https://github.com/marialu1/artefactum_games)
 
 ### In Progress
-- **Technical R&D:** Electronic locks controlled by app
-- Testimony writing (11 documents)
+- **Testimony documents** (11 total)
 - Physical-digital connection system
+- Technical R&D: Electronic locks controlled by app
 
 ### Next
+- Write all 11 testimony documents
 - Order ESP32/ESP8266 components (~€15-20)
 - Build prototype with solenoid locks
-- Write all testimonies and documents
 - Develop companion app
 - Playtest
 
@@ -208,6 +214,11 @@ Total: ~€15
 | Dec 7, 2024 | Restructured project, started GDD, GitHub repo created |
 | Dec 7, 2024 | Defined puzzle system, codes, hints, app architecture |
 | Dec 7, 2024 | Researched electronic locks, open source options, budget solutions |
+| Dec 7, 2024 | **Complete Narrative Bible** - 10 characters, timeline, deaths, atmosphere |
+
+## Writing Process
+
+This project is being developed through **collaborative ping-pong with Claude**. Read more about the process: [Collaborative Storytelling with Claude: A Ping-Pong Method](/posts/collaborative-storytelling-with-claude/)
 
 ---
 
