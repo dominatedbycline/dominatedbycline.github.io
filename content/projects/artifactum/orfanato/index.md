@@ -98,22 +98,28 @@ Using AI throughout development for:
 ### Done
 - Core concept and narrative
 - **Complete Narrative Bible** (700+ lines)
-- **10 fully developed characters:**
-  - 3 murdered nuns (Conceição, Beatriz, Carmo)
-  - 3 ghost children (Miguel, Sofia, João)
-  - 2 staff witnesses (Manuel, Rosa)
+- **ORFANATO_MASTER.md** - Single source of truth (537 lines, synchronized)
+- **15+ fully developed characters:**
+  - **Madre Superiora Francisca** (alive - main witness, architect of the system)
+  - 3 murdered nuns (Conceição - educator, Beatriz - discipline, Carmo - administration)
+  - 3 ghost children (Miguel 2008, Sofia 1987, João 1973)
+  - 2 good staff (Manuel caseiro, Rosa cozinheira)
   - 1 complicit priest (Padre Henrique)
   - 5 survivor witnesses (Carla, Tomás, Inês, Rui, Vera)
+  - 3 current orphans (Lucas 17, Ana 15, Matilde 12)
+  - 3 other nuns alive (Helena, Clara, Mariana)
 - Game structure (4 phases + intro/conclusion)
 - **Subtle impossible deaths** - each mirrors how the child died
 - Lock/code puzzle system (0333, 1960, MIGUEL, 2008)
 - Hint system design (3-level progressive hints)
 - App architecture (PWA with React)
 - Video production pipeline (AI images + ElevenLabs)
+- **Real Sintra facts integrated** - 1982 flying stones, Convento dos Capuchos, haunted quintas
+- **Trigger warnings** - content advisory for sensitive themes
 - GitHub repo: [artefactum_games](https://github.com/marialu1/artefactum_games)
 
 ### In Progress
-- **Testimony documents** (11 total)
+- **Testimony documents** (11 total, ~12 pages)
 - Physical-digital connection system
 - Technical R&D: Electronic locks controlled by app
 
@@ -122,6 +128,7 @@ Using AI throughout development for:
 - Order ESP32/ESP8266 components (~€15-20)
 - Build prototype with solenoid locks
 - Develop companion app
+- Create "Curiosidades de Sintra" companion document
 - Playtest
 
 ---
@@ -199,6 +206,7 @@ Total: ~€15
 
 - **Repository:** [github.com/marialu1/artefactum_games](https://github.com/marialu1/artefactum_games)
 - **GDD:** [Game Design Document](https://github.com/marialu1/artefactum_games/blob/main/orfanato/docs/GDD.md)
+- **Master Doc:** [ORFANATO_MASTER.md](https://github.com/marialu1/artefactum_games/blob/main/orfanato/docs/ORFANATO_MASTER.md) - Single source of truth
 - **Technical Docs:**
   - [Physical-Digital Connection Options](https://github.com/marialu1/artefactum_games/blob/main/orfanato/docs/PHYSICAL_DIGITAL_CONNECTION.md)
   - [Electronic Locks Guide](https://github.com/marialu1/artefactum_games/blob/main/orfanato/docs/TECHNICAL_ELECTRONIC_LOCKS.md)
@@ -215,6 +223,10 @@ Total: ~€15
 | Dec 7, 2024 | Defined puzzle system, codes, hints, app architecture |
 | Dec 7, 2024 | Researched electronic locks, open source options, budget solutions |
 | Dec 7, 2024 | **Complete Narrative Bible** - 10 characters, timeline, deaths, atmosphere |
+| Dec 8, 2024 | **Major sync:** Created ORFANATO_MASTER.md - unified GDD + Bible into single source |
+| Dec 8, 2024 | Fixed hierarchy: Francisca is Madre Superiora (alive), Conceição is educator |
+| Dec 8, 2024 | Integrated real Sintra facts: 1982 flying stones, Capuchos convent, haunted quintas |
+| Dec 8, 2024 | Added trigger warnings, finalized character list (15+ characters) |
 
 ## Writing Process
 

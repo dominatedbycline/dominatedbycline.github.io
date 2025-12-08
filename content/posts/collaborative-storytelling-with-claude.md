@@ -106,15 +106,30 @@ Three perspectives on trauma. None simple.
 
 ## The Result So Far
 
-After two sessions of ping-pong:
+After multiple sessions of ping-pong:
 
+- **ORFANATO_MASTER.md** - 537-line synchronized master document
 - **700+ line narrative bible**
-- **10 fully developed characters**
+- **15+ fully developed characters** (including witnesses, survivors, current orphans)
 - **Timeline from 1847 to 2024**
 - **3 impossible deaths with subtle horror**
 - **Complex witness dynamics** (defenders, accusers, the guilty, the traumatized)
+- **Real Sintra facts integrated** - from the 1982 flying stones phenomenon to the Convento dos Capuchos
+- **Proper hierarchy established** - Madre Superiora Francisca (alive, architect), three murdered nuns beneath her
 
 All from conversation. No blank page paralysis. No writing alone.
+
+### Update (Dec 8, 2024)
+
+Today we hit a milestone: **synchronizing two divergent documents** (GDD and Narrative Bible) into a single source of truth.
+
+The ping-pong method proved essential for:
+- Resolving inconsistencies (two characters named Beatriz!)
+- Making difficult decisions (mórbido vs subtil death methods)
+- Integrating real-world research (Sintra's actual paranormal history)
+- Adding trigger warnings without losing narrative impact
+
+The process: I identified conflicts, Claude analyzed both documents, I made directional decisions ("gosto mais do mórbido do GDD"), Claude synthesized into the final version.
 
 ---
 
