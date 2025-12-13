@@ -31,11 +31,13 @@ I have a Hetzner server with Tailscale. Here's what's actually running:
 ### **1. AI Business OS** (Artefactum)
 Generate complete operational startups from a single business idea. 6-phase DSPy pipeline that creates company structures, AI workers, and strategic variations.
 
-**Status:** Core complete, polishing for launch
+**Status:** Long-term project - huge potential, steep learning curve
 
 **What it does:**
 - Input: "I want to create an online marketplace for handmade crafts"
 - Output (5 min): Business consultation, 12 specialized AI workers, 3-5 strategic variations, quality-verified outputs
+
+**The reality:** This is ambitious. DSPy, TextGrad, self-improving AI workers - it's cutting-edge stuff that requires deep learning. The core pipeline works, but making it production-ready is a journey, not a sprint.
 
 **Tech:** DSPy, TextGrad, FastAPI, PostgreSQL, Groq gpt-oss-120b
 
