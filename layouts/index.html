@@ -111,7 +111,8 @@
 	<!-- Latest Updates Section -->
 	<section class="latest-updates">
 		<h2>Latest Posts</h2>
-		{{ $recentPosts := first 5 (where .Site.RegularPages "Type" "posts") }}
+		{{ $allPosts := where .Site.RegularPages "Type" "posts" }}
+		{{ $recentPosts := first 5 ($allPosts.ByDate.Reverse) }}
 		<div class="posts-grid">
 			{{ range $recentPosts }}
 			<article class="post-card">

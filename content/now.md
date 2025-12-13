@@ -1,144 +1,161 @@
 ---
 title: "What I'm Doing Now"
-date: 2025-10-22
+date: 2025-12-13
 draft: false
 description: "Current projects, focus areas, and what I'm learning"
 ---
 
 # What I'm Doing Now
 
-*Updated: October 22, 2025*
+*Updated: December 13, 2025*
 
 This is a [now page](https://nownownow.com/about), inspired by Derek Sivers. It's what I'd tell a friend I haven't seen in a year.
 
 ---
 
-## 🚀 Current Projects
+## Running on My Server Right Now
 
-### **1. This Blog** (dominatedbycline.github.io)
-Building a platform to document my journey with AI-assisted development.
+I have a Hetzner server with Tailscale. Here's what's actually running:
 
-**Status:** ✅ Live and growing
-
-**Recent additions:**
-- Comprehensive beginner guides (Part 1 & 2)
-- 12+ site features (RSS, analytics, comments, etc)
-- GoatCounter analytics
-- Giscus comments
-
-**Next:** More tutorial content, case studies
+| Project | Port | Status |
+|---------|------|--------|
+| AI Business OS API | 8100 | Running |
+| AI CV Enhancer (frontend) | Vite dev | Running |
+| Stimulus Collective API | 8002 | Running |
+| Artefactum Website | 8888 | Running |
 
 ---
 
-### **2. EventFlow** (Event Planning Platform)
-Full-stack event planning app with AI integration. Built in 2 weeks to solve my own chaos.
+## Current Projects
 
-**Status:** 🔨 96% complete (Caroline AI type-safe upgrade done! ✨)
+### **1. AI Business OS** (Artefactum)
+Generate complete operational startups from a single business idea. 6-phase DSPy pipeline that creates company structures, AI workers, and strategic variations.
 
-**Recent breakthroughs (Week 2):**
-- **Caroline AI type-safe upgrade** - Pydantic schemas, LLM JSON mode enforcement
-- **87.5% accuracy** on messy, interrupted, conflicting meeting notes
-- **Extraction review workflow** - Planner approves before database commit
-- **Traceability system** - Excerpt + justification for every field extracted
-- **Auth system** - Added login/register (rookie oversight, caught in time!)
-- **9 screenshots** showing real features in action
+**Status:** Core complete, polishing for launch
+
+**What it does:**
+- Input: "I want to create an online marketplace for handmade crafts"
+- Output (5 min): Business consultation, 12 specialized AI workers, 3-5 strategic variations, quality-verified outputs
+
+**Tech:** DSPy, TextGrad, FastAPI, PostgreSQL, Groq gpt-oss-120b
+
+**Lines of code:** ~11,600
+
+---
+
+### **2. Stimulus Collective**
+"The Spotify of Experiences" - AI-powered experience curation platform for Basel, Switzerland.
+
+**Status:** MVP running, working with co-founders Alex & Mark
+
+**Key innovation:** Stimulus Scores (5 sensory dimensions) + DSPy Copywriter that learns and improves
+
+**Tech:** FastAPI + DSPy + Astro (scrapbook aesthetic)
+
+---
+
+### **3. AI CV Enhancer**
+Transform any CV into a professional document with AI rewriting + template selection.
+
+**Status:** Backend 100% functional, Phase 3.5 (documentation/testing)
 
 **Features working:**
-- Dashboard with real-time analytics
-- Vendor marketplace (mini LinkedIn for event vendors)
-- Guest management & RSVP system
-- Calendar with full CRUD + modals + toast notifications
-- AI Inbox for client conversations → structured data
-- Caroline (Telegram bot, 47 type-safe tools)
-- Task templates (auto-generate 30+ tasks based on event type)
-- Project creation wizard with templates
-- Authentication & onboarding flow
+- PDF extraction + AI enhancement
+- 6 Typst templates (3 free + 3 premium)
+- Stripe payments integrated
+- Celery async processing
 
-**Tech stack:** FastAPI, SQLite, Pydantic, LiteLLM, Groq API, Jinja2, Bootstrap 5, Chart.js, python-telegram-bot
-
-**What's left:** Manual testing Caroline in production (tests pass, but real chaos?), deployment to production
-
-**Read the full story:** [EventFlow Project Page](/projects/eventflow/) | [Caroline AI Type-Safe Upgrade](/posts/eventflow-caroline-pydantic-upgrade/)
+**Tech:** Flask, Celery, Redis, PostgreSQL, MinIO, Typst, Stripe
 
 ---
 
-### **3. Murder Mystery Game**
-A 100+ page interactive murder mystery with automated typesetting.
+### **4. The Pantheon Portfolio**
+3D Greek temple portfolio with AI-generated assets. Four chambers for four Greek gods representing different facets of my work.
 
-**Status:** ✅ Complete
+**Status:** Production ready (Great Hall Carousel MVP)
 
-**What I learned:**
-- LaTeX typesetting
-- Automated build pipelines
-- AI can be surprisingly creative
-- Complex project organization
+**Approach:** Inverted 360 carousel with AI-generated HDRI backgrounds and god portals
 
-**Read about it:** [AI Can't Be Creative - I Was Wrong](/posts/2024-10-14-ai-cant-be-creative-i-was-wrong)
+**Tech:** Next.js, React Three Fiber, Skybox AI, HuggingFace Flux
+
+[Read the announcement](/posts/announcing-the-pantheon-portfolio/)
 
 ---
 
-## 📚 Currently Learning
+### **5. Artefactum Games**
+Murder mystery games + AI-assisted development. Learning AI by creating games I love.
 
-- **Pydantic + LLM JSON mode** - Type-safe AI extraction (game-changer!)
-- **LiteLLM** - Multi-provider LLM integration
-- **Testing AI systems** - Progressive difficulty levels for reliability
-- **FastAPI production patterns** - Database migrations, Docker, PostgreSQL
-- **AI Agent workflows** - Building smarter, more reliable AI assistants
-- **Telegram Bot API** - Caroline integration (47 type-safe tools)
-- **Type safety end-to-end** - LLM → Parser → API → Database
-- **Hugo** - Static site generators (this site!)
-- **DevOps basics** - Deployment, CI/CD, proper workflows
+**Current project:** Orfanato Nossa Senhora das Dores - supernatural murder mystery in a Portuguese orphanage
+
+**Status:** Pre-production (content phase) - 6 essential testimonies written, 5-act structure defined
+
+[Read about the process](/posts/collaborative-storytelling-with-claude/)
 
 ---
 
-## 📖 Currently Reading
+### **6. EventFlow**
+AI-powered event planning platform with Caroline AI assistant.
 
-**Tech:**
-- Pydantic documentation (type-safe AI is fascinating!)
-- LiteLLM guides (multi-provider LLM magic)
-- FastAPI production patterns (Docker, PostgreSQL, deployment)
-- AI agent frameworks (smolagents, testing methodologies)
+**Status:** Feature complete, testing phase
 
-**Non-tech:**
-- Dark romance novels (you probably don't care hihi 🖤)
-- Dark fantasy series (escapism from debugging sessions)
+**Highlights:**
+- Caroline AI with 47 type-safe tools (Pydantic schemas)
+- 87.5% accuracy on messy meeting notes
+- Extraction review workflow with traceability
 
----
-
-## 🎯 Focus Areas
-
-**Right now I'm focused on:**
-1. **Creating helpful content** - Guides that actually help beginners
-2. **Building in public** - Sharing the messy reality of projects
-3. **Learning by doing** - Real projects > tutorials
-4. **AI-assisted development** - Pushing what's possible with AI tools
+[Read the Caroline upgrade story](/posts/eventflow-caroline-pydantic-upgrade/)
 
 ---
 
-## 💭 Thinking About
+### **7. Murder Mystery 1926**
+Christmas murder mystery dinner for 11 players. December 24th, 2025.
 
-- **Making LLMs reliable for production** - Type safety, validation, traceability
-- **Testing AI-extracted data** - Automated tests vs real-world chaos (the scary part!)
-- **Building trust in AI systems** - Confidence scores, excerpts, justifications
-- **AI for chaotic brains** - EventFlow works for me because it solves my own chaos
-- **Next project: Interior Design App** - Integrate with EventFlow in the future (event styling + venue design)
-- **Nobody's teaching impact** - Architecture wisdom that saved weeks of mistakes
-- How to make technical content more accessible
-- The intersection of ADHD and coding (ADHD = advantage with AI tools!)
-- Building sustainable learning habits with AI
+**Status:** 75% complete
+
+**Progress:** Character dossiers nearly done, promotional video editing, 26 clue cards to design
 
 ---
 
-## 🎨 Side Interests
+## Currently Learning
 
-- **Writing** - Making complex things understandable
-- **Design** - Learning visual design basics
-- **Productivity** - Systems that actually work for ADHD brains
-- **Open Source** - Contributing where I can
+- **DSPy** - Programming LLMs instead of prompting
+- **TextGrad** - Self-improving AI workers
+- **React Three Fiber** - 3D in React
+- **Typst** - Modern typesetting (goodbye LaTeX)
+- **Production deployment** - Docker, PostgreSQL, proper DevOps
+- **Stripe integration** - Payments that actually work
 
 ---
 
-## 📫 Want to Connect?
+## Tech Stack I'm Comfortable With Now
+
+**Backend:** FastAPI, Flask, SQLAlchemy, Pydantic, Celery
+**AI:** DSPy, LiteLLM, Groq, Claude Code
+**Frontend:** Next.js, React, Astro, Tailwind
+**Database:** PostgreSQL, SQLite, Redis
+**DevOps:** Docker, Tailscale, Hetzner, Vercel
+
+---
+
+## Focus Areas
+
+1. **Shipping products** - Not just experiments, actual working software
+2. **AI workers** - Self-aware agents that know what they need
+3. **Building in public** - Documenting the messy reality
+4. **Revenue** - Making projects sustainable (Stripe, subscriptions)
+
+---
+
+## What's NOT on My Plate
+
+- Job hunting (building my own thing)
+- Freelancing (focused on products)
+- Social media (beyond GitHub)
+- Tutorials without real projects
+
+---
+
+## Want to Connect?
 
 - **GitHub:** [@marialu1](https://github.com/marialu1)
 - **Email:** marialuismartins01@gmail.com
@@ -146,19 +163,8 @@ A 100+ page interactive murder mystery with automated typesetting.
 
 ---
 
-## ❌ What I'm NOT Doing Right Now
+*This page gets updated whenever something major changes.*
 
-*(Being realistic about capacity)*
+**Last update: December 13, 2025**
 
-- Job hunting (focusing on learning)
-- Freelancing (not yet)
-- Multiple new projects (finishing what I started!)
-- Social media posting (beyond GitHub)
-
----
-
-*This page gets updated whenever something major changes. Think of it as a snapshot of my current priorities.*
-
-**Last update: October 22, 2025**
-
-**Latest:** Caroline AI type-safe upgrade complete! EventFlow now 96% feature-complete with 9 screenshots showing real progress. Testing phase begins.
+**Latest:** 7 projects running simultaneously. AI Business OS and Stimulus Collective are the main focus. Murder Mystery 1926 deadline approaching (Dec 24!).
