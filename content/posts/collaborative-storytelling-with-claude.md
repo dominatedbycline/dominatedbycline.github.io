@@ -1,7 +1,7 @@
 ---
 title: "Collaborative Storytelling with Claude: A Ping-Pong Method"
 description: "How I'm developing a murder mystery game through iterative dialogue with AI"
-date: 2024-12-07
+date: 2025-12-07
 tags: ["AI", "storytelling", "game-design", "claude", "creative-writing", "process"]
 ---
 
