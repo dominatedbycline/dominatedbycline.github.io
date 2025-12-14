@@ -7,29 +7,20 @@ Welcome to the project showcase. Each project here is an experiment in AI-assist
 
 ## Current Projects
 
-### The Pantheon Portfolio
-
-**A mythological journey through my work.**
-
-An interactive portfolio designed as a Greek temple with four chambers, each dedicated to a different god and a different facet of my work and personality. This isn't just a portfolio; it's an experience.
-
-**Status:** In Development 🚧
-**Tags:** #nextjs #react #tailwindcss #threejs #ai #portfolio
-
-[Explore the Pantheon →](/projects/pantheon-portfolio/)
-
----
-
 ### Artifactum Mystery Crimes
 
 **Murder, Mayhem, and Machine Learning**
 
-**Artefactum** is my series of murder mystery roleplay games—each one a complete, self-contained experiment in AI-assisted creative chaos. The name comes from the Latin word for "artifact": something crafted with skill.
+**Artefactum** is my series of murder mystery games + the ecosystem around them. Each project is an experiment in AI-assisted creative chaos—from game design to web development.
 
-Each game in the series is built using AI tools as creative collaborators, with full documentation of the process, tools, and inevitable bloopers.
+**Active Projects:**
+- 🎭 **Christmas Murder 1926** — 75% complete, event Dec 24
+- 👻 **Orfanato** — 80% complete, 22 characters, 5-act structure
+- 🌐 **Website** — 70% complete, Astro + vintage horror aesthetic
 
-**Status:** First game complete  
-**Tags:** #ai-tools #creative #game-design #typst #python
+Each game is built using AI tools as creative collaborators, with full documentation of process, tools, and spectacular failures.
+
+**Tags:** #ai-tools #creative #game-design #typst #astro #i18n
 
 [Explore the series →](/projects/artifactum/)
 

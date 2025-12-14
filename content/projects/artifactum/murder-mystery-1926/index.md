@@ -15,12 +15,12 @@ tags: ["project", "murder-mystery", "artifactum", "ai-tools", "game-design"]
   </video>
 </div>
 
-**Status:** In Development 🎨 (almost there!)  
-**Development Time:** 2+ weeks (14+ hours/day, hyperfocused)  
-**Players:** 11 interconnected characters → 10 people signed up  
-**Pages:** 100+ game materials  
-**Setting:** 1920s Manhattan  
-**Event:** December 25, 2025
+**Status:** 75% Complete 🎨 (final sprint!)
+**Development Time:** 2+ weeks (14+ hours/day, hyperfocused)
+**Players:** 11 interconnected characters → 10 people signed up
+**Pages:** 100+ game materials
+**Setting:** 1920s Manhattan
+**Event:** December 24, 2025 (Christmas Eve!)
 
 ---
 
@@ -471,7 +471,18 @@ graph LR
 <details>
 <summary><h2 class="inline-heading">The Final Sprint</h2></summary>
 
-**Current status:** Finishing the final details. Almost ready for December 25.
+**Current status:** Character dossiers 90% complete, 26 clues designed, master script ready.
+
+**What's Left:**
+
+| Item | Status |
+|------|--------|
+| Character dossiers | 90% ✅ |
+| 26 clues (3 tiers) | Designed ✅ |
+| Master script | Ready ✅ |
+| Physical props (~20 items) | Acquiring |
+| Print materials | Pending |
+| Final playtest | Pending |
 
 **Project Timeline:**
 
@@ -487,15 +498,15 @@ gantt
     Video Production     :done, a4, 2025-10-09, 3d
     Typesetting Setup    :done, a5, 2025-10-11, 2d
     section Final Sprint
-    Final Assembly       :active, a6, 2025-10-13, 2d
-    Testing & Polish     :a7, 2025-10-15, 10d
-    Event Day            :milestone, a8, 2025-12-25, 0d
+    Final Assembly       :done, a6, 2025-10-13, 2d
+    Props & Printing     :active, a7, 2025-12-01, 23d
+    Event Day            :milestone, a8, 2025-12-24, 0d
 ```
 
 **Feelings:** Exhausted. Proud. Nervous. Excited.
 
 ---
 
-**Note:** Full game details and character materials available upon request. The game will be played December 25, 2025. Almost there! 🎭🎄
+**Note:** Full game details and character materials available upon request. The game will be played December 24, 2025 (Christmas Eve). 10 days to go! 🎭🎄
 
 </details>

@@ -7,9 +7,9 @@ tags: ["game-design", "murder-mystery", "AI-assisted", "hybrid-game", "portugues
 
 # Orfanato Nossa Senhora das Dores
 
-**Status:** In Development 🚧
+**Status:** 80% Complete 🎯
 **Format:** Hybrid (physical box + companion app)
-**Players:** 4-10 (cooperative)
+**Players:** 1-4 (cooperative)
 **Duration:** 2-3 hours
 **Language:** Portuguese
 
@@ -95,41 +95,81 @@ Using AI throughout development for:
 
 ## Current Progress
 
-### Done
-- Core concept and narrative
-- **Complete Narrative Bible** (700+ lines)
-- **ORFANATO_MASTER.md** - Single source of truth (537 lines, synchronized)
-- **15+ fully developed characters:**
-  - **Madre Superiora Francisca** (alive - main witness, architect of the system)
-  - 3 murdered nuns (Conceição - educator, Beatriz - discipline, Carmo - administration)
-  - 3 ghost children (Miguel 2008, Sofia 1987, João 1973)
-  - 2 good staff (Manuel caseiro, Rosa cozinheira)
-  - 1 complicit priest (Padre Henrique)
-  - 5 survivor witnesses (Carla, Tomás, Inês, Rui, Vera)
-  - 3 current orphans (Lucas 17, Ana 15, Matilde 12)
-  - 3 other nuns alive (Helena, Clara, Mariana)
-- Game structure (4 phases + intro/conclusion)
-- **Subtle impossible deaths** - each mirrors how the child died
-- Lock/code puzzle system (0333, 1960, MIGUEL, 2008)
-- Hint system design (3-level progressive hints)
-- App architecture (PWA with React)
-- Video production pipeline (AI images + ElevenLabs)
-- **Real Sintra facts integrated** - 1982 flying stones, Convento dos Capuchos, haunted quintas
-- **Trigger warnings** - content advisory for sensitive themes
+```
+CONCEITO     ████████████████████ 100%
+NARRATIVA    ████████████████████ 100%
+PERSONAGENS  ████████████████████ 100% (22 fichas!)
+ESTRUTURA    ████████████████████ 100%
+DOCS INGAME  ████████░░░░░░░░░░░░ 40%
+TESTEMUNHOS  ███████████░░░░░░░░░ 55%
+```
+
+### Major Milestone: 5-Act Structure Complete
+
+The game now follows a **LucasArts-inspired puzzle dependency methodology**—each document exists to unlock something. No filler.
+
+**Design Philosophy:** "The player is a DETECTIVE, not a spectator. Emotion comes from DISCOVERING, not being TOLD."
+
+### Done ✅
+
+**Concept & Narrative:**
+- Complete Narrative Bible
+- VERSÃO_CANÓNICA.md - Single source of truth
+- 5-Act structure with minute-by-minute player experience
+
+**Characters (22 total):**
+- 4 living nuns (including Madre Superiora Francisca)
+- 3 murdered nuns (Conceição, Beatriz, Carmo)
+- 3 ghost children (João 1973, Sofia 1987, Miguel 2008)
+- 4 staff members (Manuel, Rosa, Padre Henrique, Dr. António)
+- 5 adult survivors (Carla, Tomás, Inês, Rui, Vera)
+- 3 current orphans (Lucas 17, Ana 15, Matilde 12)
+
+**Game Structure:**
+- **5-Act blueprint** with emotional arc mapped
+- Puzzle system: 0333 → MIGUEL → 2008 → 1960
+- 6 essential testimonies identified (from original 11)
+- ~19 pages of core documents designed
+
+**Act 1: The Crime - PRODUCTION READY:**
+- Police report (Typst format, authentic visual design)
+- 3 autopsies with impossible deaths (Typst format)
+- Dr. António testimony
+- Production guide created
+
+**Act 2: The Suspicions - COMPLETE:**
+- Rosa testimony (reveals abuse)
+- Ana testimony (sees ghosts)
+- Matilde testimony (witnessed death)
+- Helena testimony (MIGUEL cipher)
+
+**Technical:**
 - GitHub repo: [artefactum_games](https://github.com/marialu1/artefactum_games)
+- Real Sintra facts integrated (1982 flying stones phenomenon)
+- Typst templates for authentic document production
 
-### In Progress
-- **Testimony documents** (11 total, ~12 pages)
-- Physical-digital connection system
-- Technical R&D: Electronic locks controlled by app
+### In Progress 🚧
 
-### Next
-- Write all 11 testimony documents
-- Order ESP32/ESP8266 components (~€15-20)
-- Build prototype with solenoid locks
-- Develop companion app
-- Create "Curiosidades de Sintra" companion document
-- Playtest
+**Act 2 support materials:**
+- 3 newspaper clippings (1973, 1987, 2008)
+- Matilde's 4 drawings
+- Orphanage floor plan
+
+**Act 3: The Dead:**
+- Sofia's letter (child voice)
+- Miguel's diary (3 entries)
+- João's death certificate
+- Carla's testimony ✅ (already written)
+
+### Next Steps
+
+| Act | Status | Documents |
+|-----|--------|-----------|
+| Act 1 | ✅ Ready | Print and test |
+| Act 2 | 🟡 90% | Support materials |
+| Act 3 | ⏳ Pending | 3 documents |
+| Act 4 | ⏳ Pending | Transfer records, foundation letter |
+| Act 5 | ⏳ Pending | Final letter, conclusion video |
 
 ---
 
@@ -205,8 +245,10 @@ Total: ~€15
 ## Links
 
 - **Repository:** [github.com/marialu1/artefactum_games](https://github.com/marialu1/artefactum_games)
-- **GDD:** [Game Design Document](https://github.com/marialu1/artefactum_games/blob/main/orfanato/docs/GDD.md)
-- **Master Doc:** [ORFANATO_MASTER.md](https://github.com/marialu1/artefactum_games/blob/main/orfanato/docs/ORFANATO_MASTER.md) - Single source of truth
+- **Key Documents:**
+  - [ESTRUTURA_5_ACTOS.md](https://github.com/marialu1/artefactum_games/blob/main/orfanato/docs/ESTRUTURA_5_ACTOS.md) - Game blueprint (START HERE)
+  - [VERSÃO_CANÓNICA.md](https://github.com/marialu1/artefactum_games/blob/main/orfanato/docs/VERSAO_CANONICA.md) - Single source of truth
+  - [GDD](https://github.com/marialu1/artefactum_games/blob/main/orfanato/docs/GDD.md) - Game Design Document
 - **Technical Docs:**
   - [Physical-Digital Connection Options](https://github.com/marialu1/artefactum_games/blob/main/orfanato/docs/PHYSICAL_DIGITAL_CONNECTION.md)
   - [Electronic Locks Guide](https://github.com/marialu1/artefactum_games/blob/main/orfanato/docs/TECHNICAL_ELECTRONIC_LOCKS.md)
@@ -227,10 +269,66 @@ Total: ~€15
 | Dec 8, 2024 | Fixed hierarchy: Francisca is Madre Superiora (alive), Conceição is educator |
 | Dec 8, 2024 | Integrated real Sintra facts: 1982 flying stones, Capuchos convent, haunted quintas |
 | Dec 8, 2024 | Added trigger warnings, finalized character list (15+ characters) |
+| Dec 8, 2024 | **5-Act Structure:** Created ESTRUTURA_5_ACTOS.md - LucasArts methodology |
+| Dec 8, 2024 | **Reduced scope:** 11 testimonies → 6 essential (less docs, more impact) |
+| Dec 10, 2024 | All 11 witness testimonies written (keeping extras for expansion) |
+| Dec 11, 2024 | Puzzle dependency chart complete |
+| Dec 11, 2024 | **Act 1 complete:** Police report in Typst with visual authenticity |
+| Dec 11, 2024 | **3 autopsies created** (Typst format) - impossible deaths finalized |
+| Dec 12, 2024 | **Character expansion:** 22 characters fully documented |
+| Dec 12, 2024 | **Act 2 complete:** All 4 testimonies (Rosa, Ana, Matilde, Helena) |
+| Dec 12, 2024 | **Consistency audit:** Fixed autopsy/character sheet inconsistencies |
+| Dec 12, 2024 | Dr. António testimony - Act 1 now production ready |
+| Dec 12, 2024 | Created VERSÃO_CANÓNICA.md - definitive source of truth |
+
+## Key Learnings
+
+### 1. Less Documents = More Impact
+
+Started with 11 testimonies, ended with 6 essential. The "LucasArts methodology" - every document must unlock something or advance understanding. No atmospheric filler.
+
+**Before:** 11 testimonies + 16 characters = player gets lost
+**After:** 6 essential testimonies = player is invested
+
+### 2. Canonical Source of Truth
+
+After finding inconsistencies between autopsies and character sheets, created VERSÃO_CANÓNICA.md. Now every change goes through one document first.
+
+**Ghost-Victim relationships (corrected):**
+- Miguel → killed Conceição (impacts)
+- João → killed Beatriz (internal burns)
+- Sofia → killed Carmo (drowned in bucket)
+
+### 3. Emotional Arc Design
+
+Mapped minute-by-minute player experience:
+```
+Act 1: Curiosity → Confusion → Intrigue
+Act 2: Discomfort → Horror → Determination
+Act 3: Empathy → Sadness → Rage
+Act 4: Understanding → Ambivalence → Acceptance
+Act 5: Reverence → Peace → Satisfaction
+```
+
+### 4. Typst > LaTeX for Game Docs
+
+Switched from LaTeX to Typst for document production. Faster compilation, easier syntax, beautiful authentic-looking police reports and autopsies.
+
+### 5. AI as Quality Control
+
+Claude checks consistency across all documents. When autopsies said one thing and character sheets another, the system caught it.
+
+---
 
 ## Writing Process
 
-This project is being developed through **collaborative ping-pong with Claude**. Read more about the process: [Collaborative Storytelling with Claude: A Ping-Pong Method](/posts/collaborative-storytelling-with-claude/)
+This project is being developed through **collaborative ping-pong with Claude**. The AI handles:
+- Narrative consistency checking across 22 characters
+- Document generation (testimonies, reports)
+- Puzzle logic validation
+- Production planning
+
+Read more about the process: [Collaborative Storytelling with Claude: A Ping-Pong Method](/posts/collaborative-storytelling-with-claude/)
 
 ---
 
