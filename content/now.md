@@ -1,172 +1,131 @@
 ---
 title: "What I'm Doing Now"
-date: 2025-12-13
+date: 2026-01-11
 draft: false
-description: "Current projects, focus areas, and what I'm learning"
+description: "Current projects, focus areas, and what I'm learning - January 2026"
 ---
 
 # What I'm Doing Now
 
-*Updated: December 13, 2025*
+*Updated: January 11, 2026*
 
 This is a [now page](https://nownownow.com/about), inspired by Derek Sivers. It's what I'd tell a friend I haven't seen in a year.
 
 ---
 
-## Running on My Server Right Now
+## January 2026: Shipping, Not Building
 
-I have a Hetzner server with Tailscale. Here's what's actually running:
-
-| Project | Port | Status |
-|---------|------|--------|
-| AI Business OS API | 8100 | Running |
-| AI CV Enhancer (frontend) | Vite dev | Running |
-| Stimulus Collective API | 8002 | Running |
-| Artefactum Website | 8888 | Running |
+I'm done with endless prototypes. Time to ship production work.
 
 ---
 
-## Current Projects
+## Active Projects
 
-### **1. AI Business OS** (Artefactum)
-Generate complete operational startups from a single business idea. 6-phase DSPy pipeline that creates company structures, AI workers, and strategic variations.
+### **1. The Red Corner: Moscow 1956** 🎭
+**Status:** 100% production-ready, event TBD
 
-**Status:** Long-term project - huge potential, steep learning curve
+12-player murder mystery set in 1956 Soviet underground. Complete with 12 character dossiers (30+ pages each), interactive dashboard (132 relationships), 480-line GM script, voting system, and venue setup guide.
 
-**What it does:**
-- Input: "I want to create an online marketplace for handmade crafts"
-- Output (5 min): Business consultation, 12 specialized AI workers, 3-5 strategic variations, quality-verified outputs
+**What makes it special:** Built with unconventional tools (Groq, DSPy, Typst, Vis.js, custom ontology) that enable 3-hour generation time instead of 3 months.
 
-**The reality:** This is ambitious. DSPy, TextGrad, self-improving AI workers - it's cutting-edge stuff that requires deep learning. The core pipeline works, but making it production-ready is a journey, not a sprint.
+**Live demo:** [Interactive Dashboard](https://elaborate-kulfi-68ffe8.netlify.app/dashboard.html)
 
-**Tech:** DSPy, TextGrad, FastAPI, PostgreSQL, Groq gpt-oss-120b
-
-**Lines of code:** ~11,600
+[Explore The Red Corner →](/projects/red-corner-1956/)
 
 ---
 
-### **2. Stimulus Collective**
-"The Spotify of Experiences" - AI-powered experience curation platform for Basel, Switzerland.
+### **2. Artefactum: Mystery Game Generator**
+**Status:** Production-ready, commercially viable
 
-**Status:** MVP running, working with co-founders Alex & Mark
+Automated pipeline that generates complete 12-player murder mystery games in 3 hours. Multi-stage generation with graph-based validation, custom ontologies, and professional PDF typesetting.
 
-**Key innovation:** Stimulus Scores (5 sensory dimensions) + DSPy Copywriter that learns and improves
+**What it generates:** 12 dossiers, 14 clues, 36 objectives, 44 props, 132 validated relationships, interactive dashboard, GM materials, deployment package.
 
-**Tech:** FastAPI + DSPy + Astro (scrapbook aesthetic)
+**Innovation:** DSPy structured programs (not prompts), Groq 0.3s inference, Typst 2s compilation, domain-specific ontologies.
 
----
+**Commercial angle:** Exploring product launch, licensing, or pre-generated game sales.
 
-### **3. AI CV Enhancer**
-Transform any CV into a professional document with AI rewriting + template selection.
-
-**Status:** Backend 100% functional, Phase 3.5 (documentation/testing)
-
-**Features working:**
-- PDF extraction + AI enhancement
-- 6 Typst templates (3 free + 3 premium)
-- Stripe payments integrated
-- Celery async processing
-
-**Tech:** Flask, Celery, Redis, PostgreSQL, MinIO, Typst, Stripe
+[Read about the generator →](/projects/mystery-game-generator/)
 
 ---
 
-### **4. The Pantheon Portfolio**
-3D Greek temple portfolio with AI-generated assets. Four chambers for four Greek gods representing different facets of my work.
+### **3. EventFlow**
+**Status:** Feature-complete, production-ready
 
-**Status:** Production ready (Great Hall Carousel MVP)
+Full-stack event planning platform with Caroline AI (47 type-safe tools, 87.5% accuracy on messy meeting notes). Built for chaotic planners with creative vision but scattered execution.
 
-**Approach:** Inverted 360 carousel with AI-generated HDRI backgrounds and god portals
+**Using it for:** An actual wedding (survival mode = best motivator)
 
-**Tech:** Next.js, React Three Fiber, Skybox AI, HuggingFace Flux
+**Next:** PostgreSQL migration, production deployment prep
 
-[Read the announcement](/posts/announcing-the-pantheon-portfolio/)
-
----
-
-### **5. Artefactum Games**
-Murder mystery games + AI-assisted development. Learning AI by creating games I love.
-
-**Current project:** Orfanato Nossa Senhora das Dores - supernatural murder mystery in a Portuguese orphanage
-
-**Status:** Pre-production (content phase) - 6 essential testimonies written, 5-act structure defined
-
-[Read about the process](/posts/collaborative-storytelling-with-claude/)
+[Read the EventFlow story →](/projects/eventflow/)
 
 ---
 
-### **6. EventFlow**
-AI-powered event planning platform with Caroline AI assistant.
+### **4. Orfanato** (Next Game)
+**Status:** In development (80% complete)
 
-**Status:** Feature complete, testing phase
-
-**Highlights:**
-- Caroline AI with 47 type-safe tools (Pydantic schemas)
-- 87.5% accuracy on messy meeting notes
-- Extraction review workflow with traceability
-
-[Read the Caroline upgrade story](/posts/eventflow-caroline-pydantic-upgrade/)
-
----
-
-### **7. Murder Mystery 1926**
-Christmas murder mystery dinner for 11 players. December 24th, 2025.
-
-**Status:** 75% complete
-
-**Progress:** Character dossiers nearly done, promotional video editing, 26 clue cards to design
+Portuguese orphanage mystery. Second production game from Artefactum generator.
 
 ---
 
 ## Currently Learning
 
-- **DSPy** - Programming LLMs instead of prompting
-- **TextGrad** - Self-improving AI workers
-- **React Three Fiber** - 3D in React
-- **Typst** - Modern typesetting (goodbye LaTeX)
-- **Production deployment** - Docker, PostgreSQL, proper DevOps
-- **Stripe integration** - Payments that actually work
+- **DSPy** - Structured LLM programs (now production-ready in my stack)
+- **Typst** - Modern typesetting (2s compile time, production-proven)
+- **Graph validation** - Relationship consistency checking for complex systems
+- **Custom ontologies** - Domain-specific AI outputs that feel handcrafted
+- **Groq inference** - Sub-second LLM generation (0.3s vs 5-10s)
+- **Commercial viability** - Turning tools into products people pay for
 
 ---
 
-## Tech Stack I'm Comfortable With Now
+## Tech Stack (Production-Proven)
 
-**Backend:** FastAPI, Flask, SQLAlchemy, Pydantic, Celery
-**AI:** DSPy, LiteLLM, Groq, Claude Code
-**Frontend:** Next.js, React, Astro, Tailwind
-**Database:** PostgreSQL, SQLite, Redis
-**DevOps:** Docker, Tailscale, Hetzner, Vercel
-
----
-
-## Focus Areas
-
-1. **Shipping products** - Not just experiments, actual working software
-2. **AI workers** - Self-aware agents that know what they need
-3. **Building in public** - Documenting the messy reality
-4. **Revenue** - Making projects sustainable (Stripe, subscriptions)
+**Backend:** FastAPI, Pydantic, SQLAlchemy
+**AI:** DSPy, Groq (llama-3.3-70b), Claude Code
+**Typesetting:** Typst (not LaTeX)
+**Visualization:** Vis.js (3D network graphs)
+**Database:** PostgreSQL, SQLite
+**Deployment:** Netlify, GitHub Pages, Hetzner + Tailscale
 
 ---
 
-## What's NOT on My Plate
+## Q1 2026 Goals
 
-- Job hunting (building my own thing)
-- Freelancing (focused on products)
-- Social media (beyond GitHub)
-- Tutorials without real projects
+1. **Generate 5-10 mystery games** - Different themes, validate commercial viability
+2. **Run The Red Corner event** - Real-world playtesting with players
+3. **Explore commercialization** - Sell games? License generator? Both?
+4. **Document unconventional tools** - Blog posts about Groq, DSPy, Typst, custom ontologies
+5. **Complete Orfanato** - Second production game (80% done)
+
+---
+
+## What I'm NOT Doing
+
+- Tutorial hell (if I'm not building something real, I'm wasting time)
+- Freelancing or consulting (not interested right now)
+- Traditional job hunting (unless the perfect AI Creative Producer role appears)
+- Building things nobody wants (validate commercial viability first)
+
+---
+
+## Philosophy Shift
+
+I used to build to learn. Now I'm learning to build **products people pay for**. The skills are the same, but the mindset is different.
 
 ---
 
 ## Want to Connect?
 
 - **GitHub:** [@marialu1](https://github.com/marialu1)
-- **Email:** marialuismartins01@gmail.com
-- **Comments:** Leave a comment on any post!
+- **Projects:** [View all projects →](/projects/)
+- **Blog:** [Read latest posts →](/posts/)
 
 ---
 
 *This page gets updated whenever something major changes.*
 
-**Last update: December 13, 2025**
+**Last update: January 11, 2026**
 
-**Latest:** 7 projects running simultaneously. AI Business OS and Stimulus Collective are the main focus. Murder Mystery 1926 deadline approaching (Dec 24!).
+**Latest:** The Red Corner is 100% production-ready. Artefactum generator proven viable. Shifting focus from prototypes to products.

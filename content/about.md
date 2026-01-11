@@ -1,7 +1,7 @@
 ---
 title: ""
-description: "Interior designer → AI experimenter → Building weird stuff in public"
-date: 2025-01-13T13:00:00Z
+description: "Interior designer → AI experimenter → Building production tools with unconventional tech"
+date: 2026-01-11T13:00:00Z
 draft: false
 ---
 
@@ -49,24 +49,38 @@ But with AI as a creative collaborator, I can:
 <details>
 <summary><h2>What I'm Building</h2></summary>
 
-### 🎭 Artifactum: AI-Generated Murder Mysteries
+### 🎭 Artefactum: Automated Mystery Game Generator
 
-**Murder Mystery 1926** is the first project in my **Artifactum** series — interactive murder mystery games created using AI tools.
+I built a **production-ready pipeline** that generates complete 12-player murder mystery games in 3 hours. Not prototypes—**production games** with professional PDFs, interactive dashboards, and deployment packages.
 
-**Current status:** In active development  
-**Materials created so far:** 100+ pages of game content  
-**Tools used:** Claude (storytelling), Gemini (visual assets), lm-arena (video), Cline (automation pipeline)
+**First game:** [The Red Corner: Moscow 1956](/projects/red-corner-1956/) — 1956 Russian Mafia themed murder mystery
+**Current status:** 100% production-ready, commercially viable
+**Tools I chose (and why):**
+- **Groq** (not OpenAI) — 0.3s inference vs 5-10s (speed compounds when generating 200+ pieces of content)
+- **DSPy** (not prompt engineering) — structured LLM programs with typed outputs, not fragile prompts
+- **Typst** (not LaTeX) — 2s compile time vs 5+ minutes (enables rapid iteration)
+- **Vis.js** — interactive 3D relationship graphs (132 relationships auto-visualized)
+- **Custom ontology** — domain-specific relationship types (not generic friend/enemy)
 
-This project taught me:
-- AI collaboration workflows
-- Automated content generation
-- Typst typesetting automation
-- Git-based creative version control
-- Production pipeline architecture
+**What it generates:**
+- 12 character dossiers (professional PDFs, 30+ pages each)
+- 14 clues (7 real + 7 red herrings)
+- 36 objectives with physical props
+- 132 character relationships (graph-validated)
+- Complete story with 3-paragraph twist
+- 480-line GM running script
+- Interactive voting system
+- Deployment package ready for Netlify
 
-**The challenge:** Can you create professional-quality interactive games using AI? (Turns out: yes.)
+**The commercial angle:** This pipeline could generate games for $20-50 each. Or license the generator. Exploring patents and product launch.
 
-[Read more about Artifactum →](/projects/artifactum/)
+**What I learned:**
+- Speed matters more than model quality (Groq's 0.3s > GPT-4's 10s)
+- Structure beats prompts (DSPy > prompt engineering)
+- Domain ontologies make AI outputs feel handcrafted
+- The right tools enable production-quality automation
+
+[Generator Details →](/projects/mystery-game-generator/) | [Red Corner Game →](/projects/red-corner-1956/)
 
 ### 💻 This Website: Learning Web Dev in Public
 
@@ -102,7 +116,7 @@ I built this site from scratch using Hugo, a static site generator I'd never tou
 - 87.5% accuracy on messy, interrupted, conflicting meeting notes
 - Extraction review workflow (planner approves before database commit)
 - Analytics, vendor marketplace, guest RSVPs, task templates
-- **Current status:** 96% feature-complete, testing phase
+- **Current status:** Feature-complete, production-ready
 
 **What makes it different:**
 - Built for chaotic planners like me (creative vision, scattered execution)
@@ -235,19 +249,31 @@ My brain works in hyperfocus sprints. I need:
 <details>
 <summary><h2>What's Next</h2></summary>
 
-More projects. More experiments. More learning in public.
+**January 2026 — Shipping, Not Building**
 
-**Immediate goals:**
-- Complete Murder Mystery 1926 (Artifactum project #1)
-- Continue web dev learning (CSS, JavaScript, custom features)
-- Document the wedding planning AI methods
-- Explore more interactive experience concepts
+I'm done with endless prototypes. **Time to ship production work.**
 
-**Longer term:**
-- Create more Artifactum murder mysteries
-- Build portfolio of AI-collaborative projects
-- Land AI Creative Producer role
-- Keep learning "pra xuxu"
+**Immediate (Q1 2026):**
+- Generate 5-10 more mystery games with Artefactum (different themes, test commercial viability)
+- Run The Red Corner event (validate game design with real players)
+- Explore Artefactum commercialization (sell games? license generator? both?)
+- Document unconventional tool choices (Groq, DSPy, Typst) in blog posts
+- Build second game: Orfanato (Portuguese orphanage mystery, 80% complete)
+
+**Medium term (2026):**
+- Decide: Launch Artefactum as product or pivot to something else
+- Keep learning cutting-edge tools (currently: DSPy, TextGrad, React Three Fiber)
+- Focus on **revenue-generating projects** (not just portfolio pieces)
+- Build in public, but protect IP strategically
+
+**What I'm NOT doing:**
+- Tutorial hell (if I'm not building something real, I'm wasting time)
+- Freelancing or consulting (not interested right now)
+- Traditional job hunting (unless the perfect AI Creative Producer role appears)
+- Building things nobody wants (validate commercial viability first)
+
+**Philosophy shift:**
+I used to build to learn. Now I'm learning to build **products people pay for**. The skills are the same, but the mindset is different.
 
 </details>
 
