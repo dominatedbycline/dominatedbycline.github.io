@@ -43,7 +43,7 @@ First production game from the Artefactum generator. 1956 Moscow, Russian mafia,
 - Complete venue setup guide
 
 **Status:** 100% production-ready, event TBD
-**Live Demo:** [Interactive Dashboard](https://elaborate-kulfi-68ffe8.netlify.app/dashboard.html)
+**Live Demo:** [Interactive Dashboard](https://heartfelt-longma-0f56cb.netlify.app/dashboard.html)
 
 [Explore The Red Corner →](/projects/red-corner-1956/)
 

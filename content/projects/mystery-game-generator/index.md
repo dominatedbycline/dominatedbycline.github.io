@@ -11,7 +11,7 @@ tags: ["ai", "automation", "game-design", "python", "dspy", "groq", "llm", "typs
 
 **Generate a complete 12-player murder mystery game in 3 hours. Fully automated. Production-quality.**
 
-[📊 See Example: Red Corner Dashboard](https://elaborate-kulfi-68ffe8.netlify.app/dashboard.html) • [🎭 Example Game: The Red Corner](../red-corner-1956/)
+[📊 See Example: Red Corner Dashboard](https://heartfelt-longma-0f56cb.netlify.app/dashboard.html) • [🎭 Example Game: The Red Corner](../red-corner-1956/)
 
 ---
 
@@ -277,7 +277,7 @@ class Character(BaseModel):
 
 ## Interactive Demo
 
-**See it in action:** [The Red Corner Dashboard](https://elaborate-kulfi-68ffe8.netlify.app/dashboard.html)
+**See it in action:** [The Red Corner Dashboard](https://heartfelt-longma-0f56cb.netlify.app/dashboard.html)
 
 - Explore 132 character relationships
 - Interactive 3D network graph (Vis.js)

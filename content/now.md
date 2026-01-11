@@ -28,7 +28,7 @@ I'm done with endless prototypes. Time to ship production work.
 
 **What makes it special:** Built with unconventional tools (Groq, DSPy, Typst, Vis.js, custom ontology) that enable 3-hour generation time instead of 3 months.
 
-**Live demo:** [Interactive Dashboard](https://elaborate-kulfi-68ffe8.netlify.app/dashboard.html)
+**Live demo:** [Interactive Dashboard](https://heartfelt-longma-0f56cb.netlify.app/dashboard.html)
 
 [Explore The Red Corner →](/projects/red-corner-1956/)
 

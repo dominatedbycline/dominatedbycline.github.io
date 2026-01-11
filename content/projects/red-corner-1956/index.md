@@ -11,7 +11,7 @@ tags: ["game-design", "ai-generation", "murder-mystery", "python", "typst", "gro
 
 **A 12-player murder mystery dinner party. 100% AI-generated. Zero manual content creation.**
 
-[🎭 Try the Live Invitation](https://elaborate-kulfi-68ffe8.netlify.app/) • [📊 Interactive Dashboard](https://elaborate-kulfi-68ffe8.netlify.app/dashboard.html)
+[🎭 Try the Live Invitation](https://heartfelt-longma-0f56cb.netlify.app/) • [📊 Interactive Dashboard](https://heartfelt-longma-0f56cb.netlify.app/dashboard.html)
 
 ---
 
@@ -106,7 +106,7 @@ class CharacterGenerator(dspy.Signature):
 
 **Why I used it:** 12 characters, 132 relationships, custom ontology. You can't track that in a spreadsheet. You need a **3D interactive graph**.
 
-**What I built:** [An interactive dashboard](https://elaborate-kulfi-68ffe8.netlify.app/dashboard.html) where you can:
+**What I built:** [An interactive dashboard](https://heartfelt-longma-0f56cb.netlify.app/dashboard.html) where you can:
 - Click any character to see their connections
 - Filter by relationship type (BOSS, LOVER, ENEMY, INFORMANT, etc.)
 - Explore the web of secrets in real-time
@@ -177,7 +177,7 @@ class CharacterGenerator(dspy.Signature):
 1. Open [app.netlify.com/drop](https://app.netlify.com/drop)
 2. Drag `netlify_deploy/` folder
 3. Wait 10 seconds
-4. Get live URL: `https://elaborate-kulfi-68ffe8.netlify.app/`
+4. Get live URL: `https://heartfelt-longma-0f56cb.netlify.app/`
 
 **Real talk:** This is how deployment should work. Simple. Fast. Done.
 
@@ -277,9 +277,9 @@ This one doesn't.
 
 ## Try It Yourself
 
-**Live Invitation:** [https://elaborate-kulfi-68ffe8.netlify.app/](https://elaborate-kulfi-68ffe8.netlify.app/)
+**Live Invitation:** [https://heartfelt-longma-0f56cb.netlify.app/](https://heartfelt-longma-0f56cb.netlify.app/)
 
-**Interactive Dashboard:** [See the relationship web](https://elaborate-kulfi-68ffe8.netlify.app/dashboard.html)
+**Interactive Dashboard:** [See the relationship web](https://heartfelt-longma-0f56cb.netlify.app/dashboard.html)
 
 **Status:** Production-ready, event TBD
 
